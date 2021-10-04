@@ -1,0 +1,37 @@
+*{
+    padding: 1%;
+    font-family: Arial;
+}
+body{
+    background-color: darkgray;
+}
+
+h1{
+    text-align: center;
+    align-self: center;
+    letter-spacing: 5px;
+    font-size: 2em;
+}
+
+h2{
+    background-color: grey;
+    color:white;
+    padding: 0.5%;
+    text-transform: capitalize;
+}
+
+p{
+    text-align: justify;
+    text-indent: 2em;
+    margin: 0%;
+}
+
+fecha{
+    color: red;
+    padding: 0%;
+    font-style: italic;
+}
+strong{
+    background-color: white;
+    padding: 0%;
+}
