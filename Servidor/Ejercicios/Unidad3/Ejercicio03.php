@@ -12,9 +12,11 @@
 
 <body>
     <h2>Usuario</h2>
-    <form method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]) ?>">
+    <form method="POST"  action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]) ?>">
 
-        <label>Nombre </label><input type="text" value="<?php echo $_POST['nombre']; ?>" name="usuario"><br>
+    <?php $valor=$_POST['nombre']; ?>
+
+        <label>Nombre </label><input type="text" value="<?php echo $valor; ?>" name="usuario"><br>
         <input type="submit" value="enviar">
     </form>
 
