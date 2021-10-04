@@ -14,7 +14,7 @@
 } */
 
 body{
-    background-color: #fff7da;
+    background: url('recursos/images/yellow_background.png');
     width:auto;
 }
 
@@ -59,6 +59,12 @@ nav li{
    text-transform: uppercase;
    font-family: 'Dayrom';
 }
+
+footer{
+    background: url('recursos/images/top.png') no-repeat top center, url('recursos/images/line.png') repeat-x top, url('images/shadow.png') repeat-x top;
+    padding-top: 25px;
+}
+
 .rotate90{
     transform: rotate(90);
     text-align: center;
