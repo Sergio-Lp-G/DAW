@@ -14,7 +14,7 @@
     <h2>Usuario</h2>
     <form method="POST"  action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]) ?>">
 
-    <?php $valor=$_POST['nombre']; ?>
+    <?php $valor = $_POST['nombre']; ?>
 
         <label>Nombre </label><input type="text" value="<?php echo $valor; ?>" name="usuario"><br>
         <input type="submit" value="enviar">
@@ -24,6 +24,7 @@
     <?php
 
     if ($_POST['usuario'] == "usuario" && $_POST['usuario'] . ob_get_length() > '3'  && !empty($_POST)) {
+        $valor='';
         //echo "Recibido!! Mira la URL en tu navegador<hr>";
         echo "Hola " . $_POST['nombre'] . " Bienvenido.<br>";
         //var_dump nos puede ayudar a entender lo que hemos recibido
