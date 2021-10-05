@@ -12,9 +12,9 @@
 
 <body>
     <h2>Usuario</h2>
-    <form method="POST"  action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]) ?>">
+    <form method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]) ?>">
 
-    <?php $valor = $_POST['nombre']; ?>
+        <?php $valor = $_POST['usuario']; ?>
 
         <label>Nombre </label><input type="text" value="<?php echo $valor; ?>" name="usuario"><br>
         <input type="submit" value="enviar">
@@ -23,17 +23,19 @@
 
     <?php
 
-    if ($_POST['usuario'] == "usuario" && $_POST['usuario'] . ob_get_length() > '3'  && !empty($_POST)) {
-        $valor='';
-        //echo "Recibido!! Mira la URL en tu navegador<hr>";
-        echo "Hola " . $_POST['nombre'] . " Bienvenido.<br>";
-        //var_dump nos puede ayudar a entender lo que hemos recibido
-        echo "<hr><pre>";
-        //var_dump($_POST);
+
+    if (isset($_POST)  && !empty($_POST)) {
+
+        $valor = '';
+        if ($_POST['usuario'] == "usuario" && strlen($_POST['usuario']) > 3) {
+            echo "Hola " . $_POST['usuario'] . " Bienvenido.<br>";
+            echo "<hr><pre>";
+        } else {
+            //$valor = $_POST['nombre'];
+            echo  "El nombre " . $_POST['usuario'] . " no es valido. <br>";
+        }
     } else {
         echo "Campo NOMBRE obligatorio.<br>";
-        //$valor=$_POST['nombre'];
-        echo $_POST['nombre'] . " no es valido. <br>";
     }
     ?>
 

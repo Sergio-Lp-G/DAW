@@ -20,11 +20,8 @@
 
     <?php
     if (isset($_POST) && !empty($_POST)) {
-        echo "Recibido!! Mira la URL en tu navegador<hr>";
         echo "Hola " . $_POST['nombre'] . " Bienvenido.<br>";
-        //var_dump nos puede ayudar a entender lo que hemos recibido
         echo "<hr><pre>";
-        //var_dump($_POST);
     } else {
         echo "Campo NOMBRE obligatorio";
     }
