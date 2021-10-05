@@ -29,7 +29,7 @@
         $valor = '';
         if ($_POST['usuario'] == "usuario" && strlen($_POST['usuario']) > 3) {
             echo "Hola " . $_POST['usuario'] . " Bienvenido.<br>";
-            echo "<hr><pre>";
+            echo "<hr><pre>";echo "Hola " . $_POST['usuario'] . " Bienvenido.<br>";
         } else {
             //$valor = $_POST['nombre'];
             echo  "El nombre " . $_POST['usuario'] . " no es valido. <br>";
