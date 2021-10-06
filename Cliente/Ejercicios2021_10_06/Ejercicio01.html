@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8">
+        <title>Ejercicio 1</title>
+        <script>
+            //funciones
+        </script>
+    </head>
+
+    <body>
+        <h1>Hoy es:</h1>
+
+        <script type="text/javascript">
+            dias();
+            function dias(){
+                var dia = prompt("¿Que día de la semana es hoy?").toLowerCase();
+            
+            switch (dia) {
+                case 'lunes':
+                    alert("Hoy es lunes.");
+                    dias();
+                    break;
+            
+                case 'martes':
+                    alert("Hoy es martes.");
+                    dias();
+                    break;
+            
+                case 'miercoles':
+                    alert("Hoy es miercoles.");
+                    dias();
+                    break;
+            
+                case 'jueves':
+                    alert("Hoy es jueves.");
+                    dias();
+                    break;
+            
+                case 'viernes':
+                    alert("Hoy es viernes.");
+                    dias();
+                    break;
+                
+                case 'sabado':
+                    alert("Hoy es sabado.");
+                    dias();
+                    break;
+                
+                case 'domingo':
+                    alert("Hoy es domingo.");
+                    dias();
+                    break;
+                    
+                default:
+                    alert("Indique un día valido.");
+                    dias();
+                    break;
+                }
+            }
+            
+            
+        </script>
+    </body>
+
+</html>
