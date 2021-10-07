@@ -9,27 +9,26 @@
 </head>
 
 <body>
-    <h2>Nombres</h2>
+    <h1>Cuestionario</h1>
 
     <form method="POST">
 
-        <h2>Pregunta 1. EIE</h2>
-       
-        
-        <label>Pregunta 2. Inglés </label><br>
+        <h2>Pregunta 1. EIE</h2><br>
 
-        <label>Pregunta 3. Despliegue </label><br>
 
-        <label>Pregunta 4. Cliente</label><br>
+        <h2>Pregunta 2. Inglés </h2><br>
 
-        <label>Pregunta 5.  Servidor</label><br>
+
+        <h2>Pregunta 3. Despliegue </h2><br>
+
+
+        <h2>Pregunta 4. Cliente</h2><br>
+
+
+        <h2>Pregunta 5. Servidor</h2><br>
+
 
         <input type="submit" value="enviar">
-    
-    
-    
-    
-    
     </form>
 
 
