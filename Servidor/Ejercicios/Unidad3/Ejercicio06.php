@@ -14,32 +14,67 @@
     <form method="POST">
 
         <h2>Pregunta 1. EIE</h2><br>
-
-
+        <label for="pregunta1">Profesor que imparte esta asignatura.</label>
+        <select name="pregunta1" id="pregunta1">
+            <option value="0">Fran</option>
+            <option value="1">Jose Miguel</option>
+            <option value="0">Elena</option>
+            <option value="0">Sandra</option>
+        </select>
+        <br>
         <h2>Pregunta 2. Inglés </h2><br>
-
+        <label for="pregunta1">Profesor que imparte esta asignatura.</label>
+        <select name="pregunta1" id="pregunta1">
+            <option value="0">Fran</option>
+            <option value="1">Jose Miguel</option>
+            <option value="0">Elena</option>
+            <option value="0">Sandra</option>
+        </select>
+        <br>
 
         <h2>Pregunta 3. Despliegue </h2><br>
-
+        <label for="pregunta1">Profesor que imparte esta asignatura.</label>
+        <select name="pregunta1" id="pregunta1">
+            <option value="0">Fran</option>
+            <option value="1">Jose Miguel</option>
+            <option value="0">Elena</option>
+            <option value="0">Sandra</option>
+        </select>
+        <br>
 
         <h2>Pregunta 4. Cliente</h2><br>
-
+        <label for="pregunta1">Profesor que imparte esta asignatura.</label>
+        <select name="pregunta1" id="pregunta1">
+            <option value="0">Fran</option>
+            <option value="1">Jose Miguel</option>
+            <option value="0">Elena</option>
+            <option value="0">Sandra</option>
+        </select>
+        <br>
 
         <h2>Pregunta 5. Servidor</h2><br>
-
+        <label for="pregunta1">Profesor que imparte esta asignatura.</label>
+        <select name="pregunta1" id="pregunta1">
+            <option value="0">Fran</option>
+            <option value="1">Jose Miguel</option>
+            <option value="0">Elena</option>
+            <option value="0">Sandra</option>
+        </select>
+        <br>
 
         <input type="submit" value="enviar">
     </form>
 
 
     <?php
-    if (!empty($_POST['nombres']) && is_array($_POST['nombres'])) {
 
-        foreach ($_POST['nombres'] as $nombres) {
-            echo $nombres . " <br>";
+    if (!empty($_POST) && isset($_POST)) {
+        $contador=0;
+        foreach ($_POST as $_POST['name'] => $nombre) {
+            # code...
         }
-    } else {
-        echo "error";
+
+        if($_POST['pregunta1']){}
     }
     ?>
 </body>
