@@ -10,8 +10,21 @@
         function escribirBienvenida(){
             document.write("<h1>Hola a tod@s</h1>")
         }
-        function saludo() {
-            
+        function saludo(nom) {
+            document.write("<p>Hola "+nom+".</p>");
+        }
+        function suma(num1, num2) {
+            var resultado=num1+num2;
+            document.write("<p>La suma de los números "+num1+" y "+num2+" resulta en "+resultado+"</p>");
+        }
+        function resta(a,b) {
+            var resultado=a-b;
+            return resultado;
+        }
+
+        function producto(a,b) {
+            var multip=a*b;
+            return multip;
         }
     </script>
 </head>
@@ -19,8 +32,19 @@
 <body>
     <script>
         escribirBienvenida();
-        var nombre=prompt("Nombre: ");
-        saludo(nombre);
+        //var nombre=prompt("Nombre: ");
+        //saludo(nombre);
+        var numero1=parseInt(prompt("Indique su primer numero:"));
+        var numero2=parseInt(prompt("Indique su segundo numero:"));
+        //suma(numero1, numero2);
+
+        //var resta=resta();
+        //alert(resta);
+
+        
+        var product=producto(numero1, numero2);
+        alert(product);
+
     </script>
 </body>
 

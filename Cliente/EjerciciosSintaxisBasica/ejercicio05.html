@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<!-- Realiza un script que le pregunte al usuario la nota obtenida y devuelva "Suspenso","Aprobado","Notable" o "Sobresaliente"-->
+<html>
+    <head>
+        <title>Ejercicio 5</title>
+        <meta charset="UTF-8">
+        <script>
+            //funciones
+            function notas(nota) {
+                var valor;
+                if(nota < 5){
+                     valor="Suspenso";
+                }else if(nota >=5 && nota <7){
+                    valor="Aprobado";
+                }else if(nota >=7 && nota <9){
+                    valor="Notable";
+                }else if(nota>=9){
+                    valor="Sobresaliente"
+                }else{
+                    valor="Valor no valido."
+                }
+                return valor;
+            }
+        </script>
+    </head>
+    <body>
+        <script>
+            var num=parseInt(prompt("Indique su nota:"));
+            var nota=notas(num);
+            alert(nota);
+        </script>
+
+    </body>
+</html>
