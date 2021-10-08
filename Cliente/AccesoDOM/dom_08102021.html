@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Ejercicios de DOM</title>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <h1 id="en1">Bienvenido a la pagina de ejercicios de DOM</h1>
+    <p name="item1">Estoy aprendiendo.</p>
+    <p>Soy estudiante.</p>
+    <p><b>Tengo</b> los <b>apuntes</b></p>
+
+    <h2 class="en2"> Continuamos con otro encabezado.</h2>
+
+    <script>
+        //getElementById
+        /* var encabezados = document.getElementById("en1");
+         alert(encabezados.textContent);*/
+
+        //getElementsByClassName
+        var encabezados2 = document.getElementsByClassName("en2");
+        alert(encabezados2[0].textContent);
+
+        //getElementsByName
+        var parrafos1 = document.getElementsByName("item1");
+        alert(parrafos1[0].textContent);
+
+        //mostrar todos los textos de la etiqueta parrafo. Usar metodo .length y un for.
+        //Usar getElementsByTagName.
+        var parrafos2 = document.getElementsByTagName("p");
+        for (var index = 0; index < parrafos2.length; index++) {
+            alert(parrafos2[index].textContent);
+
+        }
+        alert(document.getElementsByTagName("p")[2].getElementsByTagName("b")[1].textContent);
+
+    </script>
+</body>
+
+</html>
