@@ -2,7 +2,7 @@ div#a{
     background: blue;
     width: 2em;
     height: 4em;
-    position: absolute;
+    float: right; 
     top: 1em;
     left: 2em;
 }
