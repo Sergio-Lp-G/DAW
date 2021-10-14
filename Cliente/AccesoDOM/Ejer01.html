@@ -33,6 +33,32 @@
         Prueba J.
     </p>
 
+    <script>
+        var contadorEnlaces=0;
+        var contadorPrueba=0;
+        var enlaces=document.getElementsByTagName("a");
+        for (i=0; i<enlaces.length; i++) {
+            contadorEnlaces+=1;
+            if (enlaces[i].href=="http://prueba"||enlaces[i].href=="http://prueba/") {
+                contadorPrueba+=1;
+            }
+        }
+        //a)
+        document.write(contadorEnlaces+" enlaces<br>");
+
+        //b)
+        document.write(enlaces[enlaces.length-2].href+"<br>");
+
+        //c)
+        document.write(contadorPrueba+" enlaces a http://prueba<br>");
+
+        //d)
+        var parrafos=document.getElementsByTagName("p");
+        var enlacesTercerParrafo=parrafos[2].getElementsByTagName("a");
+        document.write(enlacesTercerParrafo.length+" enlaces hay en el tercer párrafo.")
+    </script>
+
+
 </body>
 
 </html>
