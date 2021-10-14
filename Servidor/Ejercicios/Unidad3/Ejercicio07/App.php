@@ -13,7 +13,7 @@ class App
 
     protected function numeros()
     {
-
+        $numvector=[];
     }
 
     public function fibonacci()
