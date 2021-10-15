@@ -1,0 +1,90 @@
+.contenedor {
+    width: 90%;
+    border-style: solid;
+    border-color: #3f51b5;
+    border-width: 4px;
+    margin-top: 15px;
+    display: flex;
+}
+
+.contenedor>div {
+    background-color: #ff4081;
+    color: white;
+    text-align: center;
+    width: 50px;
+    font-size: 3em;
+    margin: 4px;
+}
+
+#cont01 {
+    flex-direction: row; /* mostrar en una fila */
+}
+
+#cont02 {
+    flex-direction: row-reverse; /* muestra en fila invertida*/
+}
+
+#cont03 {
+    flex-direction: column; /* mostrar en formato columna*/
+}
+
+#cont04 {
+    flex-direction: column-reverse; /* muestra en columna con orden invertido*/
+} 
+#cont05 {
+    flex-wrap: nowrap; /* ajusto los elementos a una linea */
+}
+#cont06 {
+    flex-wrap: wrap; /* distribuye sin cambiar tamaño */
+}
+#cont07 {
+    flex-wrap: wrap-reverse; /* distribuye sin cambiar tamaño, pero usa el orden invertido */
+}
+#cont08 {
+    justify-content: flex-start; /* ajusta los elementos al principio del eje */
+}
+#cont09 {
+    justify-content:flex-end; /*ajusta l final */
+}
+#cont10 {
+    justify-content: center;/*centra los elementos */
+}
+#cont11 {
+    justify-content: space-between; /* con los elementos ajustados a los bordes los espacia equitativamente*/
+}
+#cont12 {
+    justify-content: space-around; /* reparte el espacio alrededor de los elementos*/
+}
+
+.contenedorAlto{
+    height: 100px;
+}
+#cont13 {
+    align-items: stretch; /* ocupar todo el alto*/
+}
+#cont14 {
+    align-items: flex-start; /*alinear arriba*/
+}
+#cont15 {
+    align-items: flex-end; /* alinear abajo*/
+}
+#cont16 {
+    align-items: center; /* centrar */
+}
+
+#item1{
+    order:3;
+}
+#item2{
+    order:1;
+    flex-grow: 2;
+}
+#item3{
+    order:2;
+}
+#item4{
+    order:5;
+}
+#item5{
+    order:4;
+}
