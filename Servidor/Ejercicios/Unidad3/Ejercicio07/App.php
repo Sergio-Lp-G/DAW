@@ -20,7 +20,7 @@ class App
         } else {
             //La primera vez ejecuta el método index
             //$method = 'index';
-            $method = 'fibonacci';
+            $method = 'potencias2';
         }
 
         try {
@@ -44,7 +44,7 @@ class App
 
     protected function index()
     {
-        
+
     }
 
     protected function numeros()
@@ -70,7 +70,7 @@ class App
     public function potencias2()
     {
         for($i=2;$i<25;$i++){
-
+            echo pow(2,$i)."<br>";
         }
     }
 
