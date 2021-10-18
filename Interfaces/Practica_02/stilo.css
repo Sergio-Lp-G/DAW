@@ -1,0 +1,59 @@
+
+
+body {
+    background-color: white;
+}
+
+header {
+    background-color: black;
+    color: white;
+    text-align: center;
+}
+
+header>h1 {
+    letter-spacing: 10px;
+}
+
+nav {
+    display: inline-block;
+}
+
+nav li {
+    display: inline-block;
+    margin-right: 15px;
+}
+
+
+
+section {
+    width: 65%;
+    display: inline-block;
+}
+
+aside {
+    width: 30%;
+    
+    display: inline-block;
+}
+
+.inline {
+    display: inline-block;
+}
+
+dl {
+    line-height: 1.5;
+}
+
+dt {
+    width: 100px;
+    text-align: right;
+    font-weight: bold;
+}
+
+#sectFot {
+    text-align: center;
+}
+
+footer {
+    text-align: center;
+}
