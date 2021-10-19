@@ -19,8 +19,7 @@ class App
             $method = $_GET['method'];
         } else {
             //La primera vez ejecuta el método index
-            //$method = 'index';
-            $method = 'potencias2';
+            $method = 'indice';
         }
 
         try {
@@ -42,51 +41,81 @@ class App
 
 
 
-    protected function index()
+    protected function indice()
     {
 
+        echo "<ul>";
+        echo "<li><a href=\"/DAW/Servidor/Ejercicios/Unidad3/Ejercicio07/?method=fibonacci\">Fibonacci</a></li>";
+        echo "<li><a href=\"/DAW/Servidor/Ejercicios/Unidad3/Ejercicio07/?method=potencias2\">Potencia de 2</a></li>";
+        echo "<li><a href=\"/DAW/Servidor/Ejercicios/Unidad3/Ejercicio07/?method=factoriales\">Factoriales</a></li>";
+        echo "<li><a href=\"/DAW/Servidor/Ejercicios/Unidad3/Ejercicio07/?method=primo\">Numeros primos</a></li>";
+        echo "</ul>";
     }
 
-    protected function numeros()
-    {
-        $numvector = [];
-    }
+
 
     public function fibonacci()
     {
-        $fibon=[0,1];
-        for($i=2;$i<100;$i++){
-            $fibon[]=$fibon[$i-1]+$fibon[$i-2];
-        }
-        foreach ($fibon as $key => $value) {
-            if($value < 1000000) {
-                echo $value."<br>";
-            }
-            
+        $this->indice();
+        echo "Fibonacci<br><br>";
+        $fibon = [0, 1];
+        for ($i = 2; $i < 50; $i++) {
+            $fibon[$i] = $fibon[$i - 1] + $fibon[$i - 2];
         }
 
+        foreach ($fibon as $key => $value) {
+            if ($value < 1000000) {
+                echo $key . " => " . $value . "<br>";
+            }
+        }
     }
 
-    public function potencias2()
+    protected function potencias2()
     {
-        for($i=2;$i<25;$i++){
-            echo pow(2,$i)."<br>";
+        $this->indice();
+        $pot=[];
+        echo "Potencia de 2 hasta 25<br><br>";
+        for ($i = 2; $i < 25; $i++) {
+            $pot[]= pow(2, $i);
+        }
+        foreach ($pot as $key => $value) {
+            echo $key . " => " . $value . "<br>";
         }
     }
 
     public function factoriales()
     {
+        $this->indice();
+        echo "Factoriales<br><br>";
+        $fact = [1];
+        for ($i = 1; $i < 1000000; $i++) {
+            $fact[$i] = $fact[$i - 1] * $i;
+        }
+        foreach ($fact as $key => $value) {
+            if ($value < 1000000) {
+                echo $key . " => " . $value . "<br>";
+            }
+        }
     }
 
     public function primo()
     {
-        $contador = 0;
+        $this->indice();
+        echo "Primos<br><br>";
+        $primos = [];
         for ($i = 1; $i < 10000; $i++) {
-            for ($j = 0; $j < $i; $j++) {
+            $contador = 0;
+            for ($j = 1; $j <= $i; $j++) {
                 if ($i % $j == 0) {
                     $contador++;
                 }
             }
+            if ($contador < 3) {
+                $primos[] = $i;
+            }
+        }
+        foreach ($primos as $key => $value) {
+            echo $key ." => " . $value . "<br>";
         }
     }
 }
