@@ -10,7 +10,7 @@
     <script>
         var cadena="abc1Hola a abc2bbtodos";
         var ex1=/abc[0-9]/g; //busqueda global en toda la cadena
-
+/*
         //devuelve la caden encontrada
         alert(ex1.exec(cadena)+" - - 1");
         
@@ -23,6 +23,18 @@
 
         //crea un array con los coincidentes
         alert(cadena.match(ex1));
+        var array=cadena.match(ex1);
+        alert(array[1]);
+        
+        //devuelve la posicion, numerica, en la cadena donde empieza el patron
+        alert(cadena.search(/c1/));
+
+        //crear un array segun un caracter indicado
+        alert(cadena.split(" "));//en esta caso separa por el espacio.
+*/
+        //con el metodo test buscar dos apariciones seguidas del caracter b, usando caracteres especiales
+        var ptrB=/b{2}/;
+        alert(ptrB.test(cadena));
 
     </script>
 </body>

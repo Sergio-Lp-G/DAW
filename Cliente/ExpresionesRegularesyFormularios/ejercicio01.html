@@ -11,7 +11,7 @@
 
 <body>
     <script>
-        var num=" 23456789";
+        var num="123456789";
         var telefono=/\d{9}/;
         alert(num+" telefono "+telefono.test(num));
 
@@ -23,8 +23,9 @@
         var cp=/\d{5}/;
         alert("Codigo postal "+cp.test(num2));
 
-        var contacto="serg@gmail.com";
-        var email=/ /;
+        var contacto="serg@gmailcom";
+        var email=/\w?@\w?.[a-zA-z]{2,4}/;
+        alert("Correo electronico "+email.test(contacto));
     </script>
 </body>
 
