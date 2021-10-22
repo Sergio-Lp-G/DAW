@@ -10,7 +10,10 @@
         function cambiaColor2(colornuevo2, colorfondo){
             var parrafo=document.getElementsByTagName("p");
             parrafo[0].style.color=colornuevo2;
-            parrafo[0].style.backgroundColor =colorfondo;
+            parrafo[0].style.backgroundColor = colorfondo;
+        }
+        function reset(){
+            
         }
     </script>
 </head>
@@ -20,7 +23,7 @@
     <input type="button" value="Rojo" onclick="cambiacolor('red')"/>
     <input type="button" value="Verde" onclick="cambiacolor('green')"/>
     <input type="button" value="Azul" onclick="cambiacolor('blue')"/>
-    <input type="button" value="reset" onclick="cambiacolor('white'), cambiaColor2('black','trasparent')"/>
+    <input type="button" value="reset" onclick="reset()"/>
     <script>
 
     </script>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Ejercicios de expresiones regulares</title>
+    
+</head>
+
+<body>
+    <script>
+        var cadena="abc1Hola a abc2bbtodos";
+        var ex1=/abc[0-9]/g; //busqueda global en toda la cadena
+
+        //devuelve la caden encontrada
+        alert(ex1.exec(cadena)+" - - 1");
+        
+        //devuelve true/false si lo encuentra
+        alert(ex1.test(cadena)+" - - 2");
+
+        //busca al final de la cadena
+        var ex2=/x$/;
+        alert(ex2.test(cadena)+" - - 3");
+
+        //crea un array con los coincidentes
+        alert(cadena.match(ex1));
+
+    </script>
+</body>
+</html>

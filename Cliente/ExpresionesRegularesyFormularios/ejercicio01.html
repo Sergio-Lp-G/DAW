@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Ejercicios con expresiones regulares de JavaScript.</title>
+    <meta charset="UTF-8">
+    <script>
+        
+    </script>
+</head>
+
+<body>
+    <script>
+        var num=" 23456789";
+        var telefono=/\d{9}/;
+        alert(num+" telefono "+telefono.test(num));
+
+        var fecha="21/07/1990";
+        var dat=/[0-9]{2}\/[0-9]{2}\/[0-9]{4}/;
+        alert("fecha "+dat.test(fecha));
+
+        var num2=50011;
+        var cp=/\d{5}/;
+        alert("Codigo postal "+cp.test(num2));
+
+        var contacto="serg@gmail.com";
+        var email=/ /;
+    </script>
+</body>
+
+</html>
