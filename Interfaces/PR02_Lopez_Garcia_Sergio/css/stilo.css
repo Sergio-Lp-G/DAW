@@ -1,0 +1,71 @@
+html{
+    background: white;
+}
+*{
+    margin: 0px;
+
+}
+/* Ancho fijo de 1190 pixeles */
+body{
+    width: 1190px;
+    background-color:white;
+    margin: 0 auto;
+}
+
+
+header{
+    width: 590px; 
+    display: inline-block;
+    
+}
+
+#subtitulo{
+    
+}
+
+
+nav ul{
+    list-style-type: none;
+}
+nav li{
+    display: inline-block;
+}
+
+
+#navPrincipal{
+    width: 590px; 
+    text-align: right;
+    float: right;
+    padding-right:10px;
+    height: 109px;
+}
+#pags li{
+    background: gray;
+    border-radius: 5px;
+
+}
+#navSec{
+    width: 690px;
+    display: inline-block;
+}
+#idioma{
+    width: 490px;
+    display: inline-block;
+
+}
+
+#idioma li{
+    display: inline-block;
+    margin-right: 15px;
+}
+
+
+#festSpace{
+    width: 890px;
+}
+a{
+    padding: 5px;
+}
+.caix{
+    width: 290px;
+}
