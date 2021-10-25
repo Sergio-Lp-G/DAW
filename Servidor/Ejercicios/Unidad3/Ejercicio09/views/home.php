@@ -14,7 +14,8 @@
     <h2>Lista de deseos</h2>
 
     <?php
-
+    echo "<ul><li>hola</li><li>adios</li></ul>" ;
+    
 
     ?>
 
