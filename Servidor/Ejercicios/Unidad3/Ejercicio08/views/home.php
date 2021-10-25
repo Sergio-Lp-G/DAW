@@ -8,15 +8,17 @@
 </head>
 
 <body>
-
+    <p><a href="javascript:history.back()">Atras</a></p>
     <?php
     //Incluir los enlaces
-    require('views/header.php');
+    //require('views/header.php');
     ?>
 
 
     <h1>Home</h1>
 
+    <p>Un saludo</p>
+    <p> <a href="/DAW/Servidor/Ejercicios/Unidad3/Ejercicio08/index.php?method=logout">Cerrar sesion</a> </p>
 
 </body>
 

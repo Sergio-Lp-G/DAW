@@ -42,7 +42,7 @@ class App
 
     protected function login()
     {
-        include('views/login.php');
+        include('views/login.html');
     }
 
     protected function auth()
@@ -58,7 +58,7 @@ class App
 
     protected function home()
     {
-        include('views/home.php');
+        include('views/home.html');
     }
 
     protected function logout()
@@ -68,7 +68,25 @@ class App
         $contraseña = $_POST['pss'];
         setcookie('nombre', $nombre, time() - 3600 * 24);
         setcookie('contraseña', $contraseña, time() - 3600 * 24);
-        include('views/login.php');
+        include('views/login.html');
         
+    }
+
+    protected function new(){
+
+
+        $deseo = $_POST['deseo'];
+        
+        setcookie('deseo', $deseo, time() + 3600 * 24);
+        
+        include('views/home.html');
+    }
+
+    protected function vaciar(){
+        $deseo = $_POST['deseo'];
+        
+        setcookie('deseo', $deseo, time() - 3600 * 24);
+        
+        include('views/home.html');
     }
 }

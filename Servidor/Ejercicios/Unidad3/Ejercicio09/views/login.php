@@ -8,12 +8,6 @@
 </head>
 
 <body>
-
-    <?php
-    //Incluir los enlaces
-    require('views/header.php');
-    ?>
-
     <h1>Login</h1>
 
     <form method="POST" action="?method=auth">
