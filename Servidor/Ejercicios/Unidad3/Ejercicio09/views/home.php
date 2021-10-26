@@ -13,23 +13,31 @@
 
     <h2>Lista de deseos</h2>
 
-    <?php
-    echo "<ul><li>hola</li><li>adios</li></ul>" ;
-    
+    <ul>
+        <?php
+        if(count($deseo)){
+            foreach($deseo as $id => $lista){
+                echo "<li>$id: ".$lista.' <a href="?method=delete&id='.$id.' ">Borrar</a> </li>';
 
-    ?>
+            }
+        }
+        
 
-    <h2><a href="?method=vaciar">Vaciar lista</a></h2>
+
+        ?>
+    </ul>
+
+    <h2><a href="?method=empty">Vaciar lista</a></h2>
 
     <form method="POST" action="?method=new">
-        <label>Nuevo deseo </label><input type="text" value="" name="deseo"><br>
+        <label>Nuevo deseo </label><input type="text" value="" name="new"><br>
         <input type="submit" value="enviar">
     </form>
 
 
 
     <p>Un saludo</p>
-    <p> <a href="/DAW/Servidor/Ejercicios/Unidad3/Ejercicio09/index.php?method=login">Cerrar sesion</a> </p>
+    <p> <a href="?method=logout">Cerrar sesion</a> </p>
 
 </body>
 

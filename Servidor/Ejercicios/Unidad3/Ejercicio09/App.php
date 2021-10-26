@@ -63,30 +63,49 @@ class App
 
     protected function logout()
     {
-        
+
         $nombre = $_POST['name'];
         $contraseña = $_POST['pss'];
+        $deseo[]= $_POST['deseo'];
         setcookie('nombre', $nombre, time() - 3600 * 24);
         setcookie('contraseña', $contraseña, time() - 3600 * 24);
+        setcookie('deseo', serialize($deseo), time() - 3600 * 24);
         include('views/login.php');
-        
     }
 
-    protected function new(){
-
-
-        $deseo = $_POST['deseo'];
+    protected function new()
+    {
         
-        setcookie('deseo', $deseo, time() + 3600 * 24);
-        
-        include('views/home.html');
+        $new= $_POST['new'];
+        if(isset($_COOKIE['deseo'])){
+            $deseo=unserialize($_COOKIE['deseo']);
+        }else{
+            $deseo =[];
+        }
+        $deseo[]= $new;
+        setcookie('deseo', serialize($deseo), time() + 3600 * 24);
+        include('views/home.php');
+        //header('Location: index.php?views/home.php');
     }
 
-    protected function vaciar(){
+    protected function delete(){
+        if(isset($_COOKIE['deseo'])){
+            $deseo=unserialize($_COOKIE['deseo']);
+        }else{
+            $deseo =[];
+        }
+        $id=$_GET['id'];
+        unset($deseo[$id]);
+        setcookie('deseo', serialize($deseo), time() + 3600 * 24);
+        include('views/home.php');
+    }
+
+    protected function empty()
+    {
         $deseo = $_POST['deseo'];
-        
+
         setcookie('deseo', $deseo, time() - 3600 * 24);
-        
+
         include('views/home.php');
     }
 }
