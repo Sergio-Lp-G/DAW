@@ -15,15 +15,11 @@
 
     <ul>
         <?php
-        if(count($deseo)){
-            foreach($deseo as $id => $lista){
-                echo "<li>$id: ".$lista.' <a href="?method=delete&id='.$id.' ">Borrar</a> </li>';
-
+        if (count($deseo)) {
+            foreach ($deseo as $id => $lista) {
+                echo "<li>$id: " . $lista . ' <a href="?method=delete&id=' . $id . ' ">Borrar</a> </li>';
             }
         }
-        
-
-
         ?>
     </ul>
 
