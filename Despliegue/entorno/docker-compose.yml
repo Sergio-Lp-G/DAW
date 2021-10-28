@@ -1,0 +1,30 @@
+version: "3"
+services:
+  web1:
+    image: php:7.3-apache
+    container_name: web1
+    hostname: web1
+    ports:
+      - "80:80"
+    volumes:
+      - ./sitios/web1:/var/www/html
+    environment:
+      - VIRTUAL_HOST=web1.com,www.web1.com
+    restart: always
+    networks:
+      - frontend
+  web2:
+    image: php:7.4-apache
+    container_name: web2
+    hostname: web2
+    ports:
+      - "81:80"
+    volumes:
+      - ./sitios/web2:/var/www/html
+    environment:
+      - VIRTUAL_HOST=web2.com,www.web2.com
+    restart: always
+    networks:
+      - frontend
+networks:
+  frontend:
