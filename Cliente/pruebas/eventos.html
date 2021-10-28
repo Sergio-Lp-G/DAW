@@ -1,16 +1,50 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <title>Ejercicio de eventos</title>
-    </head>
-    <body>
-        <p onclick="alert('me has pulsado')">Púlsame</p>
-        <p onmouseover="this.style.color='red'" onmouseout="this.style.color='black'">Pasa sobre mí</p>
-        <script>
 
+<head>
+    <meta charset="utf-8">
+    <title>Ejercicio de eventos</title>
+    <script>
+        function cambioParrafo3() {
+            var p3 = document.getElementById("parrafo3");
+            if (p3.style.color != "green") {
+                p3.style.color = "green";
+                p3.style.backgroundColor = "brown";
+                p3.style.fontSize = "2rem";
+                p3.textContent = "Este mensaje es nuevo";
+            }else{
+                p3.style.color = "black";
+                p3.style.backgroundColor = "white";
+            }
+        }
+        function mensaje1(){
+            alert("Bloque de div.");
+        }
+        function mensaje2(){
+            alert("Sigo en el div.");
+        }
+    </script>
+</head>
 
-        </script>
-    </body>
+<body>
+    <p id="parrafo1" onclick="alert('me has pulsado')">Púlsame</p>
+    <p id="parrafo1.2" onmouseover="this.style.color='red'" onmouseout="this.style.color='black'">Pasa sobre mí</p>
+    <p id="parrafo2" onmouseover="document.getElementById('parrafo2').style.color='blue'"
+        onmouseout="document.getElementById('parrafo2').style.color='black'">Pasa sobre mí</p>
+    <p id="parrafo3">Pulsa aquí y cambiare el color a verde y el texto</p>
+
+    <div id="div1">
+        <p id="parrafo4">Esto es un parrafo con <b id="n1">negrita</b>.</p>
+    </div>
+
+    <!-- Eventos sólo con Javascript-->
+    <script>
+        document.getElementById("parrafo3").onclick = cambioParrafo3;
+
+        document.getElementById("div1").addEventListener("click",mensaje1,false);
+        document.getElementById("div1").addEventListener("click",mensaje2,false);
+
+    </script>
+</body>
 
 </html>
