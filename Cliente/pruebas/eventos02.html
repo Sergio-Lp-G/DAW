@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Ejercicio de eventos y fomularios</title>
+    <script>
+        function mostrar() {
+            var area = document.getElementById("area").value;
+            alert("area: " + area);
+            var dia = document.formulario.dias.value;
+            alert("Día: " + dia);
+            
+
+        }
+    </script>
+</head>
+
+<body>
+    <form id="formulario" name="formulario">
+        <label for=""> Texto:
+            <input type="text" name="texto" id="texto">
+        </label><br>
+        <textarea name="area" id="area" cols="60" rows="10"></textarea><br>
+        <!--radiobuton-->
+        <input type="radio" name="dias" value="lunes">Lunes <br>
+        <input type="radio" name="dias" value="martes">Martes <br>
+        <input type="radio" name="dias" value="miercoles">Miércoles <br>
+        <input type="radio" name="dias" value="jueveses">Jueveses <br>
+        <!--Checkbox-->
+        <label for="hijos">Número de hijos</label><br>
+        <input type="checkbox" name="hijos" id="0">0 hijos <br>
+        <input type="checkbox" name="hijos" id="1">1 hijos <br>
+        <input type="checkbox" name="hijos" id="2">2 hijos <br>
+        <input type="checkbox" name="hijos" id="3">3 hijos <br>
+        <!--Select-->
+        <select name="opciones" id="lista">
+            <option value="1">Primer valor</option>
+            <option value="1">Segundo valor</option>
+            <option value="1">Tercer valor</option>
+        </select><br>
+        <!--Boton de enviar-->
+        <input type="button" name="" id="boton1" value="Mostrar" onclick="mostrar()">
+    </form>
+    <!-- Eventos sólo con Javascript-->
+    <script>
+
+    </script>
+</body>
+
+</html>
