@@ -6,6 +6,9 @@ html {
 
 * {
     margin: 0px;
+    padding: 0px;
+    background-color: wheat;
+    margin-bottom: 5px;
 }
 
 /* Ancho fijo de 1190 pixeles */
