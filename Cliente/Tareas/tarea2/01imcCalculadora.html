@@ -5,15 +5,14 @@
     <title>Calculadora de IMC-Indice de masa corporal.</title>
     <meta charset="UTF-8">
     <script>
+        function imc(params) {
+
+        }
 
     </script>
 </head>
 
 <body>
-
-
-
-
     <script>
         /* switch + case*/
         var num = parseInt(prompt("Numero: "));
@@ -31,6 +30,30 @@
         }
 
     </script>
+
+    <label for="altura">Altura:&nbsp;</label>
+    <input type="text" name="altura" id="altura">
+    <br />
+    <label for="peso">Peso:&nbsp;</label>
+    <input type="text" name="peso" id="peso">
+    <br />
+    <input type="button" value="Enviar">
+
+
+    <ul id="clasificacion">
+        <li id='1'> &lt;16.00: Infrapeso (delgadez severa).</li>
+        <li id='2'>16.00-16.99: Infrapeso (delgadez moderada).</li>
+        <li id='3'>17.00-18.49: Infrapeso (delgadez aceptable).</li>
+        <li id='4'>18.50-24.99: Peso normal.</li>
+        <li id='5'>25.00-29.99: Sobre peso.</li>
+        <li id='6'>30.00-34.99: Obeso (Tipo I)</li>
+        <li id='7'>35.00-40.00: Obeso (Tipo II)</li>
+        <li id='8'>&gt;40.00: Obeso (Tipo III)</li>
+    </ul>
+
+
+
+
 
 
 
