@@ -1,11 +1,21 @@
 version: "3"
 services:
+  proxy:
+    hostname: proxy
+    image: jwilder/nginx-proxy
+    container_name: proxydaw
+    ports:
+      - "80:80"
+    volumes:
+      - /var/run/docker.sock:/tmp/docker.sock:ro
+      - ./nginx-proxy:/etc/nginx/vhost.d:ro
+      - "./conf/my_custom_proxy_settings.conf:/etc/nginx/conf.d/my_custom_proxy_settings.conf:ro"
+    networks:
+      - frontend
   web1:
     image: php:7.3-apache
     container_name: web1
     hostname: web1
-    ports:
-      - "80:80"
     volumes:
       - ./sitios/web1:/var/www/html
     environment:
@@ -17,8 +27,6 @@ services:
     image: php:7.4-apache
     container_name: web2
     hostname: web2
-    ports:
-      - "81:80"
     volumes:
       - ./sitios/web2:/var/www/html
     environment:
