@@ -22,7 +22,7 @@
                 document.getElementById(i).style.color="black";
             }
 
-            var peso = parseInt(document.getElementsById("peso").value);
+            var peso = parseInt(document.getElementById("peso").value);
             var altura = parseInt(document.getElementById("altura").value);
             var imc = peso/(Math.pow((altura/100),2));
             show(imc);
@@ -30,14 +30,30 @@
         function show(imc){
             switch (true) {
             case (imc <16):
-                alert("degadez severa");
+                document.getElementById('resultado').innerHTML=" "+imc;
                 document.getElementById('1').style.color='red';
+                document.getElementById('1').style.borderBottom='solid';
                 document.getElementById('1').style.borderBottomColor='red';
-                break;
-            case (num >= 10 && num <= 20):
-                alert("Eres joven");
-                break;
 
+                break;
+            case (imc >= 16 && imc < 17):
+                document.getElementById('2').style.color='red';
+                document.getElementById('2').style.borderBottom='solid';
+                document.getElementById('2').style.borderBottomColor='red';
+                
+                break;
+            case (imc >= 17 && imc < 18.5):
+                document.getElementById('3').style.color='red';
+                document.getElementById('3').style.borderBottom='solid';
+                document.getElementById('3').style.borderBottomColor='red';
+                
+                break;
+            case (imc >= 16 && imc < 17):
+                document.getElementById('4').style.color='red';
+                document.getElementById('4').style.borderBottom='solid';
+                document.getElementById('4').style.borderBottomColor='red';
+                
+                break;
 
             default:
 
@@ -61,8 +77,8 @@
     <input type="text" name="peso" id="peso">
     <br />
     <input type="button" onclick="imc()" value="Enviar">
-
-
+    <h2>El valor de su imc es: </h2>
+    <h2 id="resultado"></h2>
     <ul id="clasificacion">
         <li id='1'> &lt;16.00: Infrapeso (delgadez severa).</li>
         <li id='2'>16.00-16.99: Infrapeso (delgadez moderada).</li>
