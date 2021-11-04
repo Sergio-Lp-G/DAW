@@ -11,15 +11,15 @@
     <p><a href="javascript:history.back()">Atras</a></p>
     <h1>Home</h1>
 
-    <h2>Bienvenido <?php $_SESSION['nombre'] ?></h2>
+    <h2>Bienvenido <?= $_SESSION['nombre'] ?></h2>
 
     <h2>Lista de deseos</h2>
 
     <ul>
         <?php
-        if (count($_SESSION['deseo'])) {
-            echo "Deseos" ;
-            foreach ($_SESSION['deseo'] as $_SESSION['id'] => $lista) {
+        if (count($deseo)) {
+            echo "Deseos: " ;
+            foreach ($deseo as $id => $lista) {
                 echo "<li>$id: " . $lista . ' <a href="?method=delete&id=' . $id . ' ">Borrar</a> </li>';
             }
         }

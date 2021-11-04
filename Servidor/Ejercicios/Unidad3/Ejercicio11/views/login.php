@@ -11,8 +11,8 @@
     <h1>Login</h1>
 
     <form method="POST" action="?method=auth">
-        <label>Nombre </label><input type="text" value="" name="name"><br>
-        <label>Contraseña </label><input type="text" value="" name="pss"><br>
+        <label for="">Nombre </label><input type="text"  name="name"><br>
+        <label for="">Contraseña </label><input type="text"  name="pss"><br>
         <input type="submit" value="enviar">
     </form>
 

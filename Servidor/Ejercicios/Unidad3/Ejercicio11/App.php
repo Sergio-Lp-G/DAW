@@ -61,6 +61,11 @@ class App
 
     protected function home()
     {
+        if(isset($_SESSION['deseo'])){
+            $deseo=unserialize($_SESSION['deseo']);
+        }else{
+            $deseo=[];
+        }
         include('views/home.php');
     }
 
@@ -88,9 +93,10 @@ class App
         $deseo[] = $new;
 
         $_SESSION['deseo']=serialize($deseo);
-        
+        echo "<script>alert('Hola mundo cruel')</script>";
         //include('views/home.php');
         header('Location: index.php?method=home');
+        
     }
 
     protected function delete()
