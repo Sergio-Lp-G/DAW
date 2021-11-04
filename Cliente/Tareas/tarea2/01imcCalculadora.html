@@ -5,59 +5,86 @@
     <title>Calculadora de IMC-Indice de masa corporal.</title>
     <meta charset="UTF-8">
     <script>
-        function imc() {
-            /*
-            
+        function init() {
             var lista = document.getElementById("clasificacion");
-            var estado=document.getElementsByTagName("li");
-            estado.forEach(element => {
-                document.getElementById(i).style.color="black";
-            });
-            
-            
-            */
-
-            for (var i = 1; i < 9; i++) {
-                //const element = array[index];
-                document.getElementById(i).style.color="black";
+            var elementos = lista.getElementsByTagName("li");
+            for (var i = 0; i < elementos.length; i++) {
+                elementos[i].style.color = "black";
             }
+            valAlt();
+        }
+
+        function valAlt() {
+            var altura = parseInt(document.getElementById("altura").value);
+            var plant = /^[1-3]\/\d{2}$/;
+            if (plant.test(altura)) {
+                alert("Introduzca un valor de altura válido");
+            } else {
+                valPeso();
+            }
+        }
+
+        function validar(num) {
+            if (isNaN(num)) {
+            alert("Error")
+        } else {
+            alert("Es numero")
+        }
+        }
+        
+        function imc() {
 
             var peso = parseInt(document.getElementById("peso").value);
             var altura = parseInt(document.getElementById("altura").value);
-            var imc = peso/(Math.pow((altura/100),2));
+            valAlt(altura, peso);
+            var imc = peso / (Math.pow((altura / 100), 2));
             show(imc);
+
         }
-        function show(imc){
+
+
+        function show(imc) {
             switch (true) {
-            case (imc <16):
-                document.getElementById('resultado').innerHTML=" "+imc;
-                document.getElementById('1').style.color='red';
-                document.getElementById('1').style.borderBottom='solid';
-                document.getElementById('1').style.borderBottomColor='red';
+                case (imc < 16):
+                    document.getElementById('resultado').innerHTML = imc;
+                    document.getElementById('infraSevera').style.color = 'red';
+                    break;
+                case (imc >= 16 && imc < 17):
+                    document.getElementById('resultado').innerHTML = imc;
+                    document.getElementById('infraMod').style.color = 'red';
+                    break;
+                case (imc >= 17 && imc < 18.5):
+                    document.getElementById('resultado').innerHTML = imc;
+                    document.getElementById('infraAcep').style.color = 'red';
+                    break;
+                case (imc >= 18.5 && imc < 25):
+                    document.getElementById('resultado').innerHTML = imc;
+                    document.getElementById('norm').style.color = 'red';
+                    break;
 
-                break;
-            case (imc >= 16 && imc < 17):
-                document.getElementById('2').style.color='red';
-                document.getElementById('2').style.borderBottom='solid';
-                document.getElementById('2').style.borderBottomColor='red';
-                
-                break;
-            case (imc >= 17 && imc < 18.5):
-                document.getElementById('3').style.color='red';
-                document.getElementById('3').style.borderBottom='solid';
-                document.getElementById('3').style.borderBottomColor='red';
-                
-                break;
-            case (imc >= 16 && imc < 17):
-                document.getElementById('4').style.color='red';
-                document.getElementById('4').style.borderBottom='solid';
-                document.getElementById('4').style.borderBottomColor='red';
-                
-                break;
+                case (imc >= 25 && imc < 30):
+                    document.getElementById('resultado').innerHTML = imc;
+                    document.getElementById('sobre').style.color = 'red';
+                    break;
 
-            default:
+                case (imc >= 30 && imc < 35):
+                    document.getElementById('resultado').innerHTML = imc;
+                    document.getElementById('obeso1').style.color = 'red';
+                    break;
 
-        }
+                case (imc >= 35 && imc < 40):
+                    document.getElementById('resultado').innerHTML = imc;
+                    document.getElementById('obeso2').style.color = 'red';
+                    break;
+
+                case (imc >= 40):
+                    document.getElementById('resultado').innerHTML = imc;
+                    document.getElementById('obeso3').style.color = 'red';
+                    break;
+                default:
+                    alert("Errorrrrr");
+
+            }
         }
 
     </script>
@@ -65,8 +92,14 @@
 
 <body>
     <script>
-       
-        
+        //isNAN
+        /*var num = prompt("escribe un numero.");
+        if (isNaN(num)) {
+            alert("Error")
+        } else {
+            alert("Es numero")
+        }*/
+
 
     </script>
 
@@ -76,18 +109,21 @@
     <label for="peso">Peso:&nbsp;</label>
     <input type="text" name="peso" id="peso">
     <br />
-    <input type="button" onclick="imc()" value="Enviar">
-    <h2>El valor de su imc es: </h2>
-    <h2 id="resultado"></h2>
+    <input type="button" onclick="init()" value="Enviar">
+
+
+    <h2>El valor de su imc es: <res id="resultado"></res>
+    </h2>
+
     <ul id="clasificacion">
-        <li id='1'> &lt;16.00: Infrapeso (delgadez severa).</li>
-        <li id='2'>16.00-16.99: Infrapeso (delgadez moderada).</li>
-        <li id='3'>17.00-18.49: Infrapeso (delgadez aceptable).</li>
-        <li id='4'>18.50-24.99: Peso normal.</li>
-        <li id='5'>25.00-29.99: Sobre peso.</li>
-        <li id='6'>30.00-34.99: Obeso (Tipo I)</li>
-        <li id='7'>35.00-40.00: Obeso (Tipo II)</li>
-        <li id='8'>&gt;40.00: Obeso (Tipo III)</li>
+        <li id='infraSevera'> &lt;16.00: Infrapeso (delgadez severa).</li>
+        <li id='infraMod'>16.00-16.99: Infrapeso (delgadez moderada).</li>
+        <li id='infraAcep'>17.00-18.49: Infrapeso (delgadez aceptable).</li>
+        <li id='norm'>18.50-24.99: Peso normal.</li>
+        <li id='sobre'>25.00-29.99: Sobre peso.</li>
+        <li id='obeso1'>30.00-34.99: Obeso (Tipo I)</li>
+        <li id='obeso2'>35.00-40.00: Obeso (Tipo II)</li>
+        <li id='obeso3'>&gt;40.00: Obeso (Tipo III)</li>
     </ul>
 
 
