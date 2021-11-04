@@ -21,7 +21,7 @@ class App
             //La primera vez ejecuta el método index
             $method = 'home';
         }
-
+        session_start();
         try {
             $this->$method();
         } catch (Throwable $th) {
@@ -53,7 +53,7 @@ class App
     protected function cambio()
     {
         $cokiecolor = $_GET['color'];
-        setcookie('cokiecolor', $cokiecolor, time() + 3600 * 24);
+        $_SESSION['cokiecolor']= $cokiecolor;
         include('views/home.php');
     }
 }

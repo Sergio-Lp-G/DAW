@@ -16,13 +16,7 @@
 
 
     <h2><a href="?method=color">Elegir color</a></h2>
-
-
-
-
-
-
-
+<button><a href="?method=color">Elegir color</a></button>
 </body>
 
 </html>
