@@ -5,20 +5,34 @@
     <title>Calculadora de IMC-Indice de masa corporal.</title>
     <meta charset="UTF-8">
     <script>
-        function imc(params) {
+        function imc() {
+            /*
+            
+            var lista = document.getElementById("clasificacion");
+            var estado=document.getElementsByTagName("li");
+            estado.forEach(element => {
+                document.getElementById(i).style.color="black";
+            });
+            
+            
+            */
 
+            for (var i = 1; i < 9; i++) {
+                //const element = array[index];
+                document.getElementById(i).style.color="black";
+            }
+
+            var peso = parseInt(document.getElementsById("peso").value);
+            var altura = parseInt(document.getElementById("altura").value);
+            var imc = peso/(Math.pow((altura/100),2));
+            show(imc);
         }
-
-    </script>
-</head>
-
-<body>
-    <script>
-        /* switch + case*/
-        var num = parseInt(prompt("Numero: "));
-        switch (true) {
-            case (num >= 10 && num <= 20):
-                alert("Eres adolescente");
+        function show(imc){
+            switch (true) {
+            case (imc <16):
+                alert("degadez severa");
+                document.getElementById('1').style.color='red';
+                document.getElementById('1').style.borderBottomColor='red';
                 break;
             case (num >= 10 && num <= 20):
                 alert("Eres joven");
@@ -28,6 +42,15 @@
             default:
 
         }
+        }
+
+    </script>
+</head>
+
+<body>
+    <script>
+       
+        
 
     </script>
 
@@ -37,7 +60,7 @@
     <label for="peso">Peso:&nbsp;</label>
     <input type="text" name="peso" id="peso">
     <br />
-    <input type="button" value="Enviar">
+    <input type="button" onclick="imc()" value="Enviar">
 
 
     <ul id="clasificacion">
