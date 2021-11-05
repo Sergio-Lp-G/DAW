@@ -26,12 +26,12 @@
 
         function validar(num) {
             if (isNaN(num)) {
-            alert("Error")
-        } else {
-            alert("Es numero")
+                alert("Error")
+            } else {
+                alert("Es numero")
+            }
         }
-        }
-        
+
         function imc() {
 
             var peso = parseInt(document.getElementById("peso").value);
@@ -86,7 +86,6 @@
 
             }
         }
-
     </script>
 </head>
 
@@ -99,8 +98,6 @@
         } else {
             alert("Es numero")
         }*/
-
-
     </script>
 
     <label for="altura">Altura:&nbsp;</label>
@@ -112,7 +109,8 @@
     <input type="button" onclick="init()" value="Enviar">
 
 
-    <h2>El valor de su imc es: <res id="resultado"></res>
+    <h2>El valor de su imc es:
+        <res id="resultado"></res>
     </h2>
 
     <ul id="clasificacion">
@@ -125,15 +123,6 @@
         <li id='obeso2'>35.00-40.00: Obeso (Tipo II)</li>
         <li id='obeso3'>&gt;40.00: Obeso (Tipo III)</li>
     </ul>
-
-
-
-
-
-
-
-
-
 
 </body>
 
