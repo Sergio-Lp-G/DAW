@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tabla en JavaScript</title>
+    <meta charset="UTF-8">
+    <script type="text/javascript">
+    </script>
+</head>
+<body id="body" > <!-- onload="nombreFuncion()"  dentro del tag body-->
+    <script>
+        //Crear tabla con JS
+        var tabla = document.createElement("table");
+        tabla.setAttribute("border",1);
+        var encabezado = [];
+        encabezado.push("Nombre ", "Apellidos ", "Teléfono ", "Email ");
+        var fila = document.createElement("tr");
+        encabezado.forEach(element => {
+            var encabCelda = document.createElement("th");
+            var textoCelda = document.createTextNode(element);
+            encabCelda.appendChild(textoCelda);
+            fila.appendChild(encabCelda);
+            tabla.appendChild(fila);
+        });
+
+        var juan = [];
+        juan.push("Juan", "Perez", "666666666", "juan@yahoo.org");
+        var fila = document.createElement("tr");
+        juan.forEach(element => {
+            var celda = document.createElement("td");
+            var textoCelda = document.createTextNode(element);
+            celda.appendChild(textoCelda);
+            fila.appendChild(celda);
+            tabla.appendChild(fila);
+        });
+        //document.body.appendChild(tabla);
+        //document.getElementById("body").appendChild(tabla);
+        document.getElementsByTagName("body")[0].appendChild(tabla);
+    </script>
+</body>
+</html>
