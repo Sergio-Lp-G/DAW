@@ -65,10 +65,12 @@ nav li {
     border-radius: 5px;
 }
 
+
+/* */
 #idioma {
     width: 490px;
-    display: inline-block;
     text-align: right;
+    float: right;
 }
 
 #idioma li {
@@ -127,10 +129,17 @@ nav li {
 /*how */
 #how{
     float: right;
-}
-#how li {
-    list-style: none;
     
+}
+#how dt {/*contiene la imagen */
+    width: 45px;
+    height: 45px;
+    display: inline-block;
+}
+#how dd{
+    width: 245px;
+    height: 45px;
+    display: inline-block;
 }
 
 /* Who come*/
