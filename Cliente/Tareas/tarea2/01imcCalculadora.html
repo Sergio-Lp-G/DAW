@@ -11,33 +11,25 @@
             for (var i = 0; i < elementos.length; i++) {
                 elementos[i].style.color = "black";
             }
-            valAlt();
         }
 
-        function valAlt() {
-            var altura = parseInt(document.getElementById("altura").value);
-            var plant = /^[1-3]\/\d{2}$/;
-            if (plant.test(altura)) {
-                alert("Introduzca un valor de altura válido");
-            } else {
-                valPeso();
-            }
-        }
 
-        function validar(num) {
+
+        function validar(num, str) {
             if (isNaN(num)) {
-                alert("Error")
-            } else {
-                alert("Es numero")
+                alert("Error, untroduzca valor de " + str + " númerico.")
             }
         }
 
         function imc() {
-
+            init();
             var peso = parseInt(document.getElementById("peso").value);
+            validar(peso, "peso");
             var altura = parseInt(document.getElementById("altura").value);
-            valAlt(altura, peso);
-            var imc = peso / (Math.pow((altura / 100), 2));
+            validar(altura, "altura");
+
+            var imcEntero = peso / (Math.pow((altura / 100), 2));
+            var imc=Math.round(imcEntero*100)/100;
             show(imc);
 
         }
@@ -82,7 +74,8 @@
                     document.getElementById('obeso3').style.color = 'red';
                     break;
                 default:
-                    alert("Errorrrrr");
+                    document.getElementById('resultado').innerHTML = "";
+                    init();
 
             }
         }
@@ -106,7 +99,7 @@
     <label for="peso">Peso:&nbsp;</label>
     <input type="text" name="peso" id="peso">
     <br />
-    <input type="button" onclick="init()" value="Enviar">
+    <input type="button" onclick="imc()" value="Enviar">
 
 
     <h2>El valor de su imc es:
