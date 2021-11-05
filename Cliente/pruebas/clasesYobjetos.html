@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Clases y Objetos</title>
+    <script>
+
+    </script>
+</head>
+
+<body>
+    <script>
+        var persona = {
+            nombre: "Luis",
+            apellidos: "Martinez Campo",
+            hijos: 2
+        }
+        //añadir ciudad al objeto
+        persona.ciudad = "Zaragoza";
+        alert(persona.ciudad);
+        alert(persona.hijos);
+        //sobreescribir valor hijos
+        persona.hijos = 3;
+        alert(persona.hijos);
+
+
+        //Crear funciones constructoras de objetos. Basicamente es una CLASE
+        function Persona(nombre, apellidos){
+            this.nombre=nombre;
+            this.apellidos=apellidos;
+        }
+        var persona1=new Persona();
+        persona1.nombre="Juan";
+        persona1.apellidos="Pérez González";
+
+        //añadir propiedad ciudad y mostrar con un alert: "Hola, me llamo xxx y de apellidos xxx. Mi ciudad es xxxxx"
+        persona1.ciudad="Dinopolis";
+        alert("Hola, me llamo "+persona1.nombre+" y de apellidos "+persona1.apellidos+". Mi ciudad es "+persona1.ciudad);
+
+
+
+
+    </script>
+</body>
+
+</html>
