@@ -17,14 +17,16 @@ body {
     width: 1190px;
     background-color: white;
     margin: 0 auto;
-    flex-wrap: wrap;
-    display: inline-flex;
+    /*flex-wrap: wrap;
+    display: inline-flex;*/
 }
 
 header {
     width: 590px;
     display: inline-block;
 }
+
+/*Estilo de las listas dentro de los navs */
 
 nav ul {
     list-style-type: none;
@@ -34,6 +36,8 @@ nav li {
     display: inline-block;
 }
 
+/*El nav principal */
+
 #navPrincipal {
     width: 590px;
     text-align: right;
@@ -42,8 +46,18 @@ nav li {
     height: 109px;
 }
 
+/*Div del subtitulo */
+
 #subtitulo {
     width: 1190px;
+}
+
+/*Nav secundario con las páginas y el idioma */
+
+#navSec {
+    width: 690px;
+    display: inline-block;
+    margin-right: 10px;
 }
 
 #pags li {
@@ -51,14 +65,10 @@ nav li {
     border-radius: 5px;
 }
 
-#navSec {
-    width: 690px;
-    display: inline-block;
-}
-
 #idioma {
     width: 490px;
     display: inline-block;
+    text-align: right;
 }
 
 #idioma li {
@@ -66,40 +76,78 @@ nav li {
     margin-right: 15px;
 }
 
-#program{
+/*Div de programa, descripcion y foto */
+
+#program {
     width: 890px;
-    display: inline-block;
-}
-#foto{
-    float:right;
+    float: left;
 }
 
-#about{
+#foto {
+    float: right;
+    margin-top: 10px;
+    margin-right: 10px;
+}
+
+/* Div about */
+
+#about {
     width: 490px;
+    margin-right: 10px;
+    float: left;
 }
 
-#schedule{
+/* Div Schedule */
+
+#schedule {
     width: 390px;
+    float: left;
 }
+
+/*Div del espacio del festival */
 
 #festSpace {
     width: 890px;
+    float: left;
     flex-wrap: wrap;
     display: inline-flex;
 }
 
-a {
-    padding: 5px;
-}
+/*Los div llamados cajas*/
 
 .caix {
     width: 290px;
 }
 
-#how li{
+/*Registro */
+#registro{
+    float: right;
+}
+
+/*how */
+#how{
+    float: right;
+}
+#how li {
     list-style: none;
     
 }
+
+/* Who come*/
+#come{
+    width: 280px;
+    float: right;
+    padding-left: 10px;
+    margin-left: 10px;
+}
+
+#come ul{
+    padding-left: 40px;
+}
+
 #come li {
     list-style-image: url('../img/check.png');
+    
 }
+
+/*Twitter */
