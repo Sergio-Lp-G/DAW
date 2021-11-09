@@ -1,16 +1,18 @@
 function crear() {
-    var deportes = ["Aerobic", "Ciclismo", "Yoga", "KickBoxing", "Crossfit", "Karate", "Sgrima"];
-    for (var a = 1; a < 8; a++) {
+    var deportes = ["Spining", "Yoga", "Crossfit", "KickBoxing", "Baile de salón", "Kapoeira", "BodyPump"];
+    deportes.forEach(dep => {
+
         for (var i = 0; i < 6; i++) {
             var elemento = document.createElement("td");
-            var texto = document.createTextNode(deportes[a - 1])
+            var texto = document.createTextNode(dep)
             elemento.appendChild(texto);
-            var lista = document.getElementById("deporte" + a);
+            var lista = document.getElementById("deporte" + dep);
             lista.appendChild(elemento);
         }
-    }
+    });
+    //for (var a = 1; a < 8; a++) {}
 
-    var fisios = ["Alfredo", "Alfredo", "Maria", "Maria", "Sonia", "Sonia", "Alberto", "Alberto", "Sergio", "Sergio"];
+    var fisios = ["Tania", "Juan", "Marta", "Tania", "Juan", "Marta", "Tania", "Juan", "Marta", "Francisco"];
     for (var b = 1; b < 11; b++) {
         for (var j = 0; j < 5; j++) {
             var elemento = document.createElement("td");
