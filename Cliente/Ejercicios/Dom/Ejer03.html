@@ -1,20 +1,40 @@
 <html>
+
 <head>
     <title>Ejercicio DOM</title>
     <script type="text/javascript">
         function insertar() {
-            var elemento = document.createElement("li");
-            var text=document.createTextNode("Texto de prueba");
-            elemento.appendChild(text);
 
-            var lista = document.getElementById("lista");
-            lista.appendChild(elemento);
-
-            var nuevoElem="<li>Prueba</li>";
+            //var nuevoElem="<li>Prueba</li>";
 
             //lista.innerHTML=lista.innerHTML+nuevoElem;
-        }
 
+            var actividades = ["Spining", "Yoga", "Crossfit", "KickBoxing", "Baile de salón", "Kapoeira", "BodyPump"];
+
+            actividades.forEach((dep, index) => {
+
+                var elemento = document.createElement("label");
+                var text = document.createTextNode(dep);
+                elemento.appendChild(text);
+
+                var lista = document.getElementById("form");
+                lista.appendChild(elemento + < br / > );
+
+
+                // //<input type="checkbox" name="actividad" value="Spining">Spining<br/>
+                // var elemento = document.createElement("input");
+                // //input.setAttribute("checkbox", "actividad")
+                // input.type = "checkbox";
+                // input.name = "actividad";
+                // input.value = dep;
+                // var text = document.createTextNode(dep);
+                // elemento.appendChild(text);
+
+                // var lista = document.getElementById("form");
+                // lista.appendChild(elemento);
+            });
+
+        }
     </script>
 </head>
 
@@ -25,8 +45,12 @@
         <li>Elemento 3</li>
         <li>Elemento 4</li>
     </ul>
+    <input type="button" value="Insertar elemento" onclick="insertar();"><br/>
 
-    <input type="button" value="Insertar elemento" onclick="insertar();">
+
+    <form id="form" name="formAct" style="float: left;">
+        <label for="actividad">ACTIVIDADES</label><br/>
+    </form>
 
 </body>
 
