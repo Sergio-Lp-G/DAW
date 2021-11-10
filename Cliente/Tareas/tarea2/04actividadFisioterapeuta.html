@@ -10,7 +10,7 @@
 
 <body onload="crear()" style="width: 1000px;">
 
-    <table border="1" id="tableAct" style="float: left;">
+    <table border="1" id="tableAct">
         <tr>
             <td></td>
             <td>Lunes</td>
@@ -42,6 +42,7 @@
             <td>19:00 - 21:00</td>
         </tr>
     </table>
+    <br><br>
     <table border="1" id="tableFis">
         <tr>
             <td></td>
@@ -86,28 +87,31 @@
         </tr>
     </table>
     <br><br>
-    <form id="form" name="formAct" style="float: left;">
-        <label for="actividad">ACTIVIDADES</label><br/>
+    <div>
 
-        <!-- var actividad = ["Spining", "Yoga", "Crossfit", "KickBoxing", "Baile de salón", "Kapoeira", "BodyPump"];-->
-        <input type="checkbox" name="actividad" value="Spining">Spining<br/>
-        <input type="checkbox" name="actividad" value="Yoga">Yoga<br/>
-        <input type="checkbox" name="actividad" value="Crossfit">Crossfit<br/>
-        <input type="checkbox" name="actividad" value="KickBoxing">KickBoxing<br/>
-        <input type="checkbox" name="actividad" value="Baile de salón">Baile de salón<br/>
-        <input type="checkbox" name="actividad" value="Kapoeira">Kapoeira<br/>
-        <input type="checkbox" name="actividad" value="BodyPump">BodyPump<br/>
-        <input type="button" id="boton" value="Mostrar" onclick="resAct()">
-    </form>
-    <br><br>
-    <form id="formulario" name="fisio" style="float: left; margin-left: 20px;">
-        <label for="fisio">FISIO:</label><br/>
-        <input type="radio" name="fisio" value="Tania">Tania<br/>
-        <input type="radio" name="fisio" value="Juan">Juan<br/>
-        <input type="radio" name="fisio" value="Marta">Marta<br/>
-        <input type="radio" name="fisio" value="Francisco">Francisco<br/>
-        <input type="button" id="boton2" value="Mostrar" onclick="resFisio()">
-    </form>
+        <form id="form" name="formAct" style="float: left;">
+            <label for="actividad">ACTIVIDADES</label><br/>
+
+            <!-- var actividad = ["Spining", "Yoga", "Crossfit", "KickBoxing", "Baile de salón", "Kapoeira", "BodyPump"];-->
+            <input type="checkbox" name="actividad" value="Spining">Spining<br/>
+            <input type="checkbox" name="actividad" value="Yoga">Yoga<br/>
+            <input type="checkbox" name="actividad" value="Crossfit">Crossfit<br/>
+            <input type="checkbox" name="actividad" value="KickBoxing">KickBoxing<br/>
+            <input type="checkbox" name="actividad" value="Baile de salón">Baile de salón<br/>
+            <input type="checkbox" name="actividad" value="Kapoeira">Kapoeira<br/>
+            <input type="checkbox" name="actividad" value="BodyPump">BodyPump<br/>
+            <input type="button" id="boton" value="Mostrar" onclick="resAct()">
+        </form>
+        <br><br>
+        <form id="formulario" name="fisio" style="float: left; margin-left: 20px;">
+            <label for="fisio">FISIO:</label><br/>
+            <input type="radio" name="fisio" value="Tania">Tania<br/>
+            <input type="radio" name="fisio" value="Juan">Juan<br/>
+            <input type="radio" name="fisio" value="Marta">Marta<br/>
+            <input type="radio" name="fisio" value="Francisco">Francisco<br/>
+            <input type="button" id="boton2" value="Mostrar" onclick="resFisio()">
+        </form>
+    </div>
 </body>
 
 </html>

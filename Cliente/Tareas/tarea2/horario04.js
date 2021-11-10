@@ -35,7 +35,6 @@ function crear() {
 
 function resAct() {
     var seleccionar = [];
-    seleccionar.pop();
     var actividad = document.getElementsByName("actividad");
     var table1 = document.getElementById("tableAct");
     var celdas = table1.getElementsByTagName('td');
@@ -45,8 +44,9 @@ function resAct() {
             seleccionar.push(actividad[i].value)
         }
     }
-    
+
     for (var i = 0; i <= celdas.length; i++) {
+        celdas[i].style.backgroundColor = "white";
         for (var j = 0; j <= seleccionar.length; j++) {
             if (celdas[i].innerHTML == seleccionar[j]) {
                 celdas[i].style.backgroundColor = "grey";

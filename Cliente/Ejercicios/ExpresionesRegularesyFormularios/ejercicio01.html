@@ -5,28 +5,27 @@
     <title>Ejercicios con expresiones regulares de JavaScript.</title>
     <meta charset="UTF-8">
     <script>
-        
     </script>
 </head>
 
 <body>
     <script>
-        var num="123456789";
-        var telefono=/^\d{9}$/;
-        alert(num+" telefono "+telefono.test(num));
+        var num = "123456789";
+        var telefono = /^\d{9}$/;
+        alert(num + " telefono " + telefono.test(num));
 
-        var fecha="1/07/1990";
-        var dat=/^[0-9]{1,2}\/[0-9]{1,2}\/[0-9]{4}$/;
-       // /([012]+[0-9]|[03]+[01]) 
-        alert("fecha "+dat.test(fecha));
+        var fecha = "1/07/1990";
+        var dat = /^[0-9]{1,2}\/[0-9]{1,2}\/[0-9]{4}$/;
+        // /([012]+[0-9]|[03]+[01]) 
+        alert("fecha " + dat.test(fecha));
 
-        var num2=50011;
-        var cp=/^\d{5}$/;
-        alert("Codigo postal "+cp.test(num2));
+        var num2 = 50011;
+        var cp = /^\d{5}$/;
+        alert("Codigo postal " + cp.test(num2));
 
-        var contacto="serg@gmailcom";
-        var email=/\w?@\w?.[a-zA-Z]{2,4}/;
-        alert("Correo electronico "+email.test(contacto));
+        var contacto = "serg@gmail.com";
+        var email = /\w?@\w?.[a-zA-Z]{2,4}/;
+        alert("Correo electronico " + email.test(contacto));
     </script>
 </body>
 
