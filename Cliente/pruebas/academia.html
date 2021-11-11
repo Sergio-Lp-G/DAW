@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Academia</title>
+    <meta charset="UTF-8">
+    <script>
+
+        function alumno(nombre, edad, intereses, materia, importe) {
+            this.nombre = nombre;
+            this.edad = edad;
+            //this.intereses = new intereses[10];
+            this.intereses = intereses;
+            this.materia = materia;
+            this.importe = importe;
+
+        }
+
+        //Funcion prototipo: Academia con propiedade: nombreAcademia, direccion, ciudad. Y metodos variarIngresos(ingresos+importe), darBienvenida ("Hola nombre, bienvenido a la academia nombreAcademia.")
+        function prototipoAcademia() {
+            this.nombreAcademia = "Academia K S.A.";
+            this.direccion= "C/Juancar";
+            this.ciudad="Utebo";
+
+            this.variarIngresos=function(importe){
+                this.ingresos=this.
+            }
+
+
+            
+
+        }
+
+    </script>
+</head>
+
+<body>
+    <script>
+        /*Utilizando una funcion constructora y un rototipo:
+        Funcion constructora: Alumno con propiedade: nombre edad, intereses(array), marteria, importe.
+        Funcion prototipo: Academia con propiedade: nombreAcademia, direccion, ciudad. Y metodos variarIngresos(ingresos+importe), darBienvenida ("Hola nombre, bienvenido a la academia nombreAcademia.")
+        usad un botos que al pulsar pida los datos del alumno y muestre la bienvenida
+        otro boton que informe de los ingresos de la academia (olvidate de esto)*/
+
+        //var TaxiRenault1=new TaxiRenault("Diesel",4,500,120);
+        TaxiRenault.prototype = new prototipoTaxiRenault();
+        var TaxiRenault1 = new TaxiRenault("Diesel", 4, 500, 120);
+        alert(TaxiRenault1.fabricante);
+        //taxiRenault1.color="verde";
+        alert(TaxiRenault1.getCapacidad());
+        TaxiRenault1.variarCarga(-10);
+        alert(TaxiRenault1.carga);
+
+        var TaxiRenault2 = new TaxiRenault("Gasolina", 4, 800, 130);
+        alert(TaxiRenault2.carga);
+
+    </script>
+</body>
+
+</html>
