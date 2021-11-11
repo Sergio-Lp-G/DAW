@@ -9,8 +9,9 @@ html {
     padding: 0px;
     background-color: wheat;
     margin-bottom: 5px;
-    border: solid 1px red;
+    /*border: solid 1px red;*/
 }
+
 
 /* Ancho fijo de 1190 pixeles */
 
@@ -27,6 +28,7 @@ header {
     display: inline-block;
 }
 
+
 /*Estilo de las listas dentro de los navs */
 
 nav ul {
@@ -36,6 +38,7 @@ nav ul {
 nav li {
     display: inline-block;
 }
+
 
 /*El nav principal */
 
@@ -47,11 +50,13 @@ nav li {
     height: 109px;
 }
 
+
 /*Div del subtitulo */
 
 #subtitulo {
     width: 1190px;
 }
+
 
 /*Nav secundario con las páginas y el idioma */
 
@@ -68,6 +73,7 @@ nav li {
 
 
 /* */
+
 #idioma {
     width: 490px;
     text-align: right;
@@ -78,6 +84,7 @@ nav li {
     display: inline-block;
     margin-right: 15px;
 }
+
 
 /*Div de programa, descripcion y foto */
 
@@ -92,6 +99,7 @@ nav li {
     margin-right: 10px;
 }
 
+
 /* Div about */
 
 #about {
@@ -100,12 +108,14 @@ nav li {
     float: left;
 }
 
+
 /* Div Schedule */
 
 #schedule {
     width: 390px;
     float: left;
 }
+
 
 /*Div del espacio del festival */
 
@@ -116,48 +126,67 @@ nav li {
     display: inline-flex;
 }
 
+
 /*Los div llamados cajas*/
 
 .caix {
     width: 290px;
 }
 
+
 /*Registro */
-#registro{
+
+#registro {
     float: right;
 }
+
 
 /*how */
-#how{
+
+#how {
     float: right;
-    
 }
-#how dt {/*contiene la imagen */
+
+#how dl {
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
+}
+
+#how dt {
+    /*contiene la imagen */
     width: 45px;
     height: 45px;
-    display: inline-block;
-}
-#how dd{
-    width: 245px;
-    height: 45px;
+    padding: 0px;
+    margin: 0px;
     display: inline-block;
 }
 
+#how dd {
+    width: 240px;
+    height: 45px;
+    padding: 0px;
+    margin: 0px;
+    display: inline-block;
+}
+
+
 /* Who come*/
-#come{
+
+#come {
     width: 280px;
     float: right;
     padding-left: 10px;
     margin-left: 10px;
 }
 
-#come ul{
+#come ul {
     padding-left: 40px;
 }
 
 #come li {
     list-style-image: url('../img/check.png');
-    
 }
+
 
 /*Twitter */
