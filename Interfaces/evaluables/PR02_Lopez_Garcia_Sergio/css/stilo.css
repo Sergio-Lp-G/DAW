@@ -57,6 +57,7 @@ nav li {
 /*El nav principal */
 
 #navPrincipal {
+    font-family: sans-serif;
     width: 590px;
     text-align: right;
     float: right;
@@ -159,6 +160,10 @@ nav li {
 
 #how {
     float: right;
+    width: 270px;
+    margin-left: 10px;
+    margin-top: 10px;
+    padding: 10px;
 }
 
 #how dl {
@@ -171,17 +176,18 @@ nav li {
     /*contiene la imagen */
     width: 45px;
     height: 45px;
-    padding: 0px;
+    padding-top: 5px;
+    padding-bottom: 5px;
     margin: 0px;
-    display: inline-block;
+    float: left;
 }
 
 #how dd {
-    width: 240px;
+    width: 220px;
     height: 45px;
     padding: 0px;
     margin: 0px;
-    display: inline-block;
+    float: right;
 }
 
 
