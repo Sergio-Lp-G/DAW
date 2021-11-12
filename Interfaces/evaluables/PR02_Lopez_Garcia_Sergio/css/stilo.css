@@ -161,15 +161,9 @@ nav li {
 #how {
     float: right;
     width: 270px;
-    margin-left: 10px;
-    margin-top: 10px;
-    padding: 10px;
-}
-
-#how dl {
-    width: 100%;
-    padding: 0px;
-    margin: 0px;
+    margin-left: 5px;
+    margin-top: 5px;
+    padding: 5px;
 }
 
 #how dt {
@@ -183,10 +177,10 @@ nav li {
 }
 
 #how dd {
-    width: 220px;
-    height: 45px;
-    padding: 0px;
-    margin: 0px;
+    width: 210px;
+    height: 50px;
+    padding: 2px;
+    margin: 2px;
     float: right;
 }
 
@@ -205,7 +199,7 @@ nav li {
 }
 
 #come li {
-    list-style-image: url('../img/check.png');
+    list-style-image: url('../recursos/img/check.png');
 }
 
 
