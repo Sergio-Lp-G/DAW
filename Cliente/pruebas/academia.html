@@ -6,10 +6,9 @@
     <meta charset="UTF-8">
     <script>
 
-        function alumno(nombre, edad, intereses, materia, importe) {
+        function Alumno(nombre, edad, intereses, materia, importe) {
             this.nombre = nombre;
             this.edad = edad;
-            //this.intereses = new intereses[10];
             this.intereses = intereses;
             this.materia = materia;
             this.importe = importe;
@@ -19,41 +18,49 @@
         //Funcion prototipo: Academia con propiedade: nombreAcademia, direccion, ciudad. Y metodos variarIngresos(ingresos+importe), darBienvenida ("Hola nombre, bienvenido a la academia nombreAcademia.")
         function prototipoAcademia() {
             this.nombreAcademia = "Academia K S.A.";
-            this.direccion= "C/Juancar";
-            this.ciudad="Utebo";
+            this.direccion = "C/Juancar";
+            this.ciudad = "Utebo";
 
-            this.variarIngresos=function(importe){
-                this.ingresos=this.
+            this.variarIngresos = function () {
+                var variacion=parseInt(prompt("nuevo Gasto: "));
+                this.importeGastado=this.importeGastado+variacion;
+                alert("El gasto actual del alumno "+this.nombre+" es: "+this.importeGastado);
             }
+            this.darBienvenida = function () {
+                alert("Hola " + this.nombre + ", te damos la bienvenida a la academia " + this.nombreAcademia);
+            }
+        }
 
+        function registro() {
+            var nombre = prompt("Nombre: ");
+            var edad = prompt("Indique su edad: ");
+            var intereses = prompt("Introduce tus intereses, separado por comas: ");
+            var intereses = intereses.split(",");
+            var materia = prompt("Materias a cursar:");
+            var importeGastado = parseInt(prompt("¿Cuanto vas a gastar?"));
+            var alumno1 = new Alumno(nombre, edad, intereses, materia, importeGastado);
 
-            
-
+            Alumno.prototype = new prototipoAcademia();
+            alumno1.darBienvenida();
+            alumno1.variarIngresos();
         }
 
     </script>
 </head>
 
 <body>
+    <h1>Bienvenido a la academia</h1>
+
+    <input type="button" value="Registro" onclick="registro()">
     <script>
         /*Utilizando una funcion constructora y un rototipo:
         Funcion constructora: Alumno con propiedade: nombre edad, intereses(array), marteria, importe.
         Funcion prototipo: Academia con propiedade: nombreAcademia, direccion, ciudad. Y metodos variarIngresos(ingresos+importe), darBienvenida ("Hola nombre, bienvenido a la academia nombreAcademia.")
-        usad un botos que al pulsar pida los datos del alumno y muestre la bienvenida
-        otro boton que informe de los ingresos de la academia (olvidate de esto)*/
+        Usad un boton que al pulsar pida los datos del alumno y muestre la bienvenida
+        Otro boton que informe de los ingresos de la academia (olvidate de esto)
+        Ademas, que muestre su gasto actual dependiendo de un nuevo importeGastado solicitado por pantalla*/
 
-        //var TaxiRenault1=new TaxiRenault("Diesel",4,500,120);
-        TaxiRenault.prototype = new prototipoTaxiRenault();
-        var TaxiRenault1 = new TaxiRenault("Diesel", 4, 500, 120);
-        alert(TaxiRenault1.fabricante);
-        //taxiRenault1.color="verde";
-        alert(TaxiRenault1.getCapacidad());
-        TaxiRenault1.variarCarga(-10);
-        alert(TaxiRenault1.carga);
-
-        var TaxiRenault2 = new TaxiRenault("Gasolina", 4, 800, 130);
-        alert(TaxiRenault2.carga);
-
+        //Alumno.prototype = new prototipoAcademia();
     </script>
 </body>
 
