@@ -1,10 +1,13 @@
 * {
     margin: 0px;
     padding: 0px;
-    background-color: wheat;
+    /*background-color: wheat;*/
     margin-bottom: 5px;
     /*border: solid 1px red;*/
 }
+
+
+/*Añadimos las fuentes */
 
 @font-face {
     font-family: "PTSansRegular";
@@ -20,6 +23,9 @@
     font-style: normal;
 }
 
+
+/*Anchura máxima del html */
+
 html {
     background: white;
     margin: auto;
@@ -32,9 +38,12 @@ html {
 body {
     width: 1190px;
     background-color: white;
-    margin: 0 auto;
-    /*flex-wrap: wrap;
-    display: inline-flex;*/
+    margin: 5px;
+}
+
+a {
+    color: rgb(16, 182, 174);
+    text-decoration: none;
 }
 
 header {
@@ -54,7 +63,7 @@ nav li {
 }
 
 
-/*El nav principal */
+/*El nav principal incluye el login y las pags*/
 
 #navPrincipal {
     font-family: sans-serif;
@@ -65,39 +74,124 @@ nav li {
     height: 109px;
 }
 
+#login {
+    list-style-type: none;
+    font-size: 15px;
+    float: right;
+}
+
+#pags {
+    float: right;
+    margin-top: 20px;
+    padding-left: 40px;
+    list-style-type: none;
+    font-size: 22px;
+    display: flex;
+    justify-content: space-between;
+    width: 500px;
+}
+
+#pags li {
+    background: rgb(240, 236, 236);
+    border-radius: 5px;
+}
+
+#pags li a {
+    color: rgb(150, 146, 146);
+}
+
 
 /*Div del subtitulo */
 
 #subtitulo {
     width: 1190px;
+    width: 1190px;
+    font-family: PTSansRegular;
+    color: rgb(23, 117, 117);
+    font-size: 25px;
+    margin-bottom: 15px;
+    float: left;
 }
 
 
-/*Nav secundario con las páginas y el idioma */
+/*Nav secundario con las sub páginas y el idioma */
 
 #navSec {
     width: 690px;
     display: inline-block;
     margin-right: 10px;
+    margin-bottom: 20px;
 }
 
-#pags li {
-    background: gray;
-    border-radius: 5px;
+#subpag {
+    font-family: PTSans;
+    height: 30px;
+    width: 650px;
+    display: flex;
+    list-style-type: none;
+    justify-content: space-between;
+    font-size: 16px;
+    text-align: center;
+}
+
+#subpag li {
+    padding-top: 8px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: rgb(244, 240, 243);
+    border-start-end-radius: 10px;
+    border-top-left-radius: 10px;
+}
+
+#subpag li #esp {
+    color: black;
+    font-weight: bold;
+}
+
+#subpag li a {
+    color: rgb(150, 146, 146);
 }
 
 
-/* */
+/*Selector de idioma */
 
 #idioma {
     width: 490px;
     text-align: right;
     float: right;
+    font-family: PTSansRegular;
+    justify-content: right;
+    height: 30px;
+}
+
+#idioma ul {
+    padding-top: 5px;
+    list-style-type: none;
 }
 
 #idioma li {
     display: inline-block;
     margin-right: 15px;
+    width: 30px;
+    text-align: center;
+    background-color: rgb(244, 240, 243);
+}
+
+
+/*El primer elemento va con bordes izquierdos redondeados*/
+
+div#idioma>ul>:first-child {
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    background: rgb(228, 225, 225);
+}
+
+
+/*El último elemento va con bordes derechos redondeados*/
+
+div#idioma>ul>:last-child {
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
 }
 
 
@@ -106,11 +200,26 @@ nav li {
 #program {
     width: 890px;
     float: left;
+    margin-bottom: 5px;
+    vertical-align: middle;
+    margin-bottom: 8px;
+}
+
+#program h1 {
+    font-family: sans-serif;
+    color: rgb(68, 219, 224);
+    margin-bottom: 12px;
+}
+
+#program p {
+    font-family: 'Times New Roman', Times, serif;
+    width: 680px;
+    margin-bottom: 10px;
 }
 
 #circo {
     float: right;
-    margin-top: 10px;
+    margin-top: 20px;
     margin-right: 10px;
 }
 
@@ -121,6 +230,20 @@ nav li {
     width: 490px;
     margin-right: 10px;
     float: left;
+    margin-bottom: 25px;
+}
+
+#about h2 {
+    font-family: sans-serif;
+    font-weight: bold;
+    color: rgb(9, 155, 130);
+    margin-bottom: 5px;
+}
+
+#about p {
+    font-family: 'Times New Roman', Times, serif;
+    color: rgb(160, 155, 155);
+    width: 430px;
 }
 
 
@@ -129,23 +252,196 @@ nav li {
 #schedule {
     width: 390px;
     float: left;
+    margin-bottom: 15px;
+}
+
+#schedule h2 {
+    font-family: sans-serif;
+    font-weight: bold;
+    color: rgb(9, 155, 130);
+    margin-bottom: 5px;
+}
+
+#schedule p {
+    font-family: 'Times New Roman', Times, serif;
+    color: rgb(160, 155, 155);
+    width: 350px;
+}
+
+
+/*Los div llamados cajas, para dentro y fuera dek fest*/
+
+.caix {
+    width: 290px;
 }
 
 
 /*Div del espacio del festival */
+
+
+/*Indicamos los parrafos y los titulos */
 
 #festSpace {
     width: 890px;
     float: left;
     flex-wrap: wrap;
     display: inline-flex;
+    background-color: white;
+    margin-bottom: 8px;
+}
+
+#festSpace h2#t {
+    font-family: sans-serif;
+    font-weight: bold;
+    color: rgb(9, 155, 130);
+    margin-bottom: 10px;
+}
+
+#festSpace p#pres {
+    display: block;
+    font-family: 'Times New Roman', Times, serif;
+    width: 570px;
+}
+
+#festSpace p#fin {
+    font-family: 'Times New Roman', Times, serif;
+}
+
+#festSpace h1#in {
+    font-family: sans-serif;
+    color: rgb(67, 221, 221);
 }
 
 
-/*Los div llamados cajas*/
+/*Los posit con colores y girados los llamamos mediante nota */
 
-.caix {
-    width: 290px;
+.nota {
+    width: 260px;
+    height: 150px;
+    margin-bottom: 60px;
+    padding: 10px;
+}
+
+.nota h2 {
+    margin-bottom: 20px;
+}
+
+.nota p {
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.nota>div {
+    font-size: 18px;
+    border-radius: 5px;
+}
+
+.nota>div h2 {
+    font-family: PTSansregular;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+
+/*Color de fondo a los nota, dependiendo de cual le toque.*/
+
+div.rosa {
+    background-color: rgb(235, 196, 202);
+}
+
+div.verde {
+    background-color: rgb(173, 233, 145);
+}
+
+div.amarillo {
+    background-color: rgb(245, 244, 173);
+}
+
+div.azul {
+    background-color: rgb(134, 218, 233);
+}
+
+
+/*Margenes de "nota" para separarlas*/
+
+div#caja02 {
+    margin-left: 20px;
+}
+
+div#caja03 {
+    margin-left: 20px;
+}
+
+div#caja05 {
+    margin-left: 20px;
+}
+
+div#caja06 {
+    margin-left: 20px;
+}
+
+div#caja08 {
+    margin-left: 20px;
+}
+
+div#caja09 {
+    margin-left: 20px;
+}
+
+
+/*Rotacion de notas */
+
+div#caja01>div {
+    transform: rotate(-2deg);
+    padding: 15px;
+    padding-top: 20px;
+    padding-bottom: 30px;
+}
+
+div#caja02>div {
+    transform: rotate(1deg);
+    padding: 15px;
+}
+
+div#caja03>div {
+    transform: rotate(-2deg);
+    padding: 15px;
+    padding-top: 20px;
+    padding-bottom: 30px;
+}
+
+div#caja04>div {
+    transform: rotate(1deg);
+    padding: 17px;
+}
+
+div#caja05>div {
+    transform: rotate(2deg);
+    padding: 15px;
+}
+
+div#caja06>div {
+    transform: rotate(1deg);
+    padding: 15px;
+}
+
+div#caja07>div {
+    transform: rotate(-1deg);
+    padding: 15px;
+}
+
+div#caja08>div {
+    transform: rotate(1deg);
+    padding: 15px;
+}
+
+div#caja09>div {
+    transform: rotate(-1deg);
+    padding: 15px;
+}
+
+div#caja10>div {
+    transform: rotate(1deg);
+    padding: 15px;
 }
 
 
@@ -153,54 +449,282 @@ nav li {
 
 #registro {
     float: right;
+    width: 290px;
+    height: 120px;
+    margin-left: 10px;
+    background-color: rgb(157, 193, 240);
+    border-radius: 5px;
+    margin-bottom: 8px;
+    font-family: Georgia;
+}
+
+#botonReg {
+    margin: auto;
+    margin-top: 24px;
+    padding-top: 10px;
+    vertical-align: middle;
+    text-align: center;
+    background-color: rgb(87, 173, 87);
+    width: 230px;
+    height: 40px;
+    border-radius: 5px;
+}
+
+#botonReg p {
+    font-size: 30px;
+    background-color: rgb(87, 173, 87);
+    color: white;
+}
+
+#or {
+    margin-top: 10px;
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
 }
 
 
 /*how */
 
 #how {
+    font-family: PTSans;
+    background-color: rgb(240, 236, 236);
+    width: 280px;
     float: right;
-    width: 270px;
-    margin-left: 5px;
-    margin-top: 5px;
+    border-radius: 20px;
+    margin-bottom: 8px;
     padding: 5px;
 }
 
-#how dt {
-    /*contiene la imagen */
-    width: 45px;
-    height: 45px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    margin: 0px;
-    float: left;
+#how ul {
+    list-style: none;
 }
 
-#how dd {
-    width: 210px;
+li#p2p {
+    background: url("../recursos/img/benefit_p2pu.png") no-repeat 0 bottom;
     height: 50px;
-    padding: 2px;
-    margin: 2px;
-    float: right;
+    padding-left: 50px;
+}
+
+li#creds {
+    background: url("../recursos/img/benefit_creds.png") no-repeat 0 bottom;
+    height: 50px;
+    padding-left: 50px;
+}
+
+li#hackbuss {
+    background: url("../recursos/img/benefit_hackbus.png") no-repeat 0 bottom;
+    height: 50px;
+    padding-left: 50px;
+}
+
+li#teaching {
+    background: url("../recursos/img/benefit_teaching.png") no-repeat 0 bottom;
+    height: 50px;
+    padding-left: 50px;
+}
+
+li#hack {
+    background: url("../recursos/img/benefit_hack.png") no-repeat 0 bottom;
+    height: 50px;
+    padding-left: 50px;
+}
+
+li#wikipedia {
+    background: url("../recursos/img/benefit_wikipedia.png") no-repeat 0 bottom;
+    height: 50px;
+    padding-left: 50px;
 }
 
 
 /* Who come*/
 
 #come {
-    width: 280px;
+    /*width: 280px;
     float: right;
     padding-left: 10px;
+    margin-left: 10px;*/
+    margin-top: 20px;
+    background-color: rgb(247, 240, 149);
+    width: 270px;
+    padding: 10px;
     margin-left: 10px;
+    float: left;
+    border-radius: 10px;
+    margin-bottom: 8px;
+}
+
+#come h4 {
+    font-family: Georgia;
 }
 
 #come ul {
     padding-left: 40px;
+    padding-bottom: 20px;
+    padding-top: 10px;
 }
 
 #come li {
+    font-family: PTSansRegular;
     list-style-image: url('../recursos/img/check.png');
 }
 
+#come p {
+    font-family: 'Times New Roman', Times, serif;
+}
 
-/*Twitter */
+
+/*Bloque comparte */
+
+#comparte {
+    width: 280px;
+    margin-left: 10px;
+    padding-left: 10px;
+    padding-top: 30px;
+    float: left;
+    flex-direction: column;
+    display: flex;
+}
+
+#identica {
+    margin-left: auto;
+    margin-right: auto;
+    width: 250px;
+    border-radius: 10px;
+    background-color: rgb(107, 164, 168);
+    text-align: center;
+}
+
+#identica img {
+    margin-left: 30px;
+    float: left;
+}
+
+#identica p {
+    font-family: 'Times New Roman', Times, serif;
+    color: white;
+    padding-left: 10px;
+    margin-top: 8px;
+    float: left;
+}
+
+#twitter {
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 250px;
+    border-radius: 10px;
+    background-color: rgb(77, 185, 235);
+    text-align: center;
+}
+
+#twitter img {
+    margin-left: 30px;
+    float: left;
+}
+
+#twitter p {
+    font-family: 'Times New Roman', Times, serif;
+    color: white;
+    padding-left: 40px;
+    margin-top: 8px;
+    float: left;
+}
+
+
+/*El footer y todos sus elementos: */
+
+footer {
+    margin-top: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    height: 130px;
+    padding-top: 20px;
+    background-color: #777676;
+    float: left;
+    width: 1190px;
+    justify-content: space-between;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 10px;
+}
+
+#izq {
+    margin-left: 100px;
+    width: 260px;
+    justify-content: space-between;
+    display: flex;
+    flex-direction: row;
+}
+
+#rss {
+    display: flex;
+    float: left;
+    width: 150px;
+}
+
+#rss>p {
+    margin-left: 7px;
+    float: right;
+    color: white;
+    font-size: 15px;
+}
+
+#rss img {
+    float: left;
+    width: 20px;
+    height: 20px;
+}
+
+#redes {
+    color: white;
+    font-size: 15px;
+}
+
+#redes img {
+    width: 20px;
+    height: 20px;
+    margin-right: 7px;
+}
+
+#cent {
+    width: 260px;
+    justify-content: space-between;
+    display: flex;
+    flex-direction: row;
+}
+
+#centList ul {
+    list-style-type: none;
+    color: white;
+}
+
+#trmoz {
+    display: flex;
+}
+
+#trmoz img {
+    width: 30px;
+    height: 23px;
+    float: left;
+}
+
+#trmoz p {
+    float: right;
+    font-size: 15px;
+    color: white;
+    margin-left: 7px;
+}
+
+
+/*El bloque de la derecha tiene un tamaño de 360, estan alineados a la derecha
+y estan el linea los elementos*/
+
+#dch {
+    margin-right: 100px;
+    width: 360px;
+    flex-direction: row;
+    text-align: right;
+}
+
+#dch span {
+    color: white;
+}
