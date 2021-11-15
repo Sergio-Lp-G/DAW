@@ -89,3 +89,45 @@ function resFisio() {
         }
     }
 }
+
+function validar() {
+
+    var patronNum = /\d/;
+    var patronMinus = /[a-z]/;
+    var patronMayor = /[A-Z]/;
+    var patronEspe = /\W/;
+    //var patronLeng = new RegExp("(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*\W+){8,16}");
+    var psw = document.getElementById('pssw').value;
+    var valNum = patronNum.test(psw);
+    var valMinus = patronMinus.test(psw);
+    var valMayor = patronMayor.test(psw);
+    var valEspe = patronEspe.test(psw);
+    var leng = psw.length;
+
+    if (leng <= 15 && leng >= 8) {
+
+
+        if (valNum) {
+            if (valMinus) {
+                if (valMayor) {
+                    if (valEspe) {
+                        alert("La contraseña " + psw + " es segura");
+
+                    } else {
+                        alert("Use una contraseña con caracteres especiales");
+                    }
+                } else {
+                    alert("Use una contraseña con letras mayusculas");
+                }
+            } else {
+                alert("Use una contraseña con letras minúsculas");
+            }
+        } else {
+            alert("Use una contraseña con números");
+        }
+    } else {
+        alert("Use una contraseña de entre 8 y 16 caracteres");
+
+    }
+
+}
