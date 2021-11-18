@@ -7,6 +7,11 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="../css/gimstile.css" />
     <script>
+        function llamada() {
+            var getImport = document.querySelector(‘#template - file’);
+            var getContent = getImport.import.querySelector(‘#content’);
+            document.body.appendChild(document.importNode(getContent, true));
+        }
     </script>
 </head>
 
