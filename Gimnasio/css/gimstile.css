@@ -4,6 +4,10 @@ body {
     min-height: 500px;
 }
 
+section {
+    background-color: aqua;
+}
+
 footer {
     width: 100%;
     min-height: 200px;
