@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<header>
+    <meta charset="UTF-8">
+    <title>Herencia 1</title>
+    <script>
+        function Persona(nombre, apellidos, edad) {
+            this.nombre = nombre;
+            this.apellidos = apellidos;
+            this.edad = edad;
+        }
+        function prototipoPersona() {
+            this.pais = "España";
+            this.ciudad = "Zaragoza";
+            this.saludar = saludar;
+        }
+        function saludar() {
+            alert(this.nombre + " " + this.apellidos);
+        }
+        function Ciudadano(nombre, apellidos) {
+            this.nombre=nombre;
+            this.apellidos=apellidos;
+        }
+    </script>
+</header>
+
+<body>
+    <script>
+        Persona.prototype = new prototipoPersona();
+        var persona1 = new Persona("Pedro", "López", 35);
+        persona1.saludar();
+
+        persona2=Object.create(persona1);
+        persona2.saludar();
+
+        Ciudadano.prototype=Object.create(Persona.prototype);
+        var ciudadano1=new Ciudadano("Manuel","Martínez");
+        ciudadano1.saludar();
+    </script>
+</body>
+
+</html>
