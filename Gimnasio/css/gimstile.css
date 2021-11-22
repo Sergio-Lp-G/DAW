@@ -1,31 +1,58 @@
 body {
-    min-height: 500px;
+    min-height: 1000px;
 }
 
 header {
-    width: 100%;
+    width: 50%;
+    display: flex;
+    float: left;
 }
 
 #banner {
     justify-content: space-between;
     display: flex;
     width: 100%;
+    background-color: gray;
 }
 
 #banIzq {
-    width: 300px;
-    height: 300px;
+    width: 170px;
+    height: 170px;
+    position: relative;
 }
 
 #banIzq img {
-    
+    width: 170px;
+    height: auto;
+    top: 10%;
+    right: 0;
+    left: 0;
+    margin: 0 auto;
 }
 
 #nombreGim {
     width: 70%;
     text-align: center;
-    background-color: blue;
 }
+
+#logNav {
+    float: right;
+    width: 50%;
+    background-color: beige;
+}
+
+#login{
+    object-position: top right;
+}
+
+#logNav nav #navPrin{
+    display: inline-flex;
+}
+#logNav nav #navPrin li{
+    display: inline-flex;
+    list-style: none;
+}
+
 
 /*Flecha para scrol up rapido*/
 
@@ -57,10 +84,15 @@ header {
 }
 
 section {
+    display: flex;
+    width: 100%;
+    min-height: 60px;
     background-color: aqua;
 }
 
 footer {
+    display: flex;
+    
     width: 100%;
     min-height: 200px;
     background-image: url("../recursos/footerGim_largo.jpg");
