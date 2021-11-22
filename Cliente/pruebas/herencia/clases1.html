@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<header>
+    <meta charset="UTF-8">
+    <title>Clases 1</title>
+    <script>
+        class TarjetaFelicitacion{
+            constructor(mensaje){
+                this.mensajeTarjeta=mensaje;
+            }
+            set setMensaje(m){
+                this.mensajeTarjeta=m;
+            }
+            get getMensaje(){
+                return(this.mensajeTarjeta);
+            }
+            //añadir un metodo a la funcion constructora-clase
+            personalizar(nombre){
+                return(nombre+", tengo este mensaje para ti: "+this.mensajeTarjeta);
+            }
+            
+        }
+        //Se pueden usar las palabras getter y setter para las clases
+
+        class TarjetaFelicitacion2{
+            constructor(){
+                var mensaje="Feliz cumple!!";
+                this.mensajeTarjeta=mensaje;
+            }
+            set setMensaje(m){
+                this.mensajeTarjeta=m;
+            }
+            get getMensaje(){
+                return(this.mensajeTarjeta);
+            }
+            //añadir un metodo a la funcion constructora-clase
+            personalizar(nombre){
+                return(nombre+", tengo este mensaje para ti: "+this.mensajeTarjeta);
+            }
+        }
+
+        function felicitar(){
+            var tarjeta2=new TarjetaFelicitacion2();
+            var parrafo=document.getElementById("happy");
+            parrafo.textContent=tarjeta2.mensajeTarjeta;
+        }
+        /* ES5
+        funcion TarjetaFelicitacion(mensaje){
+            this.mensajeTarjeta=mensaje;
+        }
+        */
+    </script>
+</header>
+
+<body>
+    
+
+    <input type="button" value="Felicidades" onclick="felicitar()"/>
+    <p id="happy"></p>
+    <script>
+
+        
+        var tarjeta1=new TarjetaFelicitacion("Felicidades");
+        /*alert(tarjeta1.mensajeTarjeta);
+        alert(tarjeta1.personalizar("Juan"));*/
+
+        /*crear un nuevo objeto con mensaje "Feliz cumple!!" y que lo grabe en el contenido de un párrafo al hacer click en un botón */
+        alert(tarjeta1.getMensaje());
+        tarjeta1.setMensaje="Buenos dias!";
+        alert(tarjeta1.getMensaje);
+
+
+
+
+    </script>
+
+
+
+
+
+</body>
+
+</html>

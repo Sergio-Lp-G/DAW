@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<header>
+    <meta charset="UTF-8">
+    <title>Herencia multiples</title>
+    <script>
+        function Canido() {
+            this.patas = 4;
+            this.morder = function () {
+                alert("mordiendo");
+            }
+        }
+        function Cuadrupedo() {
+            this.velocidad = 50;
+            this.correr = function () {
+                this.velocidad += 10;
+            }
+        }
+        function Perro() {
+            Canido.call(this);
+            Cuadrupedo.call(this);
+        }
+
+    </script>
+</header>
+
+<body>
+    <script>
+        var perro1=new Perro();
+        alert(perro1.velocidad);
+        perro1.correr();
+        alert(perro1.velocidad);
+        perro1.morder();
+
+    </script>
+</body>
+
+</html>
