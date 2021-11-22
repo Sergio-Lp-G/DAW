@@ -1,5 +1,7 @@
 body {
     min-height: 1000px;
+    background: url("../recursos/metal_pattern_1280x800_2673.jpg") center top repeat-y;
+    background-size: 100% auto;
 }
 
 header {
@@ -38,21 +40,21 @@ header {
 #logNav {
     float: right;
     width: 50%;
-    background-color: beige;
+    background-color: darkgray;
 }
 
-#login{
+#login {
     object-position: top right;
 }
 
-#logNav nav #navPrin{
+#logNav nav #navPrin {
     display: inline-flex;
 }
-#logNav nav #navPrin li{
+
+#logNav nav #navPrin li {
     display: inline-flex;
     list-style: none;
 }
-
 
 /*Flecha para scrol up rapido*/
 
@@ -78,9 +80,9 @@ header {
 
 #back_to_top .fa-stack .arrow_carrot-up::before {
     display: block !important;
-    content: url(../recursos/up-chevron.png);
+    content: url("../recursos/up-chevron.png");
     position: absolute;
-    left: 21px;
+    left: 5px;
 }
 
 section {
@@ -93,6 +95,8 @@ section {
 footer {
     display: flex;
     
+    left: 0px;
+    bottom: 0px;
     width: 100%;
     min-height: 200px;
     background-image: url("../recursos/footerGim_largo.jpg");
