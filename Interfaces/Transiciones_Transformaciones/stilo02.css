@@ -1,0 +1,19 @@
+.contenedor {
+    width: 200px;
+    height: 25px;
+    clear: both;
+    background-color: orange;
+    float: left;
+    margin: 2px 20px;
+    transition: transform  1s, background-color 2s;
+}
+
+.contenedor:hover {
+    transform: rotate3d(100,100,100,90deg);
+    
+    background-color: blue;
+}
+
+.contenedor:active {
+    margin: 300px 10px;
+}

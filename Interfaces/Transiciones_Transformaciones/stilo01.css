@@ -1,0 +1,19 @@
+.contenedor {
+    width: 200px;
+    height: 25px;
+    clear: both;
+    background-color: orange;
+    float: left;
+    margin: 2px 20px;
+    -webkit-transition: background-color 1s, width 1s linear;
+    transition: background-color 1s, width 1s linear;
+}
+
+.contenedor:hover {
+    width: 800px;
+    background-color: blue;
+}
+
+.contenedor:active {
+    margin: 300px 10px;
+}
