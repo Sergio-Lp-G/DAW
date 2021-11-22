@@ -3,42 +3,49 @@
 
 <head>
     <link rel="shortcut icon" href="../recursos/logotipo-brazo-de-gimnasio.png">
-    <title>Calculadora de IMC-Indice de masa corporal.</title>
+    <title>Muscle UP</title>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="../css/gimstile.css" />
-    <script>
-        function llamada() {
-            var getImport = document.querySelector(‘#template - file’);
-            var getContent = getImport.import.querySelector(‘#content’);
-            document.body.appendChild(document.importNode(getContent, true));
-        }
-    </script>
+
 </head>
 
 <body>
 
     <header>
         <div id="banner">
-
+            <div id="banIzq">
+                <img src="../recursos/logotipo-brazo-de-gimnasio.png" alt="brazo izquierdo">
+            </div>
+            <div id="nombreGim">
+                <h1>MUSCLE UP</h1>
+            </div>
+            <div id="banDch">
+                <img src="../recursos/logotipo-brazo-de-gimnasio-derecho.png" alt="brazo derecho">
+            </div>
         </div>
+        <hr>
         <nav>
             <ul>
-                <li>
-                    <a href="../html/home.html">Home</a>
+                <li> <a href="../html/home.html">Home</a> </li>
+                <li>Herramientas
+                    <ul>
+                        <li>IMC</li>
+                        <li>FCM</li>
+                    </ul>
                 </li>
+                <li><a href="actividadFisioterapeuta.html">Fisios</a></li>
+                <li><a href="">Actividades</a></li>
             </ul>
         </nav>
+        <hr>
     </header>
+    <a id="back_to_top" class="right on" href="#">
+        <span class="fa-stack">
+            <span class="arrow_carrot-up"></span>
+        </span>
+    </a>
 
-    <link href="fcmCalculadora2.html" rel="import" />
 
-
-
-    <section>
-
-        <link id="template-file" href="fcmCalculadora2.html" rel="import" />
-
-    </section>
 
 
 
