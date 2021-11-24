@@ -10,12 +10,10 @@
             this.numeroAulas = numeroAulas;
             this.numeroAlumno = numeroAlumno;
             //modificar el numero de alumnos
-            this.modificarAlumnos() = function (variar) {
-                this.numeroAlumno=numeroAulas+variar;
+            this.modificarAlumnos() = function(variar) {
+                this.numeroAlumno = numeroAulas + variar;
             }
         }
-
-
 
         function Alumno(dni, nombre, notaMedia) {
             this.dni = dni;
@@ -23,30 +21,50 @@
             this.notaMedia = notaMedia;
         }
 
-
         function newColegio() {
-            var nombre=document.getElementById("nombreCol").value;
-            var numeroAulas=document.getElementById("numeroAulas").value
-            var numeroAlumno=document.getElementById("numeroAlumno").value;
+            var nombre = document.getElementById("nombreCol").value;
+            var numeroAulas = document.getElementById("numeroAulas").value
+            var numeroAlumno = document.getElementById("numeroAlumno").value;
 
-            var tabla=document.getElementById("tablaColegio");
-            if ((nombre!="")&&(numeroAulas!="")&&(numeroAlumno!="")){
-                var colegio=new Colegio(nombre, numeroAlumno,numeroAulas);
-                var filaColegio=document.createElement("tr");
-                var cadenaBoton="<input type='buton' value='Variar alumnos' id='boton1' onclick='modificar(this)'>";
-                filaColegio.innerHTML+="<td>"+colegio.nombre+"</td>";
-                /* inner resto de valores*/
+            var tabla = document.getElementById("tablaColegio");
+            if ((nombre != "") && (numeroAulas != "") && (numeroAlumno != "")) {
+                var colegio = new Colegio(nombre, numeroAlumno, numeroAulas);
+                var filaColegio = document.createElement("tr");
+                var cadenaBoton = "<input type='buton' value='Variar alumnos' id='boton1' onclick='modificar(this)'>";
+                filaColegio.innerHTML += "<td>" + colegio.nombre + "</td>";
+                filaColegio.innerHTML += "<td>" + colegio.numeroAlumno + "</td>";
+                filaColegio.innerHTML += "<td>" + colegio.numeroAulas + "</td>";
+                filaColegio.innerHTML += "<td> Modificar </td>";
 
                 tabla.appendChild(filaColegio);
             }
 
         }
+
         function modificar(celda) {
-            var nuevoValor=prompt("Nuevo número:");
-            celda.parentNode.previousSibling.textContent=nuevoValor;
-            
+            var nuevoValor = prompt("Nuevo número:");
+            celda.parentNode.previousSibling.textContent = nuevoValor;
+
         }
 
+        function newAlumno() {
+            var nombre = document.getElementById("nombreAl").value;
+            var dni = document.getElementById("dniAl").value;
+            var nota = document.getElementById("notaMedia").value;
+
+            var tabla = document.getElementById("tablaAlumno");
+            if ((nombre != "") && (dni != "") && (nota != "")) {
+                var alumno = new Alumno(dni, nombre, nota);
+                var filaAlumno = document.createElement("tr");
+                var cadenaBoton = "<input type='buton' value='Modificar nota' id='boton1' onclick='modificar(this)'>";
+                filaAlumno.innerHTML += "<td>" + alumno.dni + "</td>";
+                filaAlumno.innerHTML += "<td>" + alumno.nombre + "</td>";
+                filaAlumno.innerHTML += "<td>" + alumno.notaMedia + "</td>";
+                filaAlumno.innerHTML += "<td> Modificar </td>";
+
+                tabla.appendChild(filaAlumno);
+            }
+        }
     </script>
 </head>
 
@@ -70,19 +88,20 @@
             <th>Número de alumnas</th>
             <th>Incrementar número de alumnos</th>
         </tr>
-    </table><br><hr>
+    </table><br>
+    <hr>
     <!--Formulario para crear alumno-->
     <form id="formAlumno">
         <label for="nombreAl">Nombre:&nbsp;</label>
         <input type="text" name="nombreAl" id="nombre"><br/>
-        <label for="numeroAulas">Aulas:&nbsp;</label>
-        <input type="number" name="numeroAulas" id="numeroAulas"><br/>
-        <label for="numeroAlumno">Capacidad:&nbsp;</label>
-        <input type="number" name="numeroAlumno" id="numeroAlumno"><br/>
+        <label for="dniAl">DNI:&nbsp;</label>
+        <input type="text" name="dniAl" id="dniAl"><br/>
+        <label for="notaMedia">Nota media:&nbsp;</label>
+        <input type="float" name="notaMedia" id="notaMedia"><br/>
         <input type="button" onclick="newAlumno()" value="Enviar">
     </form>
-    <script>
 
+    <script>
     </script>
 
 </body>
