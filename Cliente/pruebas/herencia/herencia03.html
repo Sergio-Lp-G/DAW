@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<header>
+    <meta charset="UTF-8">
+    <title>Herencia ES6</title>
+    <script>
+        class Persona{
+            constructor(nombre, edad, sexo){
+                this.nombre=nombre;
+                this.edad=edad;
+                this.sexo=sexo;
+            }
+        }
+        class Alumno extends Persona{
+            constructor(nombre,edad,sexo,asignatura,instituto){
+                super(nombre,edad,sexo);
+                this.asignatura=asignatura;
+                this.instituto=instituto;
+            }
+        }
+
+    </script>
+</header>
+
+<body>
+    <script>
+        var alumno1=new Alumno("Juan",35,"masculino","matemáticas","ies Sant");
+        alert(alumno1.nombre+". Edad: "+alumno1.edad+", asignaturas"+asignatura);
+
+    </script>
+</body>
+
+</html>

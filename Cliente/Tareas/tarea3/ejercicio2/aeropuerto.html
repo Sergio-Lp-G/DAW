@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        class Aeropuerto {
+            constructor(nombre, ciudad, numVuelos) {
+                this.nombre = nombre;
+                this.ciudad = ciudad;
+                this.numVuelos = numVuelos;
+            }
+        }
+
+        class Vuelo {
+            constructor(codigo, llegadaHora, salidaHora) {
+                this.codigo = codigo;
+                this.llegadaHora = new Date();
+                this.llegadaHora.setHours(horaLlegada);
+                this.llegadaHora.setMinutes(minLlegada);
+
+                this.salidaHora = new Date();
+                this.salidaHora.setHours(horaSalida);
+                this.salidaHora.setMinutes(horaSalida);
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <!--Formulario para añadir aeropuertos-->
+    <form id="aeropuertoForm">
+        <label for="nameAero">Nombre:&nbsp;</label>
+        <input type="text" name="nameAero" id="nameAero"></br>
+        <label for="cityAero">Ciudad:&nbsp;</label>
+        <input type="text" name="cityAero" id="cityAero"></br>
+        <label for="vuelosDiarios">Nombre:&nbsp;</label>
+        <input type="text" name="cityAero" id="cityAero"></br>
+
+        <input type="button" onclick="newAeropuerto()" value="Crear aeropuerto">
+    </form>
+
+    <!--Tabla para mostrar los aeropuertos -->
+    <table border="1" id="tablaAeropuertos">
+        <tr>
+            <th>Nombre</th>
+            <th>Ciudad</th>
+            <th>Número de vuelos</th>
+            <th>Incrementar número de vuelos</th>
+        </tr>
+    </table><br>
+    <hr>
+
+    <!--Formulario para añadir vuelos-->
+    <form id="vueloForm">
+        <label for="nameVuelo">Código:&nbsp;</label>
+        <input type="text" name="nameVuelo" id="nameVuelo"></br>
+
+        <label for="horaLlegadaVuelo">Hora de llegada:&nbsp;</label>
+        <input type="text" name="horaLlegadaVuelo" id="horaLlegadaVuelo"></br>
+        <label for="minLlegadaVuelo">Minutos de llegada:&nbsp;</label>
+        <input type="text" name="minLlegadaVuelo" id="minLlegadaVuelo"></br>
+        
+        <label for="horaSalidaVuelo">Hora de Salida:&nbsp;</label>
+        <input type="text" name="horaSalidaVuelo" id="horaSalidaVuelo"></br>
+        <label for="minLlegadaVuelo">Minutos de llegada:&nbsp;</label>
+        <input type="text" name="minLlegadaVuelo" id="minLlegadaVuelo"></br>
+
+        <label for="vuelosDiarios">Nombre:&nbsp;</label>
+        <input type="text" name="cityAero" id="cityAero"></br>
+
+        <input type="button" onclick="newAeropuerto()" value="Crear aeropuerto">
+    </form>
+
+    <!--Tabla para mostrar los aeropuertos -->
+    <table border="1" id="tablaAeropuertos">
+        <tr>
+            <th>Nombre</th>
+            <th>Ciudad</th>
+            <th>Número de vuelos</th>
+            <th>Incrementar número de vuelos</th>
+        </tr>
+    </table><br>
+    <hr>
+
+
+</body>
+
+</html>
