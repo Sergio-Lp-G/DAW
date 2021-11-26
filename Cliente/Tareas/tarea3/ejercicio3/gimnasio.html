@@ -5,24 +5,63 @@
     <meta charset="UTF-8">
     <title></title>
     <script>
-        function UsuarioWeb(login, pss,nombre,dni) {
-            this.login=login;
-            this.pss=pss;
-            this.nombre=nombre;
-            this.dni=dni;
+        var listaAdmin = [];
+        function UsuarioWeb(login, pss, nombre, dni) {
+            this.login = login;
+            this.pss = pss;
+            this.nombre = nombre;
+            this.dni = dni;
         }
         function UsuarioAdministrador(crearAlta, crearTabla) {
             this.crearAlta = crearAlta;
             this.crearTabla = crearTabla;
         }
-        function UsuarioCliente(peso,altura,edad,sexo,imc,fmc) {
-            this.peso=peso;
-            this.altura=altura;
-            this.edad=edad;
-            this.sexo=sexo;
-            this.imc=imc;
-            this.fmc=fmc;
+        function UsuarioCliente(peso, altura, edad, sexo, imc, fmc) {
+            this.peso = peso;
+            this.altura = altura;
+            this.edad = edad;
+            this.sexo = sexo;
+            this.imc = imc;
+            this.fmc = fmc;
         }
+
+        function newAdmin() {
+            alert("Está creando un nuevo administrador.");
+            var nombre = prompt("Nombre: ");
+            var dni = valDNI();
+            var login = prompt("Nick: ");
+            var pss = valPss();
+
+            UsuarioAdministrador.prototype = new UsuarioWeb(login, pss, nombre, dni);
+            var admin = new UsuarioAdministrador(crearAlta, crearTabla);
+            listaAdmin.push(admin);
+        }
+
+        function valDNI() {
+            var dni = prompt("DNI: ");
+            var ptrdni = /^[0-9]{8}[A-Z]{1}/;
+            while (!ptrdni.test(dni)) {
+                alert("DNI invalido");
+                var dni = prompt("DNI: ");
+            }
+            return dni;
+        }
+
+        function valPss() {
+            var pss=prompt("Contraseña:");
+            var ptrPss = /^[a-zA-Z0-9!@$%^&*]{6,16}$/
+            while(!ptrPss.test(pss)){
+                alert("contraseña invalida");
+                if(pss>16 && pss<6){
+                    alert("La contraseña debe tener entre 6 y 16 caracteres.");
+                }else if(!ptrPss.test(pss)){
+                    alert("La contraseña debe tener caracteres especiales.");
+                }
+                var pss=prompt("Contraseña: ");
+            }
+            return pss;
+        }
+
     </script>
 
 </head>
