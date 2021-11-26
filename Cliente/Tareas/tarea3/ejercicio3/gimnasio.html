@@ -1,6 +1,29 @@
 <!DOCTYPE html>
 <html>
+
 <head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        function UsuarioWeb(login, pss,nombre,dni) {
+            this.login=login;
+            this.pss=pss;
+            this.nombre=nombre;
+            this.dni=dni;
+        }
+        function UsuarioAdministrador(crearAlta, crearTabla) {
+            this.crearAlta = crearAlta;
+            this.crearTabla = crearTabla;
+        }
+        function UsuarioCliente(peso,altura,edad,sexo,imc,fmc) {
+            this.peso=peso;
+            this.altura=altura;
+            this.edad=edad;
+            this.sexo=sexo;
+            this.imc=imc;
+            this.fmc=fmc;
+        }
+    </script>
 
 </head>
 
@@ -13,7 +36,7 @@
         <input type="text" name="login" id="login"><br />
         <label for="password">Contraseña:&nbsp;</label>
         <input type="text" name="password" id="password"><br />
-        <input type="button" onclick="logIn()" value="Entrar">
+        <input type="button" onclick="logear()" value="Entrar">
     </form>
 
     <script>
@@ -27,8 +50,5 @@
     
     var alumno1.prototype= new usuarioWeb(dcds,cdasc,dfd,dscdsc);
     
-    function Administrador(crearAlta, crearTabla){
-        this.crearAlta=crearAlta;
-        this.crearTabla=crearTabla;
-    }
+    
 -->

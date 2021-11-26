@@ -25,6 +25,58 @@
                 this.salidaHora.setMinutes(horaSalida);
             }
         }
+
+        function newAeropuerto() {
+            var nombre = document.getElementById("nameAero").value;
+            var ciudad = document.getElementById("cityAero").value;
+            var numVuelos = document.getElementById("vuelosDiarios").value;
+
+
+            var tabla = document.getElementById("tablaAeropuertos");
+            if ((nombre != "") && (ciudad != "") && (numVuelos != "")) {
+                var aerop = new Aeropuerto(nombre, ciudad, numVuelos);
+                var filaAerop = document.createElement("tr");
+                var cadenaBoton = "<input type='buton' value='Modificar vuelos' id='boton1' onclick='modificar(this)'>";
+                filaAerop.innerHTML += "<td>" + aerop.nombre + "</td>";
+                filaAerop.innerHTML += "<td>" + aerop.ciudad + "</td>";
+                filaAerop.innerHTML += "<td>" + aerop.numVuelos + "</td>";
+                filaAerop.innerHTML += "<td>" + cadenaBoton + "</td>";
+
+                tabla.appendChild(filaAerop);
+            }
+        }
+
+        function newVuelo() {
+            var codigo = document.getElementById("codVuelo").value;
+            var horaLlegadaVuelo = document.getElementById("horaLlegadaVuelo").value;
+            var minLlegadaVuelo = document.getElementById("minLlegadaVuelo").value;
+            var llegadaHora=horaLlegadaVuelo+":"+minLlegadaVuelo;
+
+
+            var horaSalidaVuelo = document.getElementById("horaSalidaVuelo").value;
+            var minSalidaVuelo = document.getElementById("minSalidaVuelo").value;
+            var salidaHora = horaSalidaVuelo+":";
+
+
+            var tabla = document.getElementById("tablaAeropuertos");
+            if ((codigo != "") && (horaLlegadaVuelo != "") && (minLlegadaVuelo != "")&& (horaSalidaVuelo != "") && (minSalidaVuelo != "")) {
+                var vuelo = new Vuelo(codigo, llegadaHora, salidaHora);
+                var filaVuelo = document.createElement("tr");
+                var cadenaBoton = "<input type='buton' value='Modificar vuelos' id='boton1' onclick='modificar(this)'>";
+                filaAerop.innerHTML += "<td>" + vuelo.codigo + "</td>";
+                filaAerop.innerHTML += "<td>" + vuelo.llegadaHora + "</td>";
+                filaAerop.innerHTML += "<td>" + vuelo.salidaHora + "</td>";
+                filaAerop.innerHTML += "<td>" + cadenaBoton + "</td>";
+
+                tabla.appendChild(filaAerop);
+            }
+        }
+
+        function modificar(celda) {
+            var nuevoValor = prompt("Nuevo número:");
+            celda.parentNode.previousSibling.textContent = nuevoValor;
+        }
+
     </script>
 </head>
 
@@ -35,8 +87,8 @@
         <input type="text" name="nameAero" id="nameAero"></br>
         <label for="cityAero">Ciudad:&nbsp;</label>
         <input type="text" name="cityAero" id="cityAero"></br>
-        <label for="vuelosDiarios">Nombre:&nbsp;</label>
-        <input type="text" name="cityAero" id="cityAero"></br>
+        <label for="vuelosDiarios">Numero de vuelos diarios:&nbsp;</label>
+        <input type="text" name="vuelosDiarios" id="vuelosDiarios"></br>
 
         <input type="button" onclick="newAeropuerto()" value="Crear aeropuerto">
     </form>
@@ -54,18 +106,18 @@
 
     <!--Formulario para añadir vuelos-->
     <form id="vueloForm">
-        <label for="nameVuelo">Código:&nbsp;</label>
-        <input type="text" name="nameVuelo" id="nameVuelo"></br>
+        <label for="codVuelo">Código:&nbsp;</label>
+        <input type="text" name="codVuelo" id="codVuelo"></br>
 
         <label for="horaLlegadaVuelo">Hora de llegada:&nbsp;</label>
         <input type="text" name="horaLlegadaVuelo" id="horaLlegadaVuelo"></br>
         <label for="minLlegadaVuelo">Minutos de llegada:&nbsp;</label>
         <input type="text" name="minLlegadaVuelo" id="minLlegadaVuelo"></br>
-        
+
         <label for="horaSalidaVuelo">Hora de Salida:&nbsp;</label>
         <input type="text" name="horaSalidaVuelo" id="horaSalidaVuelo"></br>
-        <label for="minLlegadaVuelo">Minutos de llegada:&nbsp;</label>
-        <input type="text" name="minLlegadaVuelo" id="minLlegadaVuelo"></br>
+        <label for="minSalidaVuelo">Minutos de llegada:&nbsp;</label>
+        <input type="text" name="minSalidaVuelo" id="minSalidaVuelo"></br>
 
         <label for="vuelosDiarios">Nombre:&nbsp;</label>
         <input type="text" name="cityAero" id="cityAero"></br>
