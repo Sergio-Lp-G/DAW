@@ -1,7 +1,7 @@
 body {
     min-height: 1000px;
-    background: url("../recursos/metal_pattern_1280x800_2673.jpg") center top repeat-y;
-    background-size: 100% auto;
+    /* background: url("../recursos/metal_pattern_1280x800_2673.jpg") center top repeat-y;
+    background-size: 100% auto; */
 }
 
 header {
@@ -50,9 +50,8 @@ header {
     width: auto;
 }
 
-#login img{
+#login img {
     resize: horizontal;
-    
 }
 
 #logNav nav #navPrin {
@@ -93,12 +92,7 @@ header {
     left: 5px;
 }
 
-
-aside{
-
-}
-
-
+aside {}
 
 section {
     display: flex;
@@ -109,12 +103,13 @@ section {
 
 footer {
     display: flex;
-    
     left: 0px;
     bottom: 0px;
     width: 100%;
     min-height: 200px;
-    background-image: url("../recursos/footerGim_largo.jpg");
+    /* background-image: url("../recursos/footerGim_largo.jpg"); */
+    background: url("../recursos/metal_pattern_1280x800_2673.jpg") center top repeat-y;
+    background-size: 100% auto;
     /*agregamos una imagen de fondo */
     background-size: cover;
     /*Reescalar la imagen para ocupar todo el footer */
