@@ -24,6 +24,7 @@ header {
 }
 
 #logo img {
+    resize: both;
     width: 170px;
     height: auto;
     top: 10%;
@@ -91,6 +92,13 @@ header {
     position: absolute;
     left: 5px;
 }
+
+
+aside{
+
+}
+
+
 
 section {
     display: flex;

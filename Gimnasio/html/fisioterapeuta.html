@@ -10,60 +10,99 @@
 
 <body onload="horarioFisio()" style="width: 1000px;">
 
-    
-    <table border="1" id="tableFis">
-        <tr>
-            <td></td>
-            <td>Lunes</td>
-            <td>Martes</td>
-            <td>Miercoles</td>
-            <td>Jueves</td>
-            <td>Viernes</td>
-        </tr>
-        <tr class="row" id="fisio1">
-            <td class="hola">10:00 - 10:45</td>
-        </tr>
-        <tr class="row" id="fisio2">
-            <td>10:45 - 11:30</td>
-        </tr>
-        <tr class="row" id="fisio3">
-            <td>11:30 - 12:15</td>
-        </tr>
-        <tr class="row" id="fisio4">
-            <td>12:15 - 13:00</td>
-        </tr>
-        <tr class="row" id="fisio5">
-            <td>13:00 - 13:45</td>
-        </tr>
-        <tr class="row" id="descanso">
-            <td>Descanso</td>
-        </tr>
-        <tr class="row" id="fisio6">
-            <td>17:00 - 17:45</td>
-        </tr>
-        <tr class="row" id="fisio7">
-            <td>17:45 - 18:30</td>
-        </tr>
-        <tr class="row" id="fisio8">
-            <td>18:30 - 19:15</td>
-        </tr>
-        <tr class="row" id="fisio9">
-            <td>19:15 - 20:00</td>
-        </tr>
-        <tr class="row" id="fisio10">
-            <td>20:00 - 20:45</td>
-        </tr>
-    </table>
-    <br><br>
+    <header>
+        <div id="banner">
+            <div id="logo">
+                <img src="../recursos/logotipo-brazo-de-gimnasio.png" alt="brazo izquierdo">
+            </div>
+            <div id="nombreGim">
+                <h1>MUSCLE UP</h1>
+            </div>
+
+        </div>
+    </header>
+
+    <div id="logNav">
+        <div id="login">
+            <a href="login.html"> <img src="../recursos/zapatilaGim.PNG" alt="LOGIN"> LOGIN</a>
+
+        </div>
+        <nav>
+            <ul id="navPrin">
+                <li> <a href="../html/home.html">Home</a> </li>
+                <li>Herramientas
+                    <ul id="navTools">
+                        <li><a href="../html/imcCalculadora.html">IMC</a></li>
+                        <li><a href="../html/fcmCalculadora.html">FCM</a></li>
+                    </ul>
+                </li>
+                <li><a href="fisioterapeuta.html">Fisios</a></li>
+                <li><a href="actividadSala.html">Actividades</a></li>
+            </ul>
+        </nav>
+    </div>
+    <hr>
+    <a id="back_to_top" class="right on" href="#header">
+        <span class="fa-stack">
+            <span class="arrow_carrot-up"></span>
+        </span>
+    </a>
+
     <div>
-        <form id="formulario" name="fisio" style="float: left; margin-left: 20px;">
-            <label for="fisio">FISIO:</label><br/>
-            <input type="radio" name="fisio" value="Tania">Tania<br/>
-            <input type="radio" name="fisio" value="Juan">Juan<br/>
-            <input type="radio" name="fisio" value="Marta">Marta<br/>
-            <input type="radio" name="fisio" value="Francisco">Francisco<br/>
-            <input type="button" id="boton2" value="Mostrar" onclick="resFisio()">
-        </form>
+        <table border="1" id="tableFis">
+            <tr>
+                <td></td>
+                <td>Lunes</td>
+                <td>Martes</td>
+                <td>Miercoles</td>
+                <td>Jueves</td>
+                <td>Viernes</td>
+            </tr>
+            <tr class="row" id="fisio1">
+                <td class="hola">10:00 - 10:45</td>
+            </tr>
+            <tr class="row" id="fisio2">
+                <td>10:45 - 11:30</td>
+            </tr>
+            <tr class="row" id="fisio3">
+                <td>11:30 - 12:15</td>
+            </tr>
+            <tr class="row" id="fisio4">
+                <td>12:15 - 13:00</td>
+            </tr>
+            <tr class="row" id="fisio5">
+                <td>13:00 - 13:45</td>
+            </tr>
+            <tr class="row" id="descanso">
+                <td>Descanso</td>
+            </tr>
+            <tr class="row" id="fisio6">
+                <td>17:00 - 17:45</td>
+            </tr>
+            <tr class="row" id="fisio7">
+                <td>17:45 - 18:30</td>
+            </tr>
+            <tr class="row" id="fisio8">
+                <td>18:30 - 19:15</td>
+            </tr>
+            <tr class="row" id="fisio9">
+                <td>19:15 - 20:00</td>
+            </tr>
+            <tr class="row" id="fisio10">
+                <td>20:00 - 20:45</td>
+            </tr>
+        </table>
+        <br><br>
+        <div>
+            <form id="formulario" name="fisio" style="float: left; margin-left: 20px;">
+                <label for="fisio">FISIO:</label><br />
+                <input type="radio" name="fisio" value="Tania">Tania<br />
+                <input type="radio" name="fisio" value="Juan">Juan<br />
+                <input type="radio" name="fisio" value="Marta">Marta<br />
+                <input type="radio" name="fisio" value="Francisco">Francisco<br />
+                <input type="button" id="boton2" value="Mostrar" onclick="resFisio()">
+            </form>
+        </div>
     </div>
 </body>
 
