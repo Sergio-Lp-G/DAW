@@ -7,6 +7,7 @@
     <script>
         var listaFisio = [];
         var listaMonitores = [];
+        //patrones para validar
         var ptrDni = /^[0-9]{8}[A-Z]{1}$/i;
         var ptrTel = /\d{9}/;
 
@@ -34,13 +35,15 @@
             var contador = 0;
             var nombre = prompt("Introduce el nombre");
             var dni;
-            do {
-                dni = prompt("Introduce el dni");
-            } while (!ptrDni.test(dni));
+            dni = prompt("Introduce el dni");
+            while (!ptrDni.test(dni)) {
+                dni = prompt("Introduce el dni válido");
+            };
             var telefono;
-            //do{
             telefono = prompt("Introduce el telefono");
-            //}while(!ptrDni.test(telefono));
+            while (!ptrTel.test(telefono)) {
+                telefono = prompt("Introduce un telefono válido");
+            };
             var fisio = new Fisio(nombre, dni, telefono);
             listaFisio.push(fisio);
         }
@@ -48,29 +51,31 @@
         function crearMonitor() {
             var nombre = prompt("Introduce el nombre");
             var dni;
-            do {
-                dni = prompt("Introduce el dni");
-            } while (!ptrDni.test(dni));
+            dni = prompt("Introduce el dni");
+            while (!ptrDni.test(dni)) {
+                dni = prompt("Introduce el dni válido");
+            };
             var telefono;
-            //do{
+
             telefono = prompt("Introduce el telefono");
-            //}while(!ptrDni.test(telefono));
+            while (!ptrTel.test(telefono)) {
+                telefono = prompt("Introduce un telefono válido");
+            };
             var monitor = new Fisio(nombre, dni, telefono);
             listaMonitores.push(monitor);
         }
 
         function listarFisio() {
             listaFisio.forEach(element => {
-                alert(element.nombre + " " + element.dni + " " + element.telefono);
+                alert("Fisio: " + element.nombre + ".\nDNI: " + element.dni + ".\nTelefono: " + element.telefono);
             });
         }
 
         function listarMonitor() {
             listaMonitor.forEach(element => {
-                alert(element.nombre + " " + element.dni + " " + element.telefono);
+                alert("Monitor: " + element.nombre + ".\nDNI: " + element.dni + ".\nTelefono: " + element.telefono);
             })
         }
-
     </script>
 </head>
 

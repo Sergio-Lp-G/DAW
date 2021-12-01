@@ -14,16 +14,32 @@
         }
 
         class Vuelo {
-            constructor(codigo, llegadaHora, salidaHora) {
+            constructor(codigo, horaLlegadaVuelo, minLlegadaVuelo, horaSalidaVuelo, minSalidaVuelo, modLlegada, modSalida) {
                 this.codigo = codigo;
                 this.llegadaHora = new Date();
-                this.llegadaHora.setHours(horaLlegada);
-                this.llegadaHora.setMinutes(minLlegada);
+                this.llegadaHora.setHours(horaLlegadaVuelo);
+                this.llegadaHora.setMinutes(minLlegadaVuelo);
 
                 this.salidaHora = new Date();
-                this.salidaHora.setHours(horaSalida);
-                this.salidaHora.setMinutes(horaSalida);
+                this.salidaHora.setHours(horaSalidaVuelo);
+                this.salidaHora.setMinutes(minSalidaVuelo);
+                this.modLlegada = function modificarLlegada(variacion) {
+                    this.llegadaHora = this.llegadaHora + variacion;
+                }
+                this.modSalida = function modificarSalida(variacion) {
+                    this.salidaHora = this.salidaHora + variacion;
+                }
             }
+        }
+
+        function modificarLlegada(celda) {
+            var nuevoValor = prompt("Variar llegada: (hh:mm)");
+            celda.parentNode.previousSibling.previousSibling.textContent = nuevoValor;
+        }
+
+        function modificarSalida(celda) {
+            var nuevoValor = prompt("Variar salida: (hh:mm)");
+            celda.parentNode.previousSibling.previousSibling.textContent = nuevoValor;
         }
 
         function newAeropuerto() {
@@ -47,37 +63,32 @@
         }
 
         function newVuelo() {
-            alert("alo");
             var codigo = document.getElementById("codVuelo").value;
-            var horaLlegada = document.getElementById("horaLlegadaVuelo").value;
-            var minLlegada = document.getElementById("minLlegadaVuelo").value;
-            var llegadaHora = horaLlegada + ":" + minLlegada;
-            var horaSalidaVuelo = document.getElementById("horaSalidaVuelo").value;
-            var minSalidaVuelo = document.getElementById("minSalidaVuelo").value;
-            var salidaHora = horaSalidaVuelo + ":" + minSalidaVuelo;
-            var tabla = document.getElementById("tablaAeropuertos");
-            alert(codigo+" "+llegadaHora+" "+salidaHora);
 
-            alert(codigo+" "+horaLlegadaVuelo+" "+minLlegadaVuelo+" "+ horaSalidaVuelo+" "+minSalidaVuelo);
+            var horaLlegadaVuelo = parseInt(document.getElementById("horaLlegadaVuelo").value);
+            var minLlegadaVuelo = parseInt(document.getElementById("minLlegadaVuelo").value);
+            var llegadaHora = horaLlegadaVuelo + ":" + minLlegadaVuelo;
+
+            var horaSalidaVuelo = parseInt(document.getElementById("horaSalidaVuelo").value);
+            var minSalidaVuelo = parseInt(document.getElementById("minSalidaVuelo").value);
+            var salidaHora = horaSalidaVuelo + ":" + minSalidaVuelo;
+
+            var tabla = document.getElementById("tablaVuelos");
 
             if ((codigo != "") && (horaLlegadaVuelo != "") && (minLlegadaVuelo != "") && (horaSalidaVuelo != "") && (minSalidaVuelo != "")) {
                 var vuelo = new Vuelo(codigo, llegadaHora, salidaHora);
                 var filaVuelo = document.createElement("tr");
-                var cadenaBoton = "<input type='buton' value='Modificar vuelos' id='boton1' onclick='modificar(this)'>";
+                var cadenaBoton1 = "<input type='buton' value='Modificar Llegada' id='boton1' onclick='modificarLlegada(this)'>";
+                var cadenaBoton2 = "<input type='buton' value='Modificar Salida' id='boton1' onclick='modificarSalida(this)'>";
                 filaVuelo.innerHTML += "<td>" + codigo + "</td>";
                 filaVuelo.innerHTML += "<td>" + llegadaHora + "</td>";
                 filaVuelo.innerHTML += "<td>" + salidaHora + "</td>";
-                filaVuelo.innerHTML += "<td>" + cadenaBoton + "</td>";
+                filaVuelo.innerHTML += "<td>" + cadenaBoton1 + "</td>";
+                filaVuelo.innerHTML += "<td>" + cadenaBoton2 + "</td>";
 
                 tabla.appendChild(filaVuelo);
             }
         }
-
-        function modificar(celda) {
-            var nuevoValor = prompt("Nuevo número:");
-            celda.parentNode.previousSibling.textContent = nuevoValor;
-        }
-
     </script>
 </head>
 
@@ -127,12 +138,14 @@
     </form>
 
     <!--Tabla para mostrar los aeropuertos -->
-    <table border="1" id="tablaAeropuertos">
+    <table border="1" id="tablaVuelos">
         <tr>
-            <th>Nombre</th>
-            <th>Ciudad</th>
-            <th>Número de vuelos</th>
-            <th>Incrementar número de vuelos</th>
+            <th>Código</th>
+            <th>Hora de Llegada</th>
+            <th>Hora de Salida</th>
+            <th>Modificar hora llegada</th>
+            <th>Modificar hora salida</th>
+
         </tr>
     </table><br>
     <hr>

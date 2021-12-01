@@ -5,6 +5,10 @@
     <title>Ejercicio 1. Colegio y alumno</title>
     <meta charset="UTF-8">
     <script>
+        //patrones para validar
+        var ptrDni = /^[0-9]{8}[A-Z]{1}$/i;
+        var ptrNom = /^[A-Aa-z]{8,40}$/i
+
         function Colegio(nombreIES, numeroAulas, numeroAlumno, modificarAlumnos) {
             this.nombreIES = nombreIES;
             this.numeroAulas = numeroAulas;
@@ -32,6 +36,10 @@
         function newColegio() {
             //alert("Hola");
             var nombreIES = document.getElementById("nombreCol").value;
+            if (nombreIES.length < 5) {
+                alert("Introduce un nombre válido");
+                nombreIES = "";
+            }
             var numeroAulas = document.getElementById("numeroAulas").value
             var numeroAlumno = document.getElementById("numeroAlumno").value;
             if ((nombreIES != "") && (numeroAulas != "") && (numeroAlumno != "")) {
@@ -53,6 +61,11 @@
         function modificarAlumno() {
             var nombre = document.getElementById("nombreAl").value;
             var dni = document.getElementById("dniAl").value;
+            if (!ptrDni.test(dni)) {
+                alert("Introduce el dni válido");
+                dni = "";
+            };
+
             var notaMedia = document.getElementById("notaMedia").value;
             if ((nombre != "") && (dni != "") && (notaMedia != "")) {
                 var alumno = new Alumno(dni, nombre, notaMedia);
@@ -63,11 +76,11 @@
                 tabla.appendChild(filaAlumno);
             }
         }
+
         function modificarNota(celda) {
             var alumno = new Alumno();
             alumno.modificarNota(celda);
         }
-
     </script>
 </head>
 

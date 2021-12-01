@@ -18,6 +18,11 @@
         function UsuarioAdministrador(crearAlta, crearTabla) {
             this.crearAlta = crearAlta;
             this.crearTabla = crearTabla;
+
+            this.check = function(id) {
+                alert("Bienvenido " + listaAdmin[id].nombre + ". Eres un administrador");
+
+            }
         }
 
         function UsuarioCliente(peso, altura, edad, sexo, imc, fmc) {
@@ -27,6 +32,10 @@
             this.sexo = sexo;
             this.imc = imc;
             this.fmc = fmc;
+
+            this.check = function(id) {
+                alert("Bienvenido " + listaCliente[id].nombre + ". Eres un cliente");
+            }
         }
 
         function newAdmin() {
@@ -63,8 +72,9 @@
 
         function valDNI() {
             var dni = prompt("DNI: ");
-            var ptrdni = /^[0-9]{8}[A-Z]{1}/;
-            while (!ptrdni.test(dni)) {
+            var ptrDni = /^[0-9]{8}[A-Z]{1}$/i;
+
+            while (!ptrDni.test(dni)) {
                 alert("DNI invalido");
                 var dni = prompt("DNI: ");
             }
@@ -73,21 +83,41 @@
 
         function valPss() {
             var pss = prompt("Contraseña:");
-            var ptrPss = /^[a-zA-Z0-9!@$%^&*]{6,16}$/
-            while (!ptrPss.test(pss)) {
-                alert("contraseña invalida");
-                if (pss > 16 && pss < 6) {
-                    alert("La contraseña debe tener entre 6 y 16 caracteres.");
-                } else if (!ptrPss.test(pss)) {
-                    alert("La contraseña debe tener caracteres especiales.");
-                }
+            if (pss.length < 8) {
+                alert("La contraseña debe tener entre 6 y 16 caracteres.");
+                var pss = prompt("Contraseña: ");
+            }
+            if (pss.search(/[a-z]/i) < 0) {
+                alert("La contraseña debe contener letras.");
+                var pss = prompt("Contraseña: ");
+            }
+            if (pss.search(/[0-9]/) < 0) {
+                alert("La contraseña debe contener números.");
                 var pss = prompt("Contraseña: ");
             }
             return pss;
         }
 
         function logear() {
+            alert("Comprobando");
+            buscarAdmin();
+            buscarClient();
+        }
 
+        function buscarClient() {
+            listaCliente.forEach(element => {
+                if (document.getElementById("login").value == element.login && document.getElementById("password").value == element.pss) {
+                    element.check(login);
+                }
+            })
+        }
+
+        function buscarAdmin() {
+            listaAdmin.forEach(element => {
+                if (document.getElementById("login").value == element.login && document.getElementById("password").value == element.pss) {
+                    element.check(login);
+                }
+            })
         }
     </script>
 
