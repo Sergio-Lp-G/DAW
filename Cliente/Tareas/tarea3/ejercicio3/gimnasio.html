@@ -6,16 +6,20 @@
     <title></title>
     <script>
         var listaAdmin = [];
+        var listaCliente = [];
+
         function UsuarioWeb(login, pss, nombre, dni) {
             this.login = login;
             this.pss = pss;
             this.nombre = nombre;
             this.dni = dni;
         }
+
         function UsuarioAdministrador(crearAlta, crearTabla) {
             this.crearAlta = crearAlta;
             this.crearTabla = crearTabla;
         }
+
         function UsuarioCliente(peso, altura, edad, sexo, imc, fmc) {
             this.peso = peso;
             this.altura = altura;
@@ -26,16 +30,36 @@
         }
 
         function newAdmin() {
-            alert("Está creando un nuevo administrador.");
+            alert("Está creando un nuevo administrador. Introduzca los valores pedidos.");
             var nombre = prompt("Nombre: ");
-            var dni = valDNI();
+            var dni = valDNI("DNI: ");
             var login = prompt("Nick: ");
-            var pss = valPss();
+            var pss = valPss("Contraseña: ");
 
             UsuarioAdministrador.prototype = new UsuarioWeb(login, pss, nombre, dni);
             var admin = new UsuarioAdministrador(crearAlta, crearTabla);
             listaAdmin.push(admin);
         }
+
+        function newCliente() {
+            alert("Está creando un nuevo cliente. Introduzca los valores pedidos.");
+            var nombre = prompt("Nombre: ");
+            var dni = valDNI("DNI: ");
+            var login = prompt("Nick: ");
+            var pss = valPss("Contraseña: ");
+
+            var peso = prompt("Peso: ");
+            var altura = prompt("Altura: ");
+            var edad = prompt("Edad: ");
+            var sexo = prompt("Sexo: ");
+            var imc = prompt("IMC: ");
+            var fcm = prompt("FCM: ")
+
+            UsuarioCliente.prototype = new UsuarioWeb(login, pss, nombre, dni);
+            var cliente = new UsuarioCliente(peso, altura, edad, sexo, imc, fmc);
+            listaCliente.push(cliente);
+        }
+
 
         function valDNI() {
             var dni = prompt("DNI: ");
@@ -48,20 +72,23 @@
         }
 
         function valPss() {
-            var pss=prompt("Contraseña:");
+            var pss = prompt("Contraseña:");
             var ptrPss = /^[a-zA-Z0-9!@$%^&*]{6,16}$/
-            while(!ptrPss.test(pss)){
+            while (!ptrPss.test(pss)) {
                 alert("contraseña invalida");
-                if(pss>16 && pss<6){
+                if (pss > 16 && pss < 6) {
                     alert("La contraseña debe tener entre 6 y 16 caracteres.");
-                }else if(!ptrPss.test(pss)){
+                } else if (!ptrPss.test(pss)) {
                     alert("La contraseña debe tener caracteres especiales.");
                 }
-                var pss=prompt("Contraseña: ");
+                var pss = prompt("Contraseña: ");
             }
             return pss;
         }
 
+        function logear() {
+
+        }
     </script>
 
 </head>

@@ -1,10 +1,85 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title></title>
-    </head>
-    <body>
-        
-    </body>
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        var listaFisio = [];
+        var listaMonitores = [];
+        var exDni = /^[0-9]{8}[A-Z]{1}$/i;
+        var exTel = /\d{9}/;
+
+        function crearFisio() {
+            var contador = 0;
+            var nombre = prompt("Introduce el nombre");
+            var dni;
+            do {
+                dni = prompt("Introduce el dni");
+            } while (!exDni.test(dni));
+            var telefono;
+            //do{
+            telefono = prompt("Introduce el telefono");
+            //}while(!exDni.test(telefono));
+            var fisio = new Fisio(nombre, dni, telefono);
+            listaFisio.push(fisio);
+        }
+
+        function crearMonitor() {
+            var nombre = prompt("Introduce el nombre");
+            var dni;
+            do {
+                dni = prompt("Introduce el dni");
+            } while (!exDni.test(dni));
+            var telefono;
+            //do{
+            telefono = prompt("Introduce el telefono");
+            //}while(!exDni.test(telefono));
+            var monitor = new Fisio(nombre, dni, telefono);
+            listaMonitores.push(monitor);
+        }
+
+        function listarFisio() {
+            listaFisio.forEach(element => {
+                alert(listaFisio[i].nombre + " " + listaFisio[i].dni + " " + listaFisio[i].telefono);
+            });
+        }
+
+        function listarMonitor() {
+            listaMonitor.forEach(element => {
+                alert(listaMonitor[i].nombre + " " + listaMonitor[i].dni + " " + listaMonitor[i].telefono);
+            })
+        }
+
+        class Empleado {
+            constructor(nombre, dni, telefono) {
+                this.nombre = nombre;
+                this.dni = dni;
+                this.telefono = telefono;
+            }
+        }
+
+        class Fisio extends Empleado {
+            constructor(nombre, dni, telefono) {
+                super(nombre, dni, telefono);
+            }
+        }
+
+        class Monitor extends Empleado {
+            constructor(nombre, dni, telefono) {
+                super(nombre, dni, telefono);
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <input type="button" value="Crear fisio" onclick="crearFisio()"><br>
+    <input type="button" value="Crear monitor" onclick="crearMonitor()"><br>
+    <input type="button" value="Listar fisios" onclick="listarFisio()"><br>
+    <input type="button" value="Listar monitor" onclick="listarMonitor()"><br>
+    <script>
+    </script>
+</body>
+
 </html>
