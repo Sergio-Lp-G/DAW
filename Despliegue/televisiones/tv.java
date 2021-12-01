@@ -19,13 +19,14 @@ public class Tv {
         this.configurar= configurar;
     }
 
-    public void info(){
+    public void apagar(){
         this.estado=false;
         return estado;
     }
 
-    public void a(){
-        
+    public void encender(){
+        this.estado=true;
+        return estado;
     }
 
     public void a(){
