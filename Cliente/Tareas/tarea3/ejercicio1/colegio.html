@@ -5,74 +5,69 @@
     <title>Ejercicio 1. Colegio y alumno</title>
     <meta charset="UTF-8">
     <script>
-        function Colegio(nombreIES, numeroAulas, numeroAlumno) {
-            this.nombre = nombreIES;
+        function Colegio(nombreIES, numeroAulas, numeroAlumno, modificarAlumnos) {
+            this.nombreIES = nombreIES;
             this.numeroAulas = numeroAulas;
             this.numeroAlumno = numeroAlumno;
             //modificar el numero de alumnos
-            // this.modificarAlumnos() = function(variar) {
-            //     this.numeroAlumno = numeroAulas + variar;
-            // }
+            this.modificarAlumnos = function modifiColegio(celda) {
+                // this.numeroAlumno = numeroAulas + variar;
+                var nuevoValor = prompt("Nuevo número:");
+                celda.parentNode.previousSibling.textContent = nuevoValor;
+            }
         }
 
-        function Alumno(dni, nombre, notaMedia) {
+        function Alumno(dni, nombre, notaMedia, modificarNota) {
             this.dni = dni;
             this.nombre = nombre;
             this.notaMedia = notaMedia;
+            //modificar la nota del alumno
+            this.modificarNota = function modifiNota(celda) {
+                // this.numeroAlumno = numeroAulas + variar;
+                var nuevoValor = prompt("Nuevo nota:");
+                celda.parentNode.previousSibling.textContent = nuevoValor;
+            }
         }
 
         function newColegio() {
-            alert("Hola");
+            //alert("Hola");
             var nombreIES = document.getElementById("nombreCol").value;
             var numeroAulas = document.getElementById("numeroAulas").value
             var numeroAlumno = document.getElementById("numeroAlumno").value;
-            alert(nombreIES +" "+numeroAulas+" "+numeroAlumno);
-            alert("alo");
-            
-            //var colegio = new Colegio(nombreIES,numeroAulas, numeroAlumno,modificarAlumnos);
-            //alert(nombreIES);
             if ((nombreIES != "") && (numeroAulas != "") && (numeroAlumno != "")) {
+                var colegio = new Colegio(nombreIES, numeroAulas, numeroAlumno);
                 var tabla = document.getElementById("tablaColegio");
-                var colegio = new Colegio(nombreIES,numeroAulas, numeroAlumno);
                 var filaColegio = document.createElement("tr");
-                var cadenaBoton = "<input type='buton' value='Variar alumnos' id='boton1' onclick='modificar(this)'>";
-                // filaColegio.innerHTML += "<td>" + colegio.nombre + "</td>";
-                // filaColegio.innerHTML += "<td>" + colegio.numeroAlumno + "</td>";
-                // filaColegio.innerHTML += "<td>" + colegio.numeroAulas + "</td>";
-                filaColegio.innerHTML += "<td>" + colegio.nombre + "</td>";
-                filaColegio.innerHTML += "<td>" + colegio.numeroAlumno + "</td>";
-                filaColegio.innerHTML += "<td>" + colegio.numeroAulas + "</td>";
-                filaColegio.innerHTML += "<td>"+cadenaBoton+"</td>";
-
+                var cadenaBoton = "<input type='button' value='Variar alumnos' id='boton1' onclick='modificar(this)'>";
+                filaColegio.innerHTML += "<td>" + nombreIES + "</td><td>" + numeroAlumno + "</td><td>" + numeroAulas + "</td><td>" + cadenaBoton + "</td>";
                 tabla.appendChild(filaColegio);
             }
 
         }
 
         function modificar(celda) {
-            var nuevoValor = prompt("Nuevo número:");
-            celda.parentNode.previousSibling.textContent = nuevoValor;
-
+            var colegio = new Colegio();
+            colegio.modificarAlumnos(celda);
         }
 
-        function newAlumno() {
+        function modificarAlumno() {
             var nombre = document.getElementById("nombreAl").value;
             var dni = document.getElementById("dniAl").value;
-            var nota = document.getElementById("notaMedia").value;
-
-            var tabla = document.getElementById("tablaAlumno");
-            if ((nombre != "") && (dni != "") && (nota != "")) {
-                var alumno = new Alumno(dni, nombre, nota);
+            var notaMedia = document.getElementById("notaMedia").value;
+            if ((nombre != "") && (dni != "") && (notaMedia != "")) {
+                var alumno = new Alumno(dni, nombre, notaMedia);
+                var tabla = document.getElementById("tablaAlumno");
                 var filaAlumno = document.createElement("tr");
-                var cadenaBoton = "<input type='buton' value='Modificar nota' id='boton1' onclick='modificar(this)'>";
-                filaAlumno.innerHTML += "<td>" + alumno.dni + "</td>";
-                filaAlumno.innerHTML += "<td>" + alumno.nombre + "</td>";
-                filaAlumno.innerHTML += "<td>" + alumno.notaMedia + "</td>";
-                filaAlumno.innerHTML += "<td>"+cadenaBoton+"</td>";
-
+                var cadenaBoton = "<input type='button' value='Modificar nota' id='boton1' onclick='modificarNota(this)'>";
+                filaAlumno.innerHTML += "<td>" + dni + "</td><td>" + nombre + "</td><td>" + notaMedia + "</td><td>" + cadenaBoton + "</td>";
                 tabla.appendChild(filaAlumno);
             }
         }
+        function modificarNota(celda) {
+            var alumno = new Alumno();
+            alumno.modificarNota(celda);
+        }
+
     </script>
 </head>
 
@@ -81,11 +76,11 @@
     <!--Formulario para crear colegio-->
     <form id="formColegio">
         <label for="nombreCol">Nombre:&nbsp;</label>
-        <input type="text" name="nombreCol" id="nombreCol"><br/>
+        <input type="text" name="nombreCol" id="nombreCol"><br />
         <label for="numeroAulas">Aulas:&nbsp;</label>
-        <input type="number" name="numeroAulas" id="numeroAulas"><br/>
+        <input type="number" name="numeroAulas" id="numeroAulas"><br />
         <label for="numeroAlumno">Capacidad:&nbsp;</label>
-        <input type="number" name="numeroAlumno" id="numeroAlumno"><br/>
+        <input type="number" name="numeroAlumno" id="numeroAlumno"><br />
         <input type="button" onclick="newColegio()" value="Enviar">
     </form>
     <!--Tabla para mostrar los colegios-->
@@ -101,12 +96,12 @@
     <!--Formulario para crear alumno-->
     <form id="formAlumno">
         <label for="nombreAl">Nombre:&nbsp;</label>
-        <input type="text" name="nombreAl" id="nombreAL"><br/>
+        <input type="text" name="nombreAl" id="nombreAl"><br />
         <label for="dniAl">DNI:&nbsp;</label>
-        <input type="text" name="dniAl" id="dniAl"><br/>
+        <input type="text" name="dniAl" id="dniAl"><br />
         <label for="notaMedia">Nota media:&nbsp;</label>
-        <input type="float" name="notaMedia" id="notaMedia"><br/>
-        <input type="button" onclick="newAlumno();" value="Enviar">
+        <input type="number" name="notaMedia" id="notaMedia"><br />
+        <input type="button" onclick="modificarAlumno()" value="Enviar">
     </form>
 
     <!--Tabla para mostrar los alumnos-->

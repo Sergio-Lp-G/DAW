@@ -47,28 +47,29 @@
         }
 
         function newVuelo() {
+            alert("alo");
             var codigo = document.getElementById("codVuelo").value;
-            var horaLlegadaVuelo = document.getElementById("horaLlegadaVuelo").value;
-            var minLlegadaVuelo = document.getElementById("minLlegadaVuelo").value;
-            var llegadaHora=horaLlegadaVuelo+":"+minLlegadaVuelo;
-
-
+            var horaLlegada = document.getElementById("horaLlegadaVuelo").value;
+            var minLlegada = document.getElementById("minLlegadaVuelo").value;
+            var llegadaHora = horaLlegada + ":" + minLlegada;
             var horaSalidaVuelo = document.getElementById("horaSalidaVuelo").value;
             var minSalidaVuelo = document.getElementById("minSalidaVuelo").value;
-            var salidaHora = horaSalidaVuelo+":";
-
-
+            var salidaHora = horaSalidaVuelo + ":" + minSalidaVuelo;
             var tabla = document.getElementById("tablaAeropuertos");
-            if ((codigo != "") && (horaLlegadaVuelo != "") && (minLlegadaVuelo != "")&& (horaSalidaVuelo != "") && (minSalidaVuelo != "")) {
+            alert(codigo+" "+llegadaHora+" "+salidaHora);
+
+            alert(codigo+" "+horaLlegadaVuelo+" "+minLlegadaVuelo+" "+ horaSalidaVuelo+" "+minSalidaVuelo);
+
+            if ((codigo != "") && (horaLlegadaVuelo != "") && (minLlegadaVuelo != "") && (horaSalidaVuelo != "") && (minSalidaVuelo != "")) {
                 var vuelo = new Vuelo(codigo, llegadaHora, salidaHora);
                 var filaVuelo = document.createElement("tr");
                 var cadenaBoton = "<input type='buton' value='Modificar vuelos' id='boton1' onclick='modificar(this)'>";
-                filaAerop.innerHTML += "<td>" + vuelo.codigo + "</td>";
-                filaAerop.innerHTML += "<td>" + vuelo.llegadaHora + "</td>";
-                filaAerop.innerHTML += "<td>" + vuelo.salidaHora + "</td>";
-                filaAerop.innerHTML += "<td>" + cadenaBoton + "</td>";
+                filaVuelo.innerHTML += "<td>" + codigo + "</td>";
+                filaVuelo.innerHTML += "<td>" + llegadaHora + "</td>";
+                filaVuelo.innerHTML += "<td>" + salidaHora + "</td>";
+                filaVuelo.innerHTML += "<td>" + cadenaBoton + "</td>";
 
-                tabla.appendChild(filaAerop);
+                tabla.appendChild(filaVuelo);
             }
         }
 
@@ -119,10 +120,10 @@
         <label for="minSalidaVuelo">Minutos de llegada:&nbsp;</label>
         <input type="text" name="minSalidaVuelo" id="minSalidaVuelo"></br>
 
-        <label for="vuelosDiarios">Nombre:&nbsp;</label>
-        <input type="text" name="cityAero" id="cityAero"></br>
+        <label for="vuelosDiarios">Vuelos diarios:&nbsp;</label>
+        <input type="text" name="num" id="cityAero"></br>
 
-        <input type="button" onclick="newAeropuerto()" value="Crear aeropuerto">
+        <input type="button" onclick="newVuelo()" value="Crear vuelo">
     </form>
 
     <!--Tabla para mostrar los aeropuertos -->
