@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Pre Examen</title>
+    <meta charset="utf-8">
+    <script>
+        var alumnos = [];
+        function Persona(nombre, dni, edad) {
+            this.nombre = nombre;
+            this.dni = dni;
+            this.edad = edad;
+            this.mostrarInfo = function (nombre, dni, edad) {
+                alert(nombre + " " + dni + " " + edad);
+            }
+        }
+
+        function Alumno(instituto, asignatura) {
+            this.instituto = instituto;
+            this.asignatura = asignatura;
+        }
+
+        function newAlumno() {
+            var nombre = prompt("Indique el nombre del alumno");
+            var dni = prompt("Indique el dni ");
+            var edad = prompt("Edad del alumno");
+
+            var instituto = prompt("Instituto:");
+            var asignatura = prompt("Asignatira:");
+
+            Persona.prototype = new Alumno(nombre, dni, edad);
+            var alumno1 = new Alumno(instituto, asignatura);
+
+            alumnos.push(alumno1);
+        }
+
+        function mostrarAlumnos() {
+            alumnos.forEach(element => {
+                alert("Alumno " + element.nombre);
+            });
+        }
+    </script>
+</head>
+
+<body>
+    <input type="button" name="bttNewAlumno" id="bttNewAlumno" value="Nuevo Alumno">
+    <input type="button" name="bttMostrar" id="bttMostrar" value="Mostrar alumno">
+
+    <script>
+        document.getElementById("bttNewAlumno").addEventListener("click", newAlumno);
+        document.getElementById("bttMostrar").addEventListener("click", Alumno.toString);
+    </script>
+</body>
+
+</html>
