@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+           
+    <meta charset="utf-8">
+            <title>Ejercicio 3 - Enlaces</title>
+       
+    <script>
+        function prepararEnlaces() {
+            var paginas = ['google', 'hotmail', 'msn', 'unizar'];
+            var c = document.getElementById('container');
+            var cadena = "<ul>";
+            for (i = 0; i < paginas.length; i++) {
+                cadena += "<li>http://www." + paginas[i] + ".com</li>";
+            }
+            cadena += "</ul>";
+            c.innerHTML = cadena;
+            crearEnlaces();
+        }
+        function crearEnlaces() {
+            // …            
+        } 
+    </script>
+</head>
+
+   
+
+<body onload="prepararEnlaces()">
+            <h1>Ejercicio de enlaces</h1>
+            <div id="container"></div>
+        </body>
+
+</html>

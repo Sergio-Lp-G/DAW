@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        var listArticulo = [];
+        class Articulo {
+            constructor(codigo, nombre, estanteria, precio) {
+                this.codigo = codigo;
+                this.nombre = nombre;
+                this.estanteria = estanteria;
+                this.precio = precio;
+                this.mostrarInfo = function (codigo, nombre, estanteria, precio) {
+                    alert("El código " + codigo + " corresponde al producto " + nombre + ".\n Está ubicado en la estanteria " + estanteria + ".\n Tiene un precio de " + precio);
+                }
+            }
+        }
+
+        class ProductoFresco {
+            constructor(codigo, nombre, estanteria, precio, fechaRecepcion, duracion) {
+                this.codigo = codigo;
+                this.nombre = nombre;
+                this.estanteria = estanteria;
+                this.precio = precio;
+                this.fechaRecepcion = new Date();
+
+                this.duracion = duracion;
+            }
+        }
+
+        function newFresco() {
+            var codigo = document.getElementById("codigo").value;
+            var nombre = document.getElementById("nombre").value;
+            var estanteria = document.getElementById("estanteria").value;
+            var precio = document.getElementById("precio").value;
+            var fechaRecepcion = document.getElementById("recepcion").value;
+
+            var duracion = document.getElementById("duracion").value;
+
+            Articulo.prototype = new ProductoFresco(codigo, nombre, estanteria, precio);
+            var articulo1 = new ProductoFresco(fechaRecepcion, duracion);
+            listArticulo.push(articulo1);
+
+            var tabla = document.getElementById("tablaProductos");
+
+            if ((codigo != "") && (nombre != "")) {
+
+                var filaArt = document.createElement("tr");
+                filaArt.innerHTML += "<td>" + codigo + "</td>";
+                filaArt.innerHTML += "<td>" + nombre + "</td>";
+                filaArt.innerHTML += "<td>" + estanteria + "</td>";
+                filaArt.innerHTML += "<td>" + precio + "</td>";
+                filaArt.innerHTML += "<td>" + fechaRecepcion + "</td>";
+                filaArt.innerHTML += "<td>" + duracion + "</td>";
+
+                tabla.appendChild(filaArt);
+            }
+
+
+        }
+
+        function buscar() {
+            var codigo = document.getElementById("codigo").value;
+
+            listArticulo.forEach(arti => {
+                if(arti.codigo==codigo){
+                    alert("El código " + codigo + " corresponde al producto " + nombre + ".\n Está ubicado en la estanteria " + estanteria + ".\n Tiene un precio de " + precio);
+                    Articulo.mostrarInfo;
+                }
+            });
+        }
+
+    </script>
+</head>
+
+<body>
+    <!--Formulario para añadir aeropuertos-->
+
+    <form id="prodFrescoForm">
+        <h1>Recepcion de producto.</h1>
+        <label for="codigo">Código:&nbsp;</label>
+        <input type="text" name="codigo" id="codigo"></br>
+
+        <label for="nombre">Nombre:&nbsp;</label>
+        <input type="text" name="nombre" id="nombre"></br>
+
+        <label for="estanteria">Estanteria:&nbsp;</label>
+        <input type="text" name="estanteria" id="estanteria"></br>
+
+        <label for="precio">Precio:&nbsp;</label>
+        <input type="text" name="precio" id="precio"></br>
+
+        <label for="recepcion">Fecha de Recepcion:&nbsp;</label>
+        <input type="date" name="recepcion" id="recepcion"></br>
+
+        <label for="duracion">Duracion:&nbsp;</label>
+        <input type="text" name="duracion" id="duracion"></br>
+
+        <input type="button" onclick="newFresco()" value="Cargar Producto Fresco">
+        <hr>
+        <h1>Busqueda de producto.</h1>
+        <input type="button" onclick="buscar()" value="Buscar Articulo"></br>
+    </form>
+    <hr>
+    <!--Tabla para mostrar los productos -->
+    <table border="1" id="tablaProductos">
+        <!--codigo, nombre, estanteria, precio, fechaRecepcion, duracion -->
+        <tr>
+            <th>Código</th>
+            <th>Nombre</th>
+            <th>Estanteria</th>
+            <th>Precio</th>
+            <th>Recepcionado el</th>
+            <th>Caduca en (días)</th>
+        </tr>
+    </table><br>
+    <hr>
+
+</body>
+
+</html>

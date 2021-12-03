@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 1 - lista</title>   
+    <script>
+
+        function Cliente(nombre, edad, telefono) {
+            this.nombre = nombre;
+            this.edad = edad;
+            this.telefono = telefono;
+        }
+
+        function newCliente() {
+            var nombre = document.getElementById("nombre").value;
+            var edad = document.getElementById("edad").value;
+            var telefono = document.getElementById("telefono").value;
+
+            var cliente1 = new Cliente(nombre, edad, telefono);
+
+            var listElement = document.createElement("li");
+            var contenido = document.createTextNode("Soy " + cliente1.nombre + ". Tengo " + cliente1.edad + " años y mi telefono es el " + cliente1.telefono);
+            listElement.appendChild(contenido);
+            document.body.appendChild(listElement);
+        }
+
+
+    </script>
+</head>
+
+<body>
+            <form id="form1" name="form1">
+                    <input id="nombre" name="nombre"><br>
+                    <input id="edad" name="edad"><br>
+                    <input id="telefono" name="telefono"><br>
+                    <input type="button" id="botonInsertar" value="Inserta usuario"><br>
+             </form>
+            <h1>LISTA DE CLIENTES</h1>
+            <ul>
+             
+            </ul>    
+           
+           
+    <script>
+        document.getElementById("botonInsertar").addEventListener("click", newCliente);
+
+    </script>
+        </body>
+
+</html>

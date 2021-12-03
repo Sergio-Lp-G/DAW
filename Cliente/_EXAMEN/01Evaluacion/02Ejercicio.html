@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Ejercicio 2 - Expresiones regulares</title>
+    <script>
+        var ptrTelefono = /^[0-9]{9}$/;
+        var ptrFecha = /^[0-9]{1,2}\/[0-9]{1,2}\/[0-9]{4}$/;
+        
+
+        function valTelf() {
+            var telefono = document.getElementById("telefono").value;
+            if (!ptrTelefono.test(telefono)) {
+                alert("Teléfono no válido, deben ser 9 dígitos.");
+            } else {
+                valFecha();
+            }
+        }
+
+        function valFecha() {
+            var fecha = document.getElementById("fecha").value;
+            if (!ptrFecha.test(fecha)) {
+                alert("Fecha no válida, use dd/mm/yyyy");
+            } else {
+                valNum();
+            }
+        }
+
+        function valNum() {
+            var numero = document.getElementById("numero").value;
+            if (numero<0 || numero >23) {
+                alert("Número no válido, debe estar comprendido entre 0 y 23.");
+            } else {
+                alert("Todos los parametros correctos.");
+            }
+        }
+
+    </script>
+</head>
+
+<body>
+    <form id="form1">
+        <label>Telefono: <input type="text" id="telefono"></label><br>
+        <label>Fecha: <input type="text" id="fecha"></label><br>
+        <label>Número: <input type="text" id="numero"></label><br>
+        <input type="button" id="boton" value="validar">
+    </form>
+    <script>
+         document.getElementById("boton").addEventListener("click", valTelf);
+
+    </script>
+</body>
+
+</html>
