@@ -1,7 +1,6 @@
 body {
     min-height: 1000px;
-    /* background: url("../recursos/metal_pattern_1280x800_2673.jpg") center top repeat-y;
-    background-size: 100% auto; */
+
 }
 
 header {
@@ -92,7 +91,11 @@ header {
     left: 5px;
 }
 
-aside {}
+aside {
+    width: 80px;
+    height: 150px;
+    background: url("../recursos/icono/gim_icon.jpg") center center repeat-y;
+}
 
 section {
     display: flex;
