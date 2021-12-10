@@ -12,9 +12,11 @@
 </head>
 
 <body>
-
+    <!--El cuerpo de la página-->
     <header>
+        <!--El header incluye el logo, el nombre, el login y el navegador-->
         <div id="banner">
+            <!--El logo y el nombre del gimnasio-->
             <div id="logo">
                 <img src="../recursos/logotipo-brazo-de-gimnasio.png" alt="brazo izquierdo">
             </div>
@@ -23,28 +25,42 @@
             </div>
         </div>
         <div id="logNav">
-            <div id="login">
+            <!--Login y navegador -->
+            <div id="login" class="boton">
                 <a href="login.html"> <img src="../recursos/zapatilaGim.PNG" alt="LOGIN"> LOGIN</a>
             </div>
             <nav>
-                <ul id="navPrin">
-                    <li> <a href="../html/home.html">Home</a> </li>
-                    <li>Herramientas
-                        <ul id="navTools">
-                            <li><a href="../html/imcCalculadora.html">IMC</a></li>
-                            <li><a href="../html/fcmCalculadora.html">FCM</a></li>
-                        </ul>
+                <ul class="navPrin">
+                    <li class="boton">
+                        <a href="../html/home.html">
+                            <span class="txtNav">Home</span>
+                        </a>
                     </li>
-                    <li><a href="fisioterapeuta.html">Fisios</a></li>
-                    <li><a href="actividadSala.html">Actividades</a></li>
-                    <li><a href="">Galería</a></li>
+                    <li class="boton">
+                        <a href="../html/imcCalculadora.html">
+                            <span class="txtNav">IMC</span>
+                        </a>
+                    </li>
+                    <li class="boton">
+                        <a href="../html/fcmCalculadora.html">
+                            <span class="txtNav">FCM</span>
+                        </a>
+                    </li>
+                    <li class="boton">
+                        <a href="fisioterapeuta.html">
+                            <span class="txtNav">Fisios</span>
+                        </a>
+                    </li>
+                    <li class="boton">
+                        <a href="actividadSala.html">
+                            <span class="txtNav">Actividades</span>
+                        </a>
+                    </li>
+
                 </ul>
             </nav>
         </div>
     </header>
-    <hr>
-    <aside>
-
     </aside>
 
     <section>
@@ -59,21 +75,19 @@
 
 
     <footer>
-        <div id="rss">
-            <img src="../recursos/icono/rss.jpg" alt="">
-            <p>Drumbeat Blog (RSS feed)</p>
-        </div>
+        <!--El pie de la página. Contiene las redes sociales, rss y el anuncio de copyright -->
+
         <div id="redes">
-            <img id="tw" src="../recursos/icono/twitter.jpg" alt="Twitter">Twitter</br>
+            <img src="../recursos/icono/rss.jpg" alt="rss">Enterate de las novedades (RSS feed)</br>
+            <img id="tw" src="../recursos/icono/twitter.jpg" alt="Twitter">Twitter
             <img id="fcb" src="../recursos/icono/facebook.jpg" alt="Facebook">Facebook</br>
             <img id="flc" src="../recursos/icono/flickr.jpg" alt="Flickr">Flickr</br>
         </div>
 
         <div id="gim">
-            <img src="../recursos/icono/logotipo-brazo-de-gimnasio2.png" alt="Mozilla">
-            <p>Muscle Up</p>
-            <p>Privacy policy</p>
-            <p>Portion of this content are &copy; 2010 by individual drumbeat.org contributors. Content available under a <span>Creative Commons license</span>.</p>
+            <img src="../recursos/icono/logotipo-brazo-de-gimnasio2.png" alt="Mozilla"> Muscle Up</br>
+            <p>Politica de privacidad</p>
+            <p>Contenido con &copy; 2010 <span>Creative Commons license</span>.</p>
         </div>
 
 

@@ -1,11 +1,20 @@
 /*
  */
-body {
-    min-height: 1000px;
 
+html {
+    max-height: 1000px;
+    margin: 0 auto;
 }
 
-/*El header ocupa el 100% del body,  */
+body {
+    max-height: 1000px;
+    margin: 0 auto;
+    background-color: lightgray;
+}
+
+
+/*El header ocupa el 100% del ancho del body*/
+
 header {
     width: 100%;
     display: flex;
@@ -17,7 +26,7 @@ header {
     justify-content: space-between;
     display: flex;
     width: 40%;
-   }
+}
 
 #logo {
     width: 170px;
@@ -26,6 +35,7 @@ header {
 }
 
 #logo img {
+    padding: 10px;
     resize: both;
     width: 170px;
     height: auto;
@@ -47,55 +57,134 @@ header {
 }
 
 #login {
-    object-position: top right;
+    float: right;
+    margin-right: 50px;
+    margin-top: 10px;
     height: 30px;
     width: auto;
 }
 
 #login img {
     resize: horizontal;
+    max-height: 50px;
 }
 
-#logNav nav #navPrin {
+#logNav nav .navPrin {
+    margin-top: 80px;
     display: inline-flex;
+    justify-content: center;
 }
 
-#logNav nav #navPrin li {
+#logNav nav .navPrin li {
     display: inline-flex;
     list-style: none;
+    margin-right: 70px;
 }
 
-aside {
-    width: 80px;
-    height: 150px;
-    background: url("../recursos/icono/gim_icon.jpg") center center repeat-y;
+.navPrin a {
+    color: inherit;
+    text-decoration: none;
+    position: relative;
+    display: block;
+    padding: 5px;
+}
+
+.navPrin a::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(to right, #b47dcd, #78b6e8, #8eeb85);
+    z-index: 1;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.5s ease-in-out;
+}
+
+.navPrin a:hover::before {
+    transform: scaleX(1);
 }
 
 section {
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
     display: flex;
-    width: 100%;
+    flex-direction: column;
+    width: 80%;
     min-height: 60px;
-    background-color: aqua;
 }
+
+section h2 {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+#home {
+    display: row;
+    width: 90%;
+    min-height: 350px;
+    background: url("../recursos/footerGim_largo.jpg")center top no-repeat;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#home p {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgba(255, 255, 255, 0.5);
+    -webkit-transition: -webkit-transform 0.5s ease-out;
+    -moz-transition: -moz-transform 0.5s ease-out;
+    -o-transition: -o-transform 0.5s ease-out;
+    -ms-transition: -ms-transform 0.5s ease-out;
+    transition: transform 0.5s ease-out;
+}
+
+#home p:hover {
+    background-color: rgb(255, 255, 255);
+    -moz-transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+    -o-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2)
+}
+
 
 /*Galeria de imagenes, un contenedor general */
-#fotoGaleria{
-    display: flex;
-    width: 100%;
-    min-height: 60px;
-    background-color: aqua;
 
-}
-/*Cada imagen va en un contendor de la misma clase */
-.galeria{
+#fotoGaleria {
+    margin-left: auto;
+    margin-right: auto;
     display: flex;
-    width: 350px;
-    height: 250px;
-    margin-left: 10px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    flex-grow: 1;
+    width: 80%;
 }
+
+
+/*Cada imagen va en un contendor de la misma clase */
+
+.galeria {
+    display: flex;
+    padding: 5px;
+}
+
+.galeria img {
+    width: 250px;
+    height: 150px;
+    object-fit: cover;
+}
+
 
 /*Pie de página.  */
+
 footer {
+    color: aliceblue;
     display: flex;
     left: 0px;
     bottom: 0px;
@@ -112,80 +201,97 @@ footer {
     /*evitamos que se repita la imagen */
 }
 
+footer #redes {
+    max-width: 45%;
+    margin: 5px auto;
+    background: rgba(255, 255, 255, 0.164);
+}
+
+footer #gim {
+    max-width: 45%;
+    margin: 5px auto;
+    background: rgba(255, 255, 255, 0.164);
+}
+
+footer #gim img {
+    max-height: 50px;
+}
+
 
 /*Media query para pantallas tablet  */
-@media screen and (max-width:800px){
-    body{
+
+@media screen and (max-width:800px) {
+    body {
         display: flex;
         flex-flow: column;
     }
-    section{
+    #banner {
+        display: flex;
+        flex-flow: column;
+        order: 3;
+    }
+    section {
         order: 1;
         width: 90%;
     }
-
-    aside{
-        order: 2;
-        width: 90%;
-    }
-    footer{
+    footer {
         display: flex;
         flex-flow: column;
+        order: 3;
     }
-    footer .rss{
+    footer .rss {
+        order: 1;
+        width: 90%;
+    }
+    footer .redes {
         order: 2;
         width: 90%;
     }
-    footer .redes{
-        order: 2;
-        width: 90%;
-    }
-    footer .gim{
+    footer .gim {
         order: 3;
         width: 90%;
     }
-    
 }
+
 
 /*Media query para pantallas móviles  */
-@media screen and (max-width:400px){
-    body{
+
+@media screen and (max-width:400px) {
+    body {
         display: flex;
         flex-flow: column;
     }
-    section{
+    section {
         order: 1;
         width: 90%;
     }
-    aside{
-        display: none;
-    }
-    footer{
+    footer {
+        order: 2;
         display: flex;
         flex-flow: column;
     }
-    footer .rss{
-        order: 2;
+    footer .redes {
+        order: 1;
         width: 90%;
     }
-    footer .redes{
+    footer .gim {
         order: 2;
-        width: 90%;
-    }
-    footer .gim{
-        order: 3;
         width: 90%;
     }
 }
 
-@media print{
-    body{
+@media print {
+    body {
         background: none;
     }
-    #logNav{
+    #banner {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    #logNav {
         display: none;
     }
-    aside{
+    footer {
         display: none;
     }
 }
