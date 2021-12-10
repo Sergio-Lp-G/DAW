@@ -6,6 +6,7 @@
     <meta charset="utf-8">
     <title>Horario 04</title>
     <script type="text/javascript" src="../js/gimnasio.js"></script>
+    <link rel="stylesheet" href="../css/gimstile.css" />
 </head>
 
 <body onload="horarioSala()" style="width: 1000px;">
@@ -60,63 +61,63 @@
     </header>
     <hr>
 
+    <section>
 
-
-    <div>
-        <table border="1" id="tableAct">
-            <tr>
-                <td></td>
-                <td>Lunes</td>
-                <td>Martes</td>
-                <td>Miercoles</td>
-                <td>Jueves</td>
-                <td>Viernes</td>
-                <td>Sabado</td>
-            </tr>
-            <tr id="actividad1">
-                <td>7:00 - 9:00</td>
-            </tr>
-            <tr id="actividad2">
-                <td>9:00 - 11:00</td>
-            </tr>
-            <tr id="actividad3">
-                <td>11:00 - 13:00</td>
-            </tr>
-            <tr id="actividad4">
-                <td>13:00 - 15:00</td>
-            </tr>
-            <tr id="actividad5">
-                <td>15:00 - 17:00</td>
-            </tr>
-            <tr id="actividad6">
-                <td>17:00 - 19:00</td>
-            </tr>
-            <tr id="actividad7">
-                <td>19:00 - 21:00</td>
-            </tr>
-        </table>
-        <br><br>
-        <br><br>
         <div>
-
-            <form id="form" name="formAct" style="float: left;">
-                <label for="actividad">ACTIVIDADES</label><br />
-
-                <!-- var actividad = ["Spining", "Yoga", "Crossfit", "KickBoxing", "Baile de salón", "Kapoeira", "BodyPump"];-->
-                <input type="checkbox" name="actividad" value="Spining">Spining<br />
-                <input type="checkbox" name="actividad" value="Yoga">Yoga<br />
-                <input type="checkbox" name="actividad" value="Crossfit">Crossfit<br />
-                <input type="checkbox" name="actividad" value="KickBoxing">KickBoxing<br />
-                <input type="checkbox" name="actividad" value="Baile de salón">Baile de salón<br />
-                <input type="checkbox" name="actividad" value="Kapoeira">Kapoeira<br />
-                <input type="checkbox" name="actividad" value="BodyPump">BodyPump<br />
-                <input type="button" id="boton" value="Mostrar" onclick="resAct()">
-            </form>
+            <table border="1" id="tableAct">
+                <tr>
+                    <td></td>
+                    <td>Lunes</td>
+                    <td>Martes</td>
+                    <td>Miercoles</td>
+                    <td>Jueves</td>
+                    <td>Viernes</td>
+                    <td>Sabado</td>
+                </tr>
+                <tr id="actividad1">
+                    <td>7:00 - 9:00</td>
+                </tr>
+                <tr id="actividad2">
+                    <td>9:00 - 11:00</td>
+                </tr>
+                <tr id="actividad3">
+                    <td>11:00 - 13:00</td>
+                </tr>
+                <tr id="actividad4">
+                    <td>13:00 - 15:00</td>
+                </tr>
+                <tr id="actividad5">
+                    <td>15:00 - 17:00</td>
+                </tr>
+                <tr id="actividad6">
+                    <td>17:00 - 19:00</td>
+                </tr>
+                <tr id="actividad7">
+                    <td>19:00 - 21:00</td>
+                </tr>
+            </table>
             <br><br>
+            <br><br>
+            <div>
 
+                <form id="form" name="formAct" style="float: left;">
+                    <label for="actividad">ACTIVIDADES</label><br />
+
+                    <!-- var actividad = ["Spining", "Yoga", "Crossfit", "KickBoxing", "Baile de salón", "Kapoeira", "BodyPump"];-->
+                    <input type="checkbox" name="actividad" value="Spining">Spining<br />
+                    <input type="checkbox" name="actividad" value="Yoga">Yoga<br />
+                    <input type="checkbox" name="actividad" value="Crossfit">Crossfit<br />
+                    <input type="checkbox" name="actividad" value="KickBoxing">KickBoxing<br />
+                    <input type="checkbox" name="actividad" value="Baile de salón">Baile de salón<br />
+                    <input type="checkbox" name="actividad" value="Kapoeira">Kapoeira<br />
+                    <input type="checkbox" name="actividad" value="BodyPump">BodyPump<br />
+                    <input type="button" id="boton" value="Mostrar" onclick="resAct()">
+                </form>
+                <br><br>
+
+            </div>
         </div>
-    </div>
-
+    </section>
 
     <footer>
         <!--El pie de la página. Contiene las redes sociales, rss y el anuncio de copyright -->
