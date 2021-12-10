@@ -7,7 +7,7 @@
     <script>
         var ptrTelefono = /^[0-9]{9}$/;
         var ptrFecha = /^[0-9]{1,2}\/[0-9]{1,2}\/[0-9]{4}$/;
-        
+        var ptrNum = /^[0-23]$/;
 
         function valTelf() {
             var telefono = document.getElementById("telefono").value;
@@ -29,13 +29,12 @@
 
         function valNum() {
             var numero = document.getElementById("numero").value;
-            if (numero<0 || numero >23) {
+            if (!ptrNum.test(numero)) {
                 alert("Número no válido, debe estar comprendido entre 0 y 23.");
             } else {
                 alert("Todos los parametros correctos.");
             }
         }
-
     </script>
 </head>
 
@@ -47,8 +46,7 @@
         <input type="button" id="boton" value="validar">
     </form>
     <script>
-         document.getElementById("boton").addEventListener("click", valTelf);
-
+        document.getElementById("boton").addEventListener("click", valTelf);
     </script>
 </body>
 

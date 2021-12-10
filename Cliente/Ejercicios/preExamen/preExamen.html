@@ -6,18 +6,23 @@
     <meta charset="utf-8">
     <script>
         var alumnos = [];
-        function Persona(nombre, dni, edad) {
+
+        function Persona(nombre, dni, edad, mostrarInfo) {
             this.nombre = nombre;
             this.dni = dni;
             this.edad = edad;
-            this.mostrarInfo = function (nombre, dni, edad) {
+            this.mostrarInfo = function(nombre, dni, edad) {
                 alert(nombre + " " + dni + " " + edad);
             }
         }
 
-        function Alumno(instituto, asignatura) {
+        function Alumno(nombre, dni, edad, instituto, asignatura) {
+            Persona.call(nombre, dni, edad, mostrarInfo);
             this.instituto = instituto;
             this.asignatura = asignatura;
+            this.mostrarInfo = function(nombre, dni, edad, instituto, asignatura) {
+                alert(nombre + " " + dni + " " + edad + " " + instituto + " " + asignatura);
+            }
         }
 
         function newAlumno() {
@@ -28,7 +33,7 @@
             var instituto = prompt("Instituto:");
             var asignatura = prompt("Asignatira:");
 
-            Persona.prototype = new Alumno(nombre, dni, edad);
+            Alumno.prototype = new Persona(nombre, dni, edad);
             var alumno1 = new Alumno(instituto, asignatura);
 
             alumnos.push(alumno1);
@@ -48,7 +53,7 @@
 
     <script>
         document.getElementById("bttNewAlumno").addEventListener("click", newAlumno);
-        document.getElementById("bttMostrar").addEventListener("click", Alumno.toString);
+        document.getElementById("bttMostrar").addEventListener("click", Alumno.mostrarInfo);
     </script>
 </body>
 
