@@ -1,3 +1,5 @@
+/*
+ */
 body {
     min-height: 1000px;
 
@@ -7,14 +9,14 @@ header {
     width: 100%;
     display: flex;
     float: left;
+    background-color: gray;
 }
 
 #banner {
     justify-content: space-between;
     display: flex;
     width: 40%;
-    background-color: gray;
-}
+   }
 
 #logo {
     width: 170px;
@@ -62,35 +64,6 @@ header {
     list-style: none;
 }
 
-/*Flecha para scrol up rapido*/
-
-#back_to_top span {
-    width: 35px !important;
-    height: 35px !important;
-    line-height: 35px !important;
-    position: fixed;
-    bottom: 80px;
-    right: 15px;
-}
-
-#back_to_top>span {
-    font-size: 35px;
-    color: #fddf01;
-    height: 66px;
-    width: 66px;
-    border-radius: 100px;
-    background-color: #202020;
-    border-width: 0px;
-    line-height: 66px;
-}
-
-#back_to_top .fa-stack .arrow_carrot-up::before {
-    display: block !important;
-    content: url("../recursos/up-chevron.png");
-    position: absolute;
-    left: 5px;
-}
-
 aside {
     width: 80px;
     height: 150px;
@@ -103,6 +76,19 @@ section {
     min-height: 60px;
     background-color: aqua;
 }
+
+/*Galeria de imagenes */
+#fotoGaleria{
+    display: flex;
+    width: 100%;
+    min-height: 60px;
+    background-color: aqua;
+
+}
+.galeria{
+    display: flex;
+}
+
 
 footer {
     display: flex;
@@ -120,4 +106,70 @@ footer {
     /* Centrar la imagen */
     background-repeat: no-repeat;
     /*evitamos que se repita la imagen */
+}
+
+
+/*Media query para pantallas tablet de entre  */
+@media screen and (max-width:1000px){
+    body{
+        display: flex;
+        flex-flow: column;
+    }
+    section{
+        order: 1;
+        width: 90%;
+    }
+    aside{
+        order: 2;
+        width: 90%;
+    }
+    footer{
+        display: flex;
+        flex-flow: column;
+    }
+    footer .rss{
+        order: 2;
+        width: 90%;
+    }
+    footer .redes{
+        order: 2;
+        width: 90%;
+    }
+    footer .gim{
+        order: 3;
+        width: 90%;
+    }
+    
+}
+
+/* 
+*/
+@media screen and (max-width:1000px){
+    body{
+        display: flex;
+        flex-flow: column;
+    }
+    section{
+        order: 1;
+        width: 90%;
+    }
+    aside{
+        display: none;
+    }
+    footer{
+        display: flex;
+        flex-flow: column;
+    }
+    footer .rss{
+        order: 2;
+        width: 90%;
+    }
+    footer .redes{
+        order: 2;
+        width: 90%;
+    }
+    footer .gim{
+        order: 3;
+        width: 90%;
+    }
 }
