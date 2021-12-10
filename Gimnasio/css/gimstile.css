@@ -4,7 +4,7 @@ body {
 }
 
 header {
-    width: 50%;
+    width: 100%;
     display: flex;
     float: left;
 }
@@ -12,7 +12,7 @@ header {
 #banner {
     justify-content: space-between;
     display: flex;
-    width: 100%;
+    width: 40%;
     background-color: gray;
 }
 
@@ -39,7 +39,7 @@ header {
 
 #logNav {
     float: right;
-    width: 50%;
+    width: 60%;
     background-color: darkgray;
 }
 

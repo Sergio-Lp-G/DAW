@@ -1,3 +1,77 @@
+function imc() {
+    init();
+    var peso = parseInt(document.getElementById("peso").value);
+    validar(peso, "peso");
+    var altura = parseInt(document.getElementById("altura").value);
+    validar(altura, "altura");
+
+    var imcEntero = peso / (Math.pow((altura / 100), 2));
+    var imc = Math.round(imcEntero * 100) / 100;
+    show(imc);
+
+}
+
+function init() {
+    var lista = document.getElementById("clasificacion");
+    var elementos = lista.getElementsByTagName("li");
+    for (var i = 0; i < elementos.length; i++) {
+        elementos[i].style.color = "black";
+    }
+}
+
+function validar(num, str) {
+    if (isNaN(num)) {
+        alert("Error, untroduzca valor de " + str + " númerico.")
+    }
+}
+
+function show(imc) {
+    switch (true) {
+        case (imc < 16):
+            document.getElementById('resultado').innerHTML = imc;
+            document.getElementById('infraSevera').style.color = 'red';
+            break;
+        case (imc >= 16 && imc < 17):
+            document.getElementById('resultado').innerHTML = imc;
+            document.getElementById('infraMod').style.color = 'red';
+            break;
+        case (imc >= 17 && imc < 18.5):
+            document.getElementById('resultado').innerHTML = imc;
+            document.getElementById('infraAcep').style.color = 'red';
+            break;
+        case (imc >= 18.5 && imc < 25):
+            document.getElementById('resultado').innerHTML = imc;
+            document.getElementById('norm').style.color = 'red';
+            break;
+
+        case (imc >= 25 && imc < 30):
+            document.getElementById('resultado').innerHTML = imc;
+            document.getElementById('sobre').style.color = 'red';
+            break;
+
+        case (imc >= 30 && imc < 35):
+            document.getElementById('resultado').innerHTML = imc;
+            document.getElementById('obeso1').style.color = 'red';
+            break;
+
+        case (imc >= 35 && imc < 40):
+            document.getElementById('resultado').innerHTML = imc;
+            document.getElementById('obeso2').style.color = 'red';
+            break;
+
+        case (imc >= 40):
+            document.getElementById('resultado').innerHTML = imc;
+            document.getElementById('obeso3').style.color = 'red';
+            break;
+        default:
+            document.getElementById('resultado').innerHTML = "";
+            init();
+
+    }
+}
+
+
+
 function calcularFCM() {
     var edad = parseInt(document.getElementById('edad').value);
     var sexo = document.getElementById('sexo').value;
@@ -118,7 +192,7 @@ function resFisio() {
     }
 }
 
-function validar() {
+function validarPss() {
 
     var patronNum = /\d/;
     var patronMinus = /[a-z]/;
