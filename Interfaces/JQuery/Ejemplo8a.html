@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <title>Ejemplo7</title>
+    <script src="jQuery/jquery-3.4.1.min.js" type="text/javascript"></script>
+
+    <script>
+        $(document).ready(function () {
+            $("body").mousedown(function (evento) {
+                $("#button").text("");
+                alert(evento.button);
+
+                switch (evento.button) {
+                    case 0:
+                        $("#button").text("Botón izquierdo");
+                        break;
+                    case 1:
+                        $("#button").text("Botón izquierdo");
+                        break;
+                    case 2:
+                        $("#button").text("Botón izquierdo");
+                        break;
+                    default:
+                    //
+                }
+            });
+
+            $("body").mousemove(function (evento) {
+                $("#screen").text("screenX "+evento.screenX+"screenY "+evento.screenY);
+                $("#cliente").text("clientX "+evento.clientY+"clientY "+evento.clientY);
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <h3>En relacion a la pantalla</h3>
+    <div id="screen"></div>
+    <h3>En relacion al navegador</h3>
+    <div id="cliente"></div>
+    <h3>Botón del ratón pulsado</h3>
+    <div id="button"></div>
+</body>
+
+</html>

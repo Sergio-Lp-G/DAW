@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <title>Ejemplo7</title>
+    <script src="jQuery/jquery-3.4.1.min.js" type="text/javascript"></script>
+
+    <script>
+        $(document).ready(function () {
+            $("#text").text("Hola mundo");
+            $("#html").html("<i>Texto en italica</i>")
+            
+            $(".append").append("contenido al final");
+            $(".prepend").prepend("Contenido al principio...");
+            $("input[type='text']").val("Agregar contenido");
+        });
+    </script>
+</head>
+
+<body>
+    <div id="text"></div>
+    <div id="html"></div>
+    <div class="append">tengo contenido...</div>
+    <div class="prepend">tengo contenido...</div>
+    <div class="append prepend">tengo contenido...</div>
+
+    <input type="text">
+</body>
+
+</html>
