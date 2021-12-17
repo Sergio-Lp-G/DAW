@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <title>Ejemplo10. Evento toggle</title>
+    <script src="jQuery/jquery-3.4.1.min.js" type="text/javascript"></script>
+
+    <script>
+        var poner_Rojo=function(){$(this).css("color","rgb(255,0,0)");}
+        var poner_Azul=function(){$(this).css("color","rgb(0,0,255)");}
+
+        $(document).ready(function () {
+            //manejo de Toogle
+            $("p").toggle(poner_Rojo,poner_Azul);
+        });
+    </script>
+    <style media="screen">
+        body{background: #666;}
+    </style>
+</head>
+
+<body>
+    <p>El texto cambia de color al hacer click</p>
+</body>
+
+</html>

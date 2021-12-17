@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio JSON</title>
+    <script>
+
+    </script>
+</head>
+
+<body>
+    
+    <script>
+        var str='{"name":"Manz","life":90}';
+
+        var obj=JSON.parse(str);
+        alert(obj.name);
+        alert(obj.life);
+
+        var obj2={
+            nombre="Juan",
+            edad=45,
+            saludar:function(){
+                return "hola";
+            }
+        };
+
+        var str2=JSON.stringify(obj2);
+        alert(str2);
+    </script>
+</body>
+
+</html>

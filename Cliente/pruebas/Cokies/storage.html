@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio almacenamiento web</title>
+    <script>
+
+    </script>
+</head>
+
+<body>
+    
+    <script>
+        //local storage
+        //crear item en la local storage
+        localStorage.setItem("ciudad","Zaragoza");
+        localStorage.setItem("ciudad","Huesca");
+        var a=localStorage.getItem("ciudad");
+        console.log(a);
+        alert(a);
+
+        //borrar item
+        localStorage.removeItem("ciudad");
+        alert(a);
+
+        //sesion storage
+        var storageArray=[5,3,"Madrid","España"];
+        sessionStorage.setItem("array1",storageArray);
+        alert(sessionStorage.getItem("array1"));
+
+        var diasLaborales=["Lunes","Martes","Miercoles","Jueves","Viernes","Sabado"];
+        sessionStorage.setItem("array2",diasLaborales);
+        alert(sessionStorage.getItem("array2"));
+
+    </script>
+</body>
+
+</html>
