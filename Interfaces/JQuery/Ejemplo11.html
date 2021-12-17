@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <title>Ejemplo11. Evento toggle</title>
+    <script src="https://code.jquery.com/jquery-1.8.3.js" type="text/javascript"></script>
+
+    <script>
+        var mostrar = function () { $(this).css("display", "block"); }
+        var ocultar = function () { $(this).css("display", "none"); }
+        $(document).ready(function () {
+            //manejo de Toogle
+            $(".mostrar").click(function () {
+                $(this).parent().next().toggle();
+            });
+            $("#mostrarTodo").click(function () {
+                $('.respuesta').toggle();
+            });
+        });
+    </script>
+
+
+    <style media="screen">
+        body {
+            background: #666;
+        }
+
+        .respuesta {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <p>Pregunta 1...(<a id="p1" href="#" class="mostrar">ver respuesta</a>)</p>
+    <p id="respuesta1" class="respuesta" >Respuesta 1...</p>
+    <p>Pregunta 2...(<a id="p2" href="#" class="mostrar">ver respuesta</a>)</p>
+    <p id="respuesta2" class="respuesta" >Respuesta 2...</p>
+    <p>Pregunta 3...(<a id="p3" href="#" class="mostrar">ver respuesta</a>)</p>
+    <p id="respuesta3" class="respuesta" >Respuesta 3...</p>
+    <br>
+    <a href="#" id="mostrarTodo">Mostrar u ocultar todas las respuestas</a>
+</body>
+
+</html>
