@@ -3,33 +3,39 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Ejemplo13. Evento toggle</title>
+    <title>Ejemplo14. Evento toggle</title>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" type="text/javascript"></script>
 
     <script>
         $(document).ready(function () {
             $("#mostrar_panel").click(function () {
                 if ($("#panel-oculto").css("display") == "none") {
-                    $("#panel-oculto").slideDown();
+                    $("#panel-oculto").toggle("fast");
                     $(this).val("Cerrar panel");
                 } else {
-                    $("#panel-oculto").slideUp();
+                    $("#panel-oculto").toggle("fast");
                     $(this).val("Mostrar panel");
                 }
             });
         });
+
     </script>
 
     <style media="screen">
+        body{
+            z-index: inherit 1;
+        }
+        #mostrar_panel{
+            z-index: 3;
+        }
         #panel-oculto {
             display: none;
-            position: fixed;
-            top: 30px;
-            right: 400px;
-            width: 100px;
-            height: 200px;
-            z-index: 1000;
+            position: absolute;
+            top: 20px;
+            width: 1000px;
+            height: 2000px;
             background-color: #222;
+            z-index: 2;
         }
     </style>
 </head>
