@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 1. Boton</title>
+    <script type="text/javascript">
+        function procesaRespuesta(){
+            var parrafo=document.getElementById("parrafo");
+            if(peticion_http.readyState==4 && peticion_http.status==200){
+                //si los datos están listos y la respuesta es correcta
+                parrafo.textContent=peticion_http.responseText;
+                alert("Datos recibidos correctamente");
+            }
+        }
+    </script>
+</head>
+<body>
+    <input type="button">
+    <p id="parrafo"></p>
+    <script>
+        //cpomprobar que el navegador soporta AJAX
+        if(window.XMLHttpRequest){
+            peticion_http=new XMLHttpRequest();
+            alert("Su navegador soporta AJAX con objetos XMLHttpRequest");
+        }else if (window.ActiveXObject){
+            peticion_http=new ActiveXObject("Microsoft.XMWHTTP");
+            alert("Su navegador soporta AJAX con objetos ActiveXObject");
+        }else{
+            alert("Su navegador es una mierda que no soporta AJAX ");
+        }
+       
+
+
+        //Asignar la funcion de procesamiento
+        peticion_http.onreadystatechange=procesaRespuesta;
+
+        //Preparar la peticion
+        peticion_http.open("GET","http://iessantiagohernandez.com",true);//asincrono
+
+        //Enviar la petición
+        peticion_http.send(null);
+    </script>
+</body>
+
+</html>
