@@ -18,11 +18,11 @@
                 }
             });
 
-            $("#mostrar_menu").click(function(){
-                if($("#menu_oculto").css("display")=="none"){
+            $("#mostrar_menu").click(function () {
+                if ($("#menu_oculto").css("display") == "none") {
                     $("#menu_oculto").toggle("fast");
                     $(this).val("Menú -");
-                }else{
+                } else {
                     $("#menu_oculto").toggle("fast");
                     $(this).val("Menú +");
                 }
@@ -33,14 +33,16 @@
     </script>
 
     <style media="screen">
-        body{
+        body {
             color: white;
         }
-        #mostrar_panel{
+
+        #mostrar_panel {
             position: fixed;
             top: 10px;
-            left:10px;
+            left: 10px;
         }
+
         #panel-oculto {
             display: none;
             top: 20px;
@@ -54,41 +56,56 @@
             background-color: #222;
             border-radius: 15px;
         }
-        #mostrar_menu{
+
+        #mostrar_menu {
             position: fixed;
-            top:60px;
+            top: 60px;
             left: 10px;
         }
-        #menu{
+
+        #menu {
             text-align: center;
             display: block;
             background-color: #222;
         }
 
-        li{
+        li {
             display: inline;
             list-style: none;
             text-transform: uppercase;
             margin: 10px;
             padding: 10px;
         }
-        a{
+
+        a {
             color: white;
         }
-        a:hover{
+
+        a:hover {
             color: orange;
         }
-
     </style>
 </head>
 
 <body>
     <div id="menu">
-        <ul>
+        <ul id="listaMenu">
             <li><a href="#">Menú Op 1</a></li>
+            <ul id="subMenu1">
+                <li></li>
+            </ul>
             <li><a href="#">Menú Op 2</a></li>
+            <ul id="subMenu2">
+                <li></li>
+            </ul>
             <li><a href="#">Menú Op 3</a></li>
+            <ul id="subMenu3">
+                <li></li>
+            </ul>
             <li><a href="#">Menú Op</a></li>
+            <ul id="subMenuOP">
+                <li></li>
+            </ul>
         </ul>
     </div>
 </body>
