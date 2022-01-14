@@ -1,9 +1,18 @@
 <!DOCTYPE html>
+<!--
+Ejercicio con Ajax que al pulsar un botón lo 
+transforme en un texto del fichero holaMundo.txt.
+a.Texto botón: “Cambia el contenido”
+b.Texto nuevo (y quita el botón, usad innerHTML):
+ Lo tiene que buscar en un fichero de texto que contenga 
+el string “Hola mundo. Me llamo xxxx xxxxx xxxx”.
+-->
 <html>
 <head>
     <meta charset="UTF-8">
     <title>Ejercicio 1. Boton</title>
     <script type="text/javascript">
+
         function procesaRespuesta(){
             var parrafo=document.getElementById("parrafo");
             if(peticion_http.readyState==4 && peticion_http.status==200){
