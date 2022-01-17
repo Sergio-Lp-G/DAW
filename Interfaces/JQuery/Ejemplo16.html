@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ejemplo16. Evento de teclado.</title>
+    <script src="jQuery/jquery-3.4.1.min.js" type="text/javascript"></script>
+    <script>
+        $(document).ready(function () {
+            $("#campo").keypress(function (e) {
+                //charCode muestra el calor decimal de la tecla pulsada
+                //String.fromCharCode(e.charCode) transforma el calor decimal a carácter
+                $("#resultado").html(e.charCode + "->" + String.fromCharCode(e.charCode));
+
+                //si el calor del campo de texto = "garulo"
+                if ($(this).val() == "garulo") {
+                    alert("garulo");
+                }
+            });
+
+            $("#campo").keydown(function (e) {
+                alert("evento keydown: has pulsado la tecla " + e.key + "->" + e.keyCode);
+            });
+
+            $("#soltar").keyup(function (e) {
+                alert("evento keyup: has soltado la tecla" + e.key + "->" + e.keyCode);
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <input type="text" id="campo">
+    <div id="resultado"></div>
+    <input type="text" id="soltar">
+</body>
+
+</html>

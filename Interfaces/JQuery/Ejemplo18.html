@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ejemplo18. Evento resize y scroll.</title>
+    <script src="jQuery/jquery-3.4.1.min.js" type="text/javascript"></script>
+    <script>
+        $(document).ready(function () {
+           $(window).resize(function(){
+            var ancho=$(this).width();
+            var alto=$(this).height();
+            $("#resultado").html("ancho="+ancho+" alto= "+alto);
+           });
+           $("#contenido").scroll(function(){
+            $("#resultado1").html("posición del scroll de la caja: "+$(this).scrollTop());
+           });
+        });
+    </script>
+    <style>
+        #contenido{
+            width: 250px;
+            height: 250px;
+            overflow: scroll;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="contenido">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Est lorem ipsum dolor sit. Et malesuada fames ac turpis egestas integer eget aliquet. Risus viverra adipiscing at in tellus integer feugiat scelerisque varius. Eget nunc scelerisque viverra mauris in aliquam sem fringilla ut. Ultrices neque ornare aenean euismod elementum nisi quis eleifend. Venenatis tellus in metus vulputate eu scelerisque felis imperdiet. Sed egestas egestas fringilla phasellus faucibus scelerisque eleifend. In vitae turpis massa sed. Faucibus ornare suspendisse sed nisi lacus sed viverra tellus in. Elit sed vulputate mi sit amet mauris commodo quis imperdiet. Euismod lacinia at quis risus sed vulputate odio ut enim. Nunc consequat interdum varius sit amet mattis vulputate. Egestas purus viverra accumsan in nisl nisi. Tortor aliquam nulla facilisi cras fermentum odio. Nullam eget felis eget nunc lobortis mattis aliquam faucibus purus. Vitae purus faucibus ornare suspendisse sed nisi. Eget lorem dolor sed viverra ipsum nunc aliquet. Pellentesque habitant morbi tristique senectus et netus. Est ullamcorper eget nulla facilisi etiam dignissim diam quis enim. Justo eget magna fermentum iaculis eu non diam. Mattis enim ut tellus elementum sagittis. Sed nisi lacus sed viverra tellus in hac. Vitae tortor condimentum lacinia quis. Faucibus turpis in eu mi bibendum neque egestas congue. Enim lobortis scelerisque fermentum dui faucibus in ornare quam viverra. Turpis nunc eget lorem dolor sed viverra. Non arcu risus quis varius quam quisque id diam.
+    </div>
+    <div id="resultado"></div>
+    <div id="resultado1"></div>
+
+</body>
+
+</html>

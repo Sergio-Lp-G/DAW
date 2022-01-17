@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ejemplo23. Reproduccion de imagenes</title>
+    <script src="jQuery/jquery-3.4.1.min.js" type="text/javascript"></script>
+    <script>
+        var imagenes = ['imagenCaballo/img1.jpg', 'imagenCaballo/img2.jpg', 'imagenCaballo/img3.jpg', 'imagenCaballo/img4.jpg', 'imagenCaballo/img5.jpg', 'imagenCaballo/img6.jpg', 'imagenCaballo/img7.jpg', 'imagenCaballo/img8.jpg'];
+        var x = 0;
+        var timer;
+        var reproducir = async function () {
+            if (x > imagenes.length) {
+                x = 0;
+            }
+            $("#imagen").attr('src', imagenes[x]);
+            x++;
+            timer = setTimeout('reproducir()', 150);
+        }
+
+        var parar = function () { clearTimeout(timer); }
+
+        $(document).ready(function () {
+            reproducir();
+
+            $("#btn_run").click(function () {
+                reproducir();
+            });
+            $("#btn_stop").click(function () {
+                parar();
+            });
+        });
+    </script>
+    <style>
+        #cajita {
+            background-color: black;
+            height: 300px;
+            padding-top: 30px;
+        }
+
+        #imagen {
+            width: 250px;
+            height: 100px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="cajita">
+        <center><img src="" id="imagen"></center>
+    </div>
+    <button id=btn_run>Iniciar animación</button>
+    <button id=btn_stop>Parar animación</button>
+</body>
+
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ejemplo22. Evento on, off, one.</title>
+    <script src="jQuery/jquery-3.4.1.min.js" type="text/javascript"></script>
+    <script>
+        $(document).ready(function () {
+            //al cargar la página oculamos la felcha que va a realizar el scroll
+            $("#flecha").hide();
+
+            //la flecha aparecera cuando la posicion de la barra de scroll sea >200px
+            $(window).scroll(function () {
+                if ($(this).scrollTop() > 100) {
+                    $("#flecha").show();
+                } else {
+                    $("#flecha").hide();
+                }
+            });
+
+            $("#flecha").click(function () {
+                $("html , body").animate({ scrollTop: $("#parrafo").offset().top}, 1000);
+            });
+        });
+    </script>
+    <style>
+        #cajita {
+            font-size: 30px;
+        }
+
+        #flecha {
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            width: 60px;
+            height: 60px;
+            font-size: 50px;
+            font-weight: bold;
+            background-color: brown;
+            color: cornsilk;
+            text-align: center;
+            border-radius: 50%;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="cajita">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis consequatur rem perferendis optio harum!
+        Nesciunt praesentium exercitationem sint! Placeat laborum, perspiciatis unde incidunt iure rem labore eius?
+        Esse, modi repudiandae.
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. In exercitationem, recusandae error rem molestiae
+        nihil praesentium! Ullam id sit illum natus error ipsum. Tenetur molestiae tempore voluptatem, ea fugiat ad?
+        <p id="parrafo">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim eaque reiciendis molestias quaerat similique
+            aliquid excepturi ipsam eum asperiores, sed exercitationem distinctio. Recusandae asperiores labore placeat
+            nostrum ipsa vel non.
+        </p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa earum distinctio dignissimos dolorum atque,
+        suscipit neque magni, nostrum reiciendis at eveniet praesentium sequi explicabo quaerat possimus. Animi eveniet
+        amet aliquid.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus dolor, sunt non odio ut et dolorem illo
+        officiis cumque distinctio mollitia molestiae doloremque ab repellendus. Maiores nostrum reiciendis consequuntur
+        possimus?
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic, quam qui praesentium ipsa autem et, dolorem error
+        eveniet, quasi magnam dolore obcaecati odio odit illo blanditiis impedit nesciunt distinctio accusamus.
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit ullam reprehenderit inventore corrupti sint,
+        repellat blanditiis numquam doloremque vitae non eum commodi, id illo, saepe dolorum in magnam architecto
+        tempora.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit fugit maiores, eligendi accusantium omnis ea.
+        Fuga perspiciatis ipsam cupiditate architecto atque, omnis asperiores expedita eos officiis commodi repellendus
+        numquam? Dolorum.
+    </div>
+    <div id="flecha">^</div>
+</body>
+
+</html>
