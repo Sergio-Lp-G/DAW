@@ -8,4 +8,8 @@
 		<titulo>Noticia 2</titulo>
 		<cuerpo>Este es el cuerpo de la noticia2</cuerpo>
 	</noticia>
+	<noticia>
+		<titulo>Noticia 3</titulo>
+		<cuerpo>Este es el cuerpo de la noticia3</cuerpo>
+	</noticia>
 </noticias>

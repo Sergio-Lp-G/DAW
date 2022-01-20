@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<!-- A partir del fichero animales.xml, al pulsar un botón escribirá en pantalla para cada animal un registro como:
+Nombre: Boby
+Especie: Perro
+Patas: 4
+El bloque de div se cambiará a “En proceso” desde que se pulsa el botón hasta que la petición se ha completado y
+comienza el proceso de grabación de datos. -->
+
+<html lang="es">
+
+<head>
+
+    <title>Ejercicio 4</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="author" content="">
+    <style>
+        p,
+        button {
+
+            margin: 5px;
+
+        }
+    </style>
+
+    <script>
+
+        function cargarAJAX() {
+
+
+
+        }
+
+    </script>
+
+</head>
+
+<body>
+
+    <p>Se cargará el contenido del archivo: animales.xml</p>
+
+    <button id="btn1">Cargar texto de archivo externo </button>
+
+    <div id="resultado">Estado de la carga.</div>
+
+    <script>
+        document.getElementById("btn1").addEventListener("click", cargarAJAX, false);
+    </script>
+
+</body>
+
+</html>
