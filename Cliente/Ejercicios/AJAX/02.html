@@ -14,13 +14,54 @@ Usad responseXML para recuperar el XML.
     <meta charset="UTF-8">
     <title>Ejercicio 02 Ajax</title>
     <script>
+        if(peticion_http.readyState==4&&peticion_http.status==200){
+            var listadoNoticias=peticion_http.responseXML.getElementByTagName("noticias");
+            for(i=0;i<listadoNoticias.length;i++){
+                crearItem(listadoNoticias[i].lastElementChild.textContent);
+                var listado=document.getElementById("lista");
+                var nuevoElemento=document.createElement("li");
+            }
+            alert("datos recibidos");
+        }else{
+            alert("En proceso");
+        }
+        function crearItem(item){
+            var listado=document.getElementById("lista");
+            var nuevoElemento=document.createElement("li");
+            var nuevoTexto=document.createTextNode(item);
+            nuevoElemento.appendChild(nuevoTexto);
+            listado.appendChild(nuevoElemento);
+        }
 
     </script>
 </head>
 
 <body>
 
-    
+    <p id="parafo"></p>
+    <ul id="lista"></ul>
+
+    <script>
+        //Crear el objeto
+        if (window.XMLHttpRequest) {
+            peticion_http = new XMLHttpRequest();
+        } else if (window.ActiveXObject) {
+            peticion_http = new ActiveXObject("Microsoft.XMWHTTP");
+        } else {
+            alert("Su navegador no soporta AJAX ");
+        }
+
+        //Asignar la funcion de procesamiento
+        peticion_http.onreadystatechange = procesaRespuesta;
+
+        //Preparar la peticion
+        peticion_http.open("GET", "noticias.xml", true);//asincrono
+
+        //Enviar la petición
+        peticion_http.send(null);
+    </script>
+
+
 </body>
 
 </html>

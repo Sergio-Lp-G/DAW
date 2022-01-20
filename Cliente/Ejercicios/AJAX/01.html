@@ -23,7 +23,7 @@ el string “Hola mundo. Me llamo xxxx xxxxx xxxx”.
                 peticion_http = new ActiveXObject("Microsoft.XMWHTTP");
                 // alert("Su navegador soporta AJAX con objetos ActiveXObject");
             } else {
-                // alert("Su navegador es una mierda que no soporta AJAX ");
+                alert("Su navegador no soporta AJAX ");
             }
 
             //Asignar la funcion de procesamiento
@@ -34,28 +34,23 @@ el string “Hola mundo. Me llamo xxxx xxxxx xxxx”.
 
             //Enviar la petición
             peticion_http.send(null);
-
-            var boton = document.getElementById("btnCambio");
-            boton.style.display = "none";
-
         }
         function procesaRespuesta() {
-            var parrafo = document.getElementById("parrafo");
+            //var parrafo = document.getElementById("parrafo");
+            var boton = document.getElementById("btnCambio");
             if (peticion_http.readyState == 4 && peticion_http.status == 200) {
                 //si los datos están listos y la respuesta es correcta
-                parrafo.textContent = peticion_http.responseText;
-                alert("Datos recibidos correctamente");
+                boton.parentElement.innerHTML = peticion_http.responseText;
+                //parrafo.textContent = peticion_http.responseText;
             }
         }
-
     </script>
 </head>
 
 <body>
     <input type="button" id="btnCambio" value="Cambia el contenido" onclick="cambio()">
-    <p id="parrafo"></p>
     <script>
-
+        document.getElementById("btnCambio").addEventListener("click", cambio, false);
     </script>
 </body>
 
