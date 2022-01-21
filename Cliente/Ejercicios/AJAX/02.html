@@ -15,8 +15,10 @@ Usad responseXML para recuperar el XML.
     <title>Ejercicio 02 Ajax</title>
     <script>
         function procesaRespuesta() {
+            parrafo.textContent = "Estado 4: " + peticion_http.readyState + ". Estado 200: " + peticion_http.status;
             if (peticion_http.readyState == 4 && peticion_http.status == 200) {
-                var listadoNoticias = peticion_http.responseXML.getElementByTagName("noticia");
+                parrafo.textContent = "Conexion realizada con exito";
+                var listadoNoticias = peticion_http.responseXML.getElementsByTagName("noticia");
                 for (i = 0; i < listadoNoticias.length; i++) {
                     crearItem(listadoNoticias[i].lastElementChild.textContent);
                     var listado = document.getElementById("lista");
@@ -24,10 +26,10 @@ Usad responseXML para recuperar el XML.
                 }
                 alert("datos recibidos");
             } else {
-                parrafo.textContent="En proceso";
-                alert("En proceso");
-
+                parrafo.textContent = "En proceso";
+                alert("Realizando, otra vez, la peticion http");
                 peticion_http.onreadystatechange = procesaRespuesta;
+
 
             }
             function crearItem(item) {
@@ -44,24 +46,24 @@ Usad responseXML para recuperar el XML.
 
 <body>
 
-    <p id="parrafo"></p>    
+    <p id="parrafo"></p>
     <ul id="lista"></ul>
 
     <script>
         //Crear el objeto
         if (window.XMLHttpRequest) {
             peticion_http = new XMLHttpRequest();
-            alert("En proceso");
+            alert("En proceso, petición preparada");
         } else if (window.ActiveXObject) {
             peticion_http = new ActiveXObject("Microsoft.XMWHTTP");
         } else {
             alert("Su navegador no soporta AJAX ");
         }
 
-        alert("En proceso 2");
+        alert("Realizando la peticion http");
         //Asignar la funcion de procesamiento
         peticion_http.onreadystatechange = procesaRespuesta;
-        alert("En proceso 3");
+        alert("Procesando respuesta");
         //Preparar la peticion
         peticion_http.open("GET", "noticias.xml", true);//asincrono
         //Enviar la petición

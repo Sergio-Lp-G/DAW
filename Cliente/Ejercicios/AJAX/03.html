@@ -23,17 +23,69 @@ columnas Artista y Título
         }
     </style>
     <script>
+
+        function procesaRespuesta() {
+            parrafo.textContent = "Estado 4: " + peticion_http.readyState + ". Estado 200: " + peticion_http.status;
+            if (peticion_http.readyState == 4 && peticion_http.status == 200) {
+                parrafo.textContent = "Conexion realizada con exito";
+                var listadoNoticias = peticion_http.responseXML.getElementsByTagName("CD");
+                for (i = 0; i < listadoNoticias.length; i++) {
+                    crearItem(listadoNoticias[i].childNodes[1].textContent);
+                    var listado = document.getElementById("lista");
+                    var nuevoElemento = document.createElement("li");
+                    crearItem(listadoNoticias[i].childNodes[3].textContent);
+                    var listado = document.getElementById("lista");
+                    var nuevoElemento = document.createElement("li");
+                }
+                alert("datos recibidos");
+            } else {
+                parrafo.textContent = "En proceso";
+                alert("Realizando, otra vez, la peticion http");
+                peticion_http.onreadystatechange = procesaRespuesta;
+            }
+            function crearItem(item) {
+                // alert("Creando lista");
+                var listado = document.getElementById("lista");
+                var nuevoElemento = document.createElement("li");
+                var nuevoTexto = document.createTextNode(item);
+                nuevoElemento.appendChild(nuevoTexto);
+                listado.appendChild(nuevoElemento);
+            }
+        }
     </script>
 </head>
 
 <body>
+    <p id="parrafo"></p>
     <div id="texto">
         <h1>Colección de Cds</h1>
         <button id="cargaCatalogo">Carga catálogo</button>
     </div>
+    <ul id="lista">
 
+    </ul>
     <table id="demo"></table>
     <script>
+        document.getElementById("cargaCatalogo").addEventListener("click", procesaRespuesta, false);
+
+        //Crear el objeto
+        if (window.XMLHttpRequest) {
+            peticion_http = new XMLHttpRequest();
+            alert("En proceso, petición preparada");
+        } else if (window.ActiveXObject) {
+            peticion_http = new ActiveXObject("Microsoft.XMWHTTP");
+        } else {
+            alert("Su navegador no soporta AJAX ");
+        }
+
+        alert("Realizando la peticion http");
+        //Asignar la funcion de procesamiento
+        peticion_http.onreadystatechange = procesaRespuesta;
+        alert("Procesando respuesta");
+        //Preparar la peticion
+        peticion_http.open("GET", "cd_catalog.xml", true);//asincrono
+        //Enviar la petición
+        peticion_http.send(null);
     </script>
 </body>
 
