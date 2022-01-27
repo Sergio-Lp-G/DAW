@@ -1,45 +1,79 @@
-﻿// Nombre de la actividad, por ejemplo: step, gbody, gap, boxeo.
-//     Descripción de la actividad.
-//     Tipo, por ejemplo: cuerpo-mente, tono-fuerza, box, baile.
-//     Duración de la sesión.
-//     Calorías
-//     Beneficios, por ejemplo: Movilidad articular, control postural, tonificación, fuerza, resistencia general o coordinación.
-//     Tipo de ejercicio, por ejemplo: Movilidad articular, elasticidad muscular, Cardiovascular, tonificación.
-[
+﻿[
     {
         "nombre": "Step",
         "descripccion": "Aerobic con step",
-        "tipo": "Cardio",
+        "tipo": [
+            "Baile",
+            "Cardio"
+        ],
         "duracion": 60,
         "calorias": 1500,
-        "beneficios": "Movilidad articular, control postural, tonificación, fuerza, resistencia general o coordinación",
-        "tipoEjercicio": "Cardiovascular"
+        "beneficios": [
+            "Movilidad articular",
+            "Control postural",
+            "Tonificación"
+        ],
+        "tipoEjercicio": [
+            "Cardiovascular",
+            "pdpd"
+        ]
     },
     {
-        "nombre": "Step",
-        "descripccion": "Aerobic con step",
-        "tipo": "Cardio",
+        "nombre": "Gbody",
+        "descripccion": "Algo del cuerpo",
+        "tipo": [
+            "Cardio",
+            "Baile"
+        ],
         "duracion": 60,
         "calorias": 1500,
-        "beneficios": "Movilidad articular, control postural, tonificación, fuerza, resistencia general o coordinación",
-        "tipoEjercicio": "Cardiovascular"
+        "beneficios": [
+            "Movilidad articular",
+            "Tonificación",
+            "Fuerza",
+            "Resistencia general",
+            "Coordinación"
+        ],
+        "tipoEjercicio": [
+            "Cardiovascular",
+            "hfhfhf"
+        ]
     },
     {
-        "nombre": "Step",
-        "descripccion": "Aerobic con step",
-        "tipo": "Cardio",
+        "nombre": "Gap",
+        "descripccion": "Ni idea",
+        "tipo": [
+            "cuerpo-mente"
+        ],
         "duracion": 60,
         "calorias": 1500,
-        "beneficios": "Movilidad articular, control postural, tonificación, fuerza, resistencia general o coordinación",
-        "tipoEjercicio": "Cardiovascular"
+        "beneficios": [
+            "Control postural",
+            "Coordinación",
+            "Equilibrio"
+        ],
+        "tipoEjercicio": [
+            "Cardiovascular",
+            "Bailevascular"
+        ]
     },
     {
-        "nombre": "Step",
-        "descripccion": "Aerobic con step",
-        "tipo": "Cardio",
+        "nombre": "Boxeo",
+        "descripccion": "Boxeo",
+        "tipo": [
+            "Cardio"
+        ],
         "duracion": 60,
         "calorias": 1500,
-        "beneficios": "Movilidad articular, control postural, tonificación, fuerza, resistencia general o coordinación",
-        "tipoEjercicio": "Cardiovascular"
+        "beneficios": [
+            "Tonificación",
+            "Fuerza",
+            "Resistencia general",
+            "Coordinación"
+        ],
+        "tipoEjercicio": [
+            "Cardiovascular",
+            "Pelea"
+        ]
     }
 ]
