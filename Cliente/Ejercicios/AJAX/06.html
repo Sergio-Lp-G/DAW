@@ -46,9 +46,24 @@ Presenta el documento obtenido mediante AJAX usando métodos de Javascript. Pued
             if (peticion_http.readyState == 4 && peticion_http.status == 200) {
                 respTxt = peticion_http.responseTxt;
             }
-            if(respTxt !=null){
+            if (respTxt != null) {
                 var docJson = JSON.parse(respTxt);
-                var table=document.createElement("table");
+                var table = document.createElement("table");
+                table.setAttribute("border","1");
+                
+                // 
+                //
+
+                for (var i = 0; i < 6; i++) {
+                    actividades.forEach((dep, index) => {
+                        var elemento = document.createElement("td");
+                        var texto = document.createTextNode(dep)
+                        elemento.appendChild(texto);
+                        var ind = (index + 1).toString();
+                        var lista = document.getElementById("actividad" + ind);
+                        lista.appendChild(elemento);
+                    });
+                }
             }
 
         }
