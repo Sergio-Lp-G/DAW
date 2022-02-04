@@ -1,32 +1,47 @@
 <!DOCTYPE html>
+<!-- Crear programa similar con funcionamiento similar a a la imagen de "Materiales JQuery" "botones.jpg" utilizando JQuery. -->
 <html>
 
 <head>
     <meta charset="utf-8">
-    <title>Ejercicio "hola mundo"</title>
+    <title>Manipulando DOM</title>
     <script src="jquery-3.6.0.min.js"></script>
-    <script>
-        function saludar() {
-            //document.getElementById("parrafo").textContent = "Hola mundo.";
-            //Con Jquery
-            $("#parrafo").html("Hola mundo");
+    <script type="text/javascript">
+        $(document).ready(iniciar);
+
+        function iniciar() {
+            $("#boton1").click(function() {
+                $("ul").remove();
+            });
+            $("boton2").click(function() {
+                $("ul").load();
+            });
+
         }
     </script>
 </head>
 
 <body>
-    <input type="button" id="boton" value="Mostrar saludo">
-    <p id="parrafo"> </p>
+    <h2>Manipulando DOM</h2>
+    <ul>
+        <li>Primer item.</li>
+        <li>Segundo item.</li>
+        <li>Tercer item.</li>
+        <li>Cuarto item.</li>
+    </ul>
+    <p>
+        <input type="button" id="boton1" value="Eliminar la lista completa.">
+        <br>
+        <input type="button" id="boton2" value="Restaurar Lista"><br>
+        <input type="button" id="boton3" value="Añadir un elemento al final de la lista"><br>
+        <input type="button" id="boton4" value="Añadir un elemento al principio de la lista"><br>
+        <input type="button" id="boton5" value="Eliminar el último elemento."><br>
+        <input type="button" id="boton6" value="Eliminar el primer elemento."><br>
+        <input type="button" id="boton7" value="Decorar colores alternos"><br>
+    </p>
 
-    <script>
-        //document.getElementById("boton").addEventListener("click", saludar, false);
+    <p><br></p>
 
-        //Con Jquery
-        //$("#boton").click(saludar);
-        $("#boton").click(function() {
-            $("#parrafo").html("Hola mundo");
-        });
-    </script>
 </body>
 
 </html>
