@@ -6,16 +6,16 @@
     <title>Ejercicio 3</title>
     <script src="jquery-3.6.0.min.js"></script>
     <script>
-        //$("p").filter(".importante") Selecciona todos los parrafos con la clase llamada "importante"
-        //$("p#primero").find("bold") devuelve etiquetas con negrita del parrafo con id "primero"
+        //$("p").filter(".importante") Selecciona todos los parrafos con la clase llamada "importante". Filtra de los encontrados.
+        //$("p#primero").find("bold") devuelve etiquetas con negrita del parrafo con id "primero". Busca descendientes.
 
         //Ejercicio: Cambiar el color a rojo al párrafo tres con el método find
         $(document).ready(inicio);
 
         function inicio() {
-            //$("#textos").find("p.importante").css("color", "red"); // si funciona
+            $("#textos").find("p.importante").css("color", "red"); // si funciona
             //$("p").find(".importante").css("color", "red"); no funciona
-            $("p").filter(":last").css("color", "red"); // si funciona
+            //$("p").filter(":last").css("color", "red"); // si funciona
         }
     </script>
 </head>
