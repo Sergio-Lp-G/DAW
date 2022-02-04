@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Ejercicio 2</title>
+    <script src="jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(inicio);
+
+        function inicio() {
+            //al pasar el raton por encima de un parrafo cambia el texto a rojo
+            $('p').mouseover(function() {
+                $(this).css("color", "red");
+            });
+
+            //al salir de un parrafo cambia de color a negro
+            $('p').mouseout(function() {
+                $(this).css("color", "black");
+            });
+
+            //loas dos funciones anteriores con una sola funcion
+            // $('p').hover(function() {
+            //     $(this).css("color", "red");
+            // }, function() {
+            //     $(this).css("color", "black");
+            // });
+            //al hacer click en el primer parrafo muestra un alert con mensaje "Has hecho click en el primer parrafo"
+            $('#primero').click(function() {
+                alert("Has hecho click en el primer parrafo");
+            });
+            //al hacer click en el tercer parrafo se oculta su texto.
+            $('.importante').click(function() {
+                $(this).css("display", "none");
+            });
+        }
+    </script>
+</head>
+
+<body>
+    <p id="primero">Párrafo 1</p><br/>
+    <p>Párrafo 2</p><br/>
+    <p class="importante">Párrafo 3</p><br/>
+
+
+    <script>
+    </script>
+</body>
+
+</html>
