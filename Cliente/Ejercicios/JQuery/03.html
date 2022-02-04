@@ -13,7 +13,9 @@
         $(document).ready(inicio);
 
         function inicio() {
-            $("p").find(".importante").css("color", "red");
+            //$("#textos").find("p.importante").css("color", "red"); // si funciona
+            //$("p").find(".importante").css("color", "red"); no funciona
+            $("p").filter(":last").css("color", "red"); // si funciona
         }
     </script>
 </head>
@@ -22,7 +24,7 @@
     <div id="textos">
         <p id="primero">Párrafo 1</p><br/>
         <p>Párrafo 2</p><br/>
-        <p class="importante">Párrafo 3</p><br/>
+        <p class="importante">Párrafo 3 <b>Hola Mundo</b></p><br/>
     </div>
 
 
