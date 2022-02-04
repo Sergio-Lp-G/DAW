@@ -15,18 +15,24 @@ El bloque de div se cambiará a “En proceso” desde que se pulsa el botón ha
     <style>
         p,
         button {
-
             margin: 5px;
-
         }
     </style>
 
     <script>
-
         function cargarAJAX() {
+            if (window.XMLHttpRequest) {
+                peticion_http = new XMLHttpRequest();
+            } else if (window.ActiveXObject) {
+                peticion_http = new ActiveXObject("Microsoft.XMLHTTP");
+            } else {
+                alert("Su navegador no soporta ajax")
+            }
 
+            peticion_http.onreadystatechange = cargarTabla;
+            peticion_http.open("GET", "animales.xml", true);
+            peticion_http.send(null);
         }
-
     </script>
 
 </head>
