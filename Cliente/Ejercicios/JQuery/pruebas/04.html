@@ -10,19 +10,25 @@
         $(document).ready(inicio);
 
         function inicio() {
-            //alert($("#primero").html()); //extrae código html
-            //alert($("#primero").text()); //extrae textotext
-            //alert($("input").val()); //extrae el valor del input
+            //Extraer
+            alert($("#primero").html()); //extrae código html
+            alert($("#primero").text()); //extrae textotext
+            alert($("input").val()); //extrae el valor del input
             //alert($("input").attr("value")); //extrae el valor del input harcodeado
             //alert($("a").attr("href"));
+            $("p").eq(0).html("Nuevo texto del parrafo");
+            $("input").val("nuevo valor del input");
 
         }
 
         function cambiarEnlace() {
-            var newHref = "http://" + $("input").val();
-            alert(newHref);
-            $("a").attr("href", newHref);
-            alert($("a").attr("href"));
+            var newHref = "http://www." + $("input").filter(":first").val();
+            //alert(newHref);
+            $("a").attr({
+                "title": "Ir al enlace",
+                "href": newHref
+            });
+            //alert($("a").attr("href"));
         }
     </script>
 </head>
