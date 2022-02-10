@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Ejercicio 7 Peticion txt</title>
+    <script src="../jquery-3.6.0.min.js"></script>
+    <script>
+        //Extraer informacion de un elementos.
+        $(document).ready(inicio);
+
+        function inicio() {
+            //cargar el txt del Servidor
+            $("#boton").click(function() {
+                cargarXML();
+            });
+        }
+
+        function cargarXML() {
+            $.ajax({
+                    method: "get",
+                    url: "cd_catalog.xml"
+                })
+                .done(function(datos) {
+                    cargarTabla(datos);
+                    alert("Texto grabado");
+                })
+                .fail(function() {
+                    alert("Ha ocurrido un error");
+                })
+                .always(function() {
+                    alert("Trabajo realizado");
+                });
+        }
+
+        function cargarTabla(dat) {
+            var listaCD = $(dat).find("CD");
+            for (i = 0; i < listaCD.length; i++) {
+                var titulo = $(listaCD).eq(i).find("TITLE").text();
+
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <input type="button" id="boton" value="Cargar txt"><br/>
+    <table id="tabla" border="1">
+        <tr>
+            <th>Titulo</th>
+            <th>Artista</th>
+            <th>Pais</th>
+        </tr>
+    </table>
+
+</body>
+
+</html>

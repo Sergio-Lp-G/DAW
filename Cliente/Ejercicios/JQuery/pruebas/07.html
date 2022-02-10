@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Ejercicio 7 Peticion txt</title>
+    <script src="../jquery-3.6.0.min.js"></script>
+    <script>
+        //Extraer informacion de un elementos.
+        $(document).ready(inicio);
+
+        function inicio() {
+            //cargar el txt del Servidor
+            $("#boton").click(function() {
+                cargarTXT();
+            });
+        }
+
+        function cargarTXT() {
+            $.ajax({
+                    method: "get",
+                    url: "saludo.txt"
+                })
+                .done(function(datos) {
+                    $("#parrafo").text(datos);
+                    alert("Texto grabado");
+                })
+                .fail(function() {
+                    alert("Ha ocurrido un error");
+                })
+                .always(function() {
+                    alert("Trabajo realizado");
+                });
+        }
+    </script>
+</head>
+
+<body>
+    <input type="button" id="boton" value="Cargar txt"><br/>
+    <p id="parrafo"></p>
+</body>
+
+</html>
