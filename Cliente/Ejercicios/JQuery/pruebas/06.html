@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Ejercicio 6 denegacion de eventos</title>
+    <script src="../jquery-3.6.0.min.js"></script>
+    <script>
+        //Extraer informacion de un elementos.
+        $(document).ready(inicio);
+
+        function inicio() {
+            //Extraer
+            $("#boton1").click(function() {
+                $("ul").append("<li>Nuevo elemnto al final</li>")
+            })
+
+            //cambio de colornuevo
+            $("ul").find("li").click(function() {
+                $(this).css("color", "red");
+            })
+
+            $("ul").find("li").click(function() {
+                $(this).css("color", "red");
+            })
+
+            //Delegacion de evento click
+            $("ul").on("click", "li", function() {
+                $(this).css("color", "red");
+            })
+
+
+        }
+    </script>
+</head>
+
+<body>
+    <h2>Manipulando DOM</h2>
+    <ul>
+        <li>Primer item</li>
+        <li>Segundo item</li>
+        <li>Tercer item</li>
+        <li>Cuarto item</li>
+
+    </ul>
+
+    <button id="boton1">Cambiar</button>
+
+    <script>
+        document.getElementById("cambiar").addEventListener("click", cambiarEnlace, false);
+    </script>
+</body>
+
+</html>
