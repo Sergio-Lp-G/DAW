@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<!-- Crear un documento JSON:
+El documento JSON debe contener una lista de actividades con los siguientes datos por cada actividad:
+    Nombre de la actividad, por ejemplo: step, gbody, gap, boxeo.
+    Descripción de la actividad.
+    Tipo, por ejemplo: cuerpo-mente, tono-fuerza, box, baile.
+    Duración de la sesión.
+    Calorías
+    Beneficios, por ejemplo: Movilidad articular, control postural, tonificación, fuerza, resistencia general o coordinación.
+    Tipo de ejercicio, por ejemplo: Movilidad articular, elasticidad muscular, Cardiovascular, tonificación.
+Presenta el documento obtenido mediante AJAX usando métodos de Javascript. Puedes crear una tabla en el html e ir rellenando las filas con Javascript. -->
+<html lang="es">
+
+<head>
+    <title>Ejercicio 6</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="author" content="">
+    <style></style>
+    <script>
+        if (window.XMLHttpRequest) {
+            peticion_http = new XMLHttpRequest();
+            //alert("Su navegador soporta AJAX con objetos XMLHttpRequest");
+        } else if (window.ActiveXObject) {
+            peticion_http = new ActiveXObject("Microsoft.XMWHTTP");
+            // alert("Su navegador soporta AJAX con objetos ActiveXObject");
+        } else {
+            alert("Su navegador no soporta AJAX ");
+        }
+        //Asignar la funcion de procesamiento
+        peticion_http.onreadystatechange = procesaRespuesta;
+        //Preparar la peticion
+        peticion_http.open("GET", "json_06gimnasio.json", true);//asincrono
+        //Enviar la petición
+        peticion_http.send(null);
+
+    </script>
+</head>
+
+<body>
+
+    <input type="button" id="cargar" value="Mostrar Actividades">
+    <script>
+        document.getElementById("cargar").addEventListener("click", crearTabla, false);
+        function crearTabla() {
+            var docJson = null;
+            if (peticion_http.readyState == 4 && peticion_http.status == 200) {
+                respTxt = peticion_http.responseTxt;
+            }
+            if (respTxt != null) {
+                var docJson = JSON.parse(respTxt);
+                var table = document.createElement("table");
+                table.setAttribute("border","1");
+                
+                // 
+                //
+
+                for (var i = 0; i < 6; i++) {
+                    actividades.forEach((dep, index) => {
+                        var elemento = document.createElement("td");
+                        var texto = document.createTextNode(dep)
+                        elemento.appendChild(texto);
+                        var ind = (index + 1).toString();
+                        var lista = document.getElementById("actividad" + ind);
+                        lista.appendChild(elemento);
+                    });
+                }
+            }
+
+        }
+    </script>
+
+</body>
+
+</html>

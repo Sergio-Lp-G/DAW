@@ -1,0 +1,39 @@
+﻿[{
+        "nombre": "Step",
+        "descripccion": "Aerobic con step",
+        "tipo": ["Baile", "Cardio"],
+        "duracion": 60,
+        "calorias": 1500,
+        "beneficios": [
+            "Movilidad articular", "Control postural", "Tonificación"
+        ],
+        "tipoEjercicio": ["Cardiovascular", "pdpd"]
+    },
+    {
+        "nombre": "Gbody",
+        "descripccion": "Algo del cuerpo",
+        "tipo": ["Cardio", "Baile"],
+        "duracion": 60,
+        "calorias": 1500,
+        "beneficios": ["Movilidad articular", "Tonificación", "Fuerza", "Resistencia general", "Coordinación"],
+        "tipoEjercicio": ["Cardiovascular", "hfhfhf"]
+    },
+    {
+        "nombre": "Gap",
+        "descripccion": "Ni idea",
+        "tipo": ["cuerpo-mente", "Baile"],
+        "duracion": 60,
+        "calorias": 1500,
+        "beneficios": ["Control postural", "Coordinación", "Equilibrio"],
+        "tipoEjercicio": ["Cardiovascular", "Bailevascular"]
+    },
+    {
+        "nombre": "Boxeo",
+        "descripccion": "Boxeo",
+        "tipo": ["Cardio", "Lucha"],
+        "duracion": 60,
+        "calorias": 1500,
+        "beneficios": ["Tonificación", "Fuerza", "Resistencia general", "Coordinación"],
+        "tipoEjercicio": ["Cardiovascular", "Pelea"]
+    }
+]

@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Ejercicio 7 Peticion xml</title>
+    <title>Ejercicio 9 edicion Json</title>
     <script src="../jquery-3.6.0.min.js"></script>
     <script>
         //Extraer informacion de un elementos.
@@ -12,14 +12,14 @@
         function inicio() {
             //cargar el txt del Servidor
             $("#boton").click(function() {
-                cargarXML();
+                cargarJSON();
             });
         }
 
-        function cargarXML() {
+        function cargarJSON() {
             $.ajax({
                     method: "get",
-                    url: "cd_catalog.xml"
+                    url: "actividad.json"
                 })
                 .done(function(datos) {
                     cargarTabla(datos);
@@ -34,26 +34,29 @@
         }
 
         function cargarTabla(dat) {
-            var listaCD = $(dat).find("CD");
-            for (i = 0; i < listaCD.length; i++) {
-                var titulo = $(listaCD).eq(i).find("TITLE").text();
-                //repetir para artista y pais.
-
-                //funcion grabarFila(titulo,artista,pais){}
-
-                //situarte en la tabla y con .append(codigo html)
+            //var ficheroJSON = dat; 
+            //alert(ficheroJSON[0].nombre);lee json en jav script
+            var elementos = $(dat);
+            for (i = 0; i < elementos.length; i++) {
+                var actividadN = elementos.eq(i).prop("nombre");
+                var listaTipos = elementos.eq(i).prop("tipo");
+                grabarFila(actividadN, listaTipos);
             }
+        }
+
+        function grabarFila(act, lis) {
+            $("#tabla").append("<tr><td>" + act + "</td><td>" + lis + "</td></tr>");
         }
     </script>
 </head>
 
 <body>
-    <input type="button" id="boton" value="Cargar txt"><br/>
+    <input type="button" id="boton" value="Cargar JSON"><br/>
     <table id="tabla" border="1">
         <tr>
-            <th>Titulo</th>
-            <th>Artista</th>
-            <th>Pais</th>
+            <th>Actividad</th>
+            <th>Tipo</th>
+
         </tr>
     </table>
 
