@@ -16,6 +16,7 @@
     --bs-orange: #fd7e14;
     --bs-yellow: #ffc107;
     --bs-green: #198754;
+    --bs-green-rgb: 25, 135, 84;
     --bs-teal: #20c997;
     --bs-cyan: #0dcaf0;
     --bs-white: #fff;
@@ -7558,6 +7559,46 @@ fieldset:disabled .btn {
     height: auto !important;
 }
 
+.height0 {
+    height: 50px;
+}
+
+.height1 {
+    height: 100px;
+}
+
+.height2 {
+    height: 200px;
+}
+
+.height3 {
+    height: 300px;
+}
+
+.height4 {
+    height: 400px;
+}
+
+.height5 {
+    height: 500px;
+}
+
+.height6 {
+    height: 600px;
+}
+
+.height7 {
+    height: 700px;
+}
+
+.height8 {
+    height: 800px;
+}
+
+.height9 {
+    height: 900px;
+}
+
 .mh-100 {
     max-height: 100% !important;
 }
@@ -8377,6 +8418,11 @@ fieldset:disabled .btn {
 .bg-primary {
     --bs-bg-opacity: 1;
     background-color: rgba(var(--bs-primary-rgb), var(--bs-bg-opacity)) !important;
+}
+
+.bg-green {
+    --bs-bg-opacity: 1;
+    background-color: rgba(var(--bs-gree), var(--bs-bg-opacity)) !important;
 }
 
 .bg-secondary {
