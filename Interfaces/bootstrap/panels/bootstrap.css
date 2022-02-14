@@ -17,6 +17,7 @@
     --bs-yellow: #ffc107;
     --bs-green: #198754;
     --bs-green-rgb: 25, 135, 84;
+    --bs-lightgreen-rgb: 144, 200, 144;
     --bs-teal: #20c997;
     --bs-cyan: #0dcaf0;
     --bs-white: #fff;
@@ -8420,9 +8421,9 @@ fieldset:disabled .btn {
     background-color: rgba(var(--bs-primary-rgb), var(--bs-bg-opacity)) !important;
 }
 
-.bg-green {
+.bg-lggreen {
     --bs-bg-opacity: 1;
-    background-color: rgba(var(--bs-green-rgb), var(--bs-bg-opacity)) !important;
+    background-color: rgba(var(--bs-lightgreen-rgb), var(--bs-bg-opacity)) !important;
 }
 
 .bg-secondary {
