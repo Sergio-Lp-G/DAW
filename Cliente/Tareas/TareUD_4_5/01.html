@@ -51,9 +51,6 @@ columnas Artista y Título
                 nuevoElemento.appendChild(nuevoTexto);
                 listado.appendChild(nuevoElemento);
             }
-
-
-
         }
 
         function tablaCatalogo() {
@@ -70,20 +67,6 @@ columnas Artista y Título
             peticion_http.send(null);
         }
 
-        function crearTabla(titulo, artista) {
-            var table = document.getElementById("demo");
-            var tr = document.createElement("tr");
-            var td1 = document.createElement("td");
-            var td2 = document.createElement("td");
-            var texto1 = document.createTextNode(titulo);
-            var texto2 = document.createTextNode(artista);
-            td1.appendChild(texto1);
-            td2.appendChild(texto2);
-            tr.appendChild(td1);
-            tr.appendChild(td2);
-            table.appendChild(tr);
-        }
-
         function cargarTabla() {
             var parrafo = document.getElementById("parrafo");
             if (peticion_http.readyState == 4 && peticion_http.status == 200) {
@@ -98,6 +81,20 @@ columnas Artista y Título
             } else {
                 parrafo.innerText = "En proceso";
                 //alert("En proceso");
+            }
+
+            function crearTabla(titulo, artista) {
+                var table = document.getElementById("demo");
+                var tr = document.createElement("tr");
+                var td1 = document.createElement("td");
+                var td2 = document.createElement("td");
+                var texto1 = document.createTextNode(titulo);
+                var texto2 = document.createTextNode(artista);
+                td1.appendChild(texto1);
+                td2.appendChild(texto2);
+                tr.appendChild(td1);
+                tr.appendChild(td2);
+                table.appendChild(tr);
             }
         }
     </script>
