@@ -17,22 +17,23 @@ Presenta el documento obtenido mediante AJAX usando métodos de Javascript. Pued
     <meta name="author" content="">
     <style></style>
     <script>
-        if (window.XMLHttpRequest) {
-            peticion_http = new XMLHttpRequest();
-            //alert("Su navegador soporta AJAX con objetos XMLHttpRequest");
-        } else if (window.ActiveXObject) {
-            peticion_http = new ActiveXObject("Microsoft.XMWHTTP");
-            // alert("Su navegador soporta AJAX con objetos ActiveXObject");
-        } else {
-            alert("Su navegador no soporta AJAX ");
+        function cargarJson() {
+            if (window.XMLHttpRequest) {
+                peticion_http = new XMLHttpRequest();
+                //alert("Su navegador soporta AJAX con objetos XMLHttpRequest");
+            } else if (window.ActiveXObject) {
+                peticion_http = new ActiveXObject("Microsoft.XMWHTTP");
+                // alert("Su navegador soporta AJAX con objetos ActiveXObject");
+            } else {
+                alert("Su navegador no soporta AJAX ");
+            }
+            //Asignar la funcion de procesamiento
+            peticion_http.onreadystatechange = procesaRespuesta;
+            //Preparar la peticion
+            peticion_http.open("GET", "json_06gimnasio.json", true); //asincrono
+            //Enviar la petición
+            peticion_http.send(null);
         }
-        //Asignar la funcion de procesamiento
-        peticion_http.onreadystatechange = procesaRespuesta;
-        //Preparar la peticion
-        peticion_http.open("GET", "json_06gimnasio.json", true);//asincrono
-        //Enviar la petición
-        peticion_http.send(null);
-
     </script>
 </head>
 
@@ -40,7 +41,8 @@ Presenta el documento obtenido mediante AJAX usando métodos de Javascript. Pued
 
     <input type="button" id="cargar" value="Mostrar Actividades">
     <script>
-        document.getElementById("cargar").addEventListener("click", crearTabla, false);
+        document.getElementById("cargar").addEventListener("click", cargarJson, false);
+
         function crearTabla() {
             var docJson = null;
             if (peticion_http.readyState == 4 && peticion_http.status == 200) {
@@ -49,8 +51,8 @@ Presenta el documento obtenido mediante AJAX usando métodos de Javascript. Pued
             if (respTxt != null) {
                 var docJson = JSON.parse(respTxt);
                 var table = document.createElement("table");
-                table.setAttribute("border","1");
-                
+                table.setAttribute("border", "1");
+
                 // 
                 //
 
