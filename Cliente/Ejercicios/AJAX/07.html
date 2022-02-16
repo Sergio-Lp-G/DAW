@@ -14,24 +14,22 @@
                 peticion_http = new XMLHttpRequest();
                 alert("En proceso, petición preparada");
             } else if (window.ActiveXObject) {
-                peticion_http = new ActiveXObject("Microsoft.XMWHTTP");
+                peticion_http = new ActiveXObject("Microsoft.XMLHTTP");
             } else {
                 alert("Su navegador no soporta AJAX ");
             }
 
             alert("Realizando la peticion http");
             //Asignar la funcion de procesamiento
+            querystring = "q=" + document.getElementById("txt1").value;
             peticion_http.onreadystatechange = procesaRespuesta;
             alert("Procesando respuesta");
             //Preparar la peticion
-            peticion_http.open("GET", "noticias.xml", true); //asincrono
-            //Enviar la petición
-            peticion_http.send(null);
 
+            peticion_http.open("POST", "gethint.php", true); //asincrono
 
+            peticion_http.setRequestHeader("Content-type", "aplication/x-www-form-urlencoded");
 
-
-            querystring = "q=" + document.getElementById("txt1").value;
 
             //Enviar la petición
 
@@ -50,10 +48,7 @@
 
     <h3>Start typing a name in the input field below:</h3>
 
-
-
     <p>Suggestions: <span id="txtHint"></span></p>
-
     <p>First name: <input type="text" id="txt1"></p>
 
 
@@ -62,6 +57,17 @@
 
     <script>
         document.getElementById("txt1").addEventListener("keyup", showHint, false);
+
+        function procesaRespuesta() {
+            var hint = null;
+
+            if (peticion_http.readyState == 4 && peticion_http.status == 200) {
+                hint = peticion_http.responseText;
+            }
+            if (hint != null) {
+                document.getElementById("txtHint").textContent = hint;
+            }
+        }
     </script>
 
 </body>

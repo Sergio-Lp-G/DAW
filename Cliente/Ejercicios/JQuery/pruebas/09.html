@@ -10,6 +10,7 @@
         $(document).ready(inicio);
 
         function inicio() {
+            // alert("iniciamos");
             //cargar el txt del Servidor
             $("#boton").click(function() {
                 cargarJSON();
@@ -18,15 +19,17 @@
 
         function cargarJSON() {
             $.ajax({
-                    method: "get",
+                    type: "post",
                     url: "actividad.json"
                 })
                 .done(function(datos) {
+                    alert("done");
                     cargarTabla(datos);
                     alert("Texto grabado");
                 })
-                .fail(function() {
+                .fail(function(datos) {
                     alert("Ha ocurrido un error");
+                    cargarJSON();
                 })
                 .always(function() {
                     alert("Trabajo realizado");
