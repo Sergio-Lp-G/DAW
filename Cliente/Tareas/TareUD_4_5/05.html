@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>AJAX con JQuery - Fichero JSON</title>
+    <script src="jquery-3.6.0.min.js"></script>
+    <script type="text/javascript">
+        //Extraer informacion de un elementos.
+        $(document).ready(iniciar);
+
+        function iniciar() {
+            // alert("iniciamos");
+            //cargar el txt del Servidor
+            $("#boton").click(function() {
+                cargarJSON();
+            });
+        }
+
+        function cargarJSON() {
+            $.ajax({
+                    type: "post",
+                    url: "actividad.json"
+                })
+                .done(function(datos) {
+                    //alert("done");
+                    cargarTabla(datos);
+                    //alert("Texto grabado");
+                })
+                .fail(function(datos) {
+                    alert("Ha ocurrido un error");
+                    cargarJSON();
+                })
+                .always(function() {
+                    //alert("Trabajo realizado");
+                });
+        }
+
+        function cargarTabla(dat) {
+            //var ficheroJSON = dat; 
+            //alert(ficheroJSON[0].nombre);lee json en jav script
+            var elementos = $(dat);
+            for (i = 0; i < elementos.length; i++) {
+                var actividadN = elementos.eq(i).prop("nombre");
+                var listaTipos = elementos.eq(i).prop("tipo");
+                grabarFila(actividadN, listaTipos);
+            }
+        }
+
+        function grabarFila(act, lis) {
+            $("#tabla").append("<tr><td>" + act + "</td><td>" + lis + "</td></tr>");
+        }
+    </script>
+</head>
+
+<body>
+    <input type="button" id="boton" value="Cargar JSON"><br/>
+    <table id="tabla" border="1">
+        <tr>
+            <th>Actividad</th>
+            <th>Tipo</th>
+
+        </tr>
+    </table>
+
+</body>
+
+</html>
