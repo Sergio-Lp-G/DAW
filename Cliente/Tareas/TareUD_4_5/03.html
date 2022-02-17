@@ -28,7 +28,7 @@
             alert("Procesando respuesta");
 
             peticion_http.open("POST", "gethint.php", true);
-            peticion_http.setRequestHeader("Content-type", "aplication/x-www-form-urlencoded");
+            peticion_http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 
             //Enviar la petición
             peticion_http.send(querystring);
