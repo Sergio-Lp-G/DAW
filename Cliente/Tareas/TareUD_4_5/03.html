@@ -4,11 +4,12 @@
 
 <head>
 
-    <title>Ejercicio 7, ajax con php</title>
+    <title>Ejercicio con php</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="author" content="">
 
     <script>
         function showHint() {
-
             //Preparar la petición
             if (window.XMLHttpRequest) {
                 peticion_http = new XMLHttpRequest();
@@ -20,29 +21,31 @@
             }
 
             alert("Realizando la peticion http");
+
             //Asignar la funcion de procesamiento
+            querystring = "q=" + document.getElementById("txt1").value;
             peticion_http.onreadystatechange = procesaRespuesta;
             alert("Procesando respuesta");
-            //Preparar la peticion
-            peticion_http.open("GET", "noticias.xml", true); //asincrono
-            //Enviar la petición
-            peticion_http.send(null);
 
-
-
-
-            querystring = "q=" + document.getElementById("txt1").value;
+            peticion_http.open("POST", "gethint.php", true);
+            peticion_http.setRequestHeader("Content-type", "aplication/x-www-form-urlencoded");
 
             //Enviar la petición
-
             peticion_http.send(querystring);
+        }
 
+        function procesaRespuesta() {
+            var hint = null;
+            if (peticion_http.readyState == 4 && peticion_http.status == 200) {
+                hint = peticion_http.responseText;
+            }
+            if (hint != null) {
+                document.getElementById("txtHint").textContent = hint;
+            }
         }
     </script>
 
 </head>
-
-
 
 <body>
 
@@ -50,10 +53,7 @@
 
     <h3>Start typing a name in the input field below:</h3>
 
-
-
     <p>Suggestions: <span id="txtHint"></span></p>
-
     <p>First name: <input type="text" id="txt1"></p>
 
 

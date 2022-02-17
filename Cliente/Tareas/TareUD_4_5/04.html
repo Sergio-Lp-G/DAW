@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Manipulando DOM</title>
+    <script src="../jquery-3.6.0.min.js"></script>
+    <script type="text/javascript">
+        //Extraer informacion de un elementos.
+        $(document).ready(iniciar);
+
+        function iniciar() {
+            //eliminar el elemento
+            $("#boton1").click(function() {
+                alert("boton eliminar pulsado");
+
+                $("ul").remove();
+            })
+
+            //restaurar el elemento
+            $("#boton2").click(function() {
+                $("li").remove();
+                $("ul").append("<li>Primer Item</li><li>Segundo Item</li><li>Tercer Item</li><li>Cuarto Item</li>");
+            });
+
+            //Añadir un elemento al final
+            $("#boton3").click(function() {
+                $("ul").append("<li>Nuevo elemento al final</li>");
+            });
+
+            //Extraer
+            $("#boton").click(function() {
+                $("ul").append("<li>Nuevo elemnto al final</li>")
+            })
+
+            //cambio de colornuevo
+            $("ul").find("li").click(function() {
+                $(this).css("color", "red");
+            })
+
+            $("ul").find("li").click(function() {
+                $(this).css("color", "red");
+            })
+
+            //Delegacion de evento click
+            $("ul").on("click", "li", function() {
+                $(this).css("color", "red");
+            })
+
+
+        }
+    </script>
+</head>
+
+<body>
+    <h2>Manipulando DOM</h2>
+    <ul>
+        <li>Primer item</li>
+        <li>Segundo item</li>
+        <li>Tercer item</li>
+        <li>Cuarto item</li>
+
+    </ul>
+
+    <p>
+        <input type="button" id="boton1" value="Eliminar la lista completa."><br>
+        <input type="button" id="boton2" value="Restaurar Lista"><br>
+        <input type="button" id="boton3" value="Añadir un elemento al final de la lista"><br>
+        <input type="button" id="boton4" value="Añadir un elemento al principio de la lista"><br>
+        <input type="button" id="boton5" value="Eliminar el último elemento."><br>
+        <input type="button" id="boton6" value="Eliminar el primer elemento."><br>
+        <input type="button" id="boton7" value="Decorar colores alternos"><br>
+    </p>
+
+
+    <script>
+        document.getElementById("cambiar").addEventListener("click", cambiarEnlace, false);
+    </script>
+</body>
+
+</html>
