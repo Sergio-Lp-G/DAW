@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <title>Manipulando DOM</title>
-    <script src="../jquery-3.6.0.min.js"></script>
+    <script src="jquery-3.6.0.min.js"></script>
     <script type="text/javascript">
         //Extraer informacion de un elementos.
         $(document).ready(iniciar);
@@ -12,9 +12,7 @@
         function iniciar() {
             //eliminar el elemento
             $("#boton1").click(function() {
-                alert("boton eliminar pulsado");
-
-                $("ul").remove();
+                $("li").remove();
             })
 
             //restaurar el elemento
@@ -23,31 +21,31 @@
                 $("ul").append("<li>Primer Item</li><li>Segundo Item</li><li>Tercer Item</li><li>Cuarto Item</li>");
             });
 
-            //Añadir un elemento al final
+            //Añadir un elemento al final de la lista
             $("#boton3").click(function() {
-                $("ul").append("<li>Nuevo elemento al final</li>");
-            });
-
-            //Extraer
-            $("#boton").click(function() {
                 $("ul").append("<li>Nuevo elemnto al final</li>")
             })
 
-            //cambio de colornuevo
-            $("ul").find("li").click(function() {
-                $(this).css("color", "red");
-            })
+            //Añadir un elemento al principio de la lista
+            $("#boton4").click(function() {
+                $("ul").prepend("<li>Nuevo elemento al principio</li>");
+            });
 
-            $("ul").find("li").click(function() {
-                $(this).css("color", "red");
-            })
+            //Eliminar el último elemento
+            $("#boton5").click(function() {
+                $("li").filter(":last").remove();
+            });
 
-            //Delegacion de evento click
-            $("ul").on("click", "li", function() {
-                $(this).css("color", "red");
-            })
+            //Eliminar el primer elemento
+            $("#boton6").click(function() {
+                $("li").filter(":first").remove();
+            });
 
-
+            //Decorar colores alternos
+            $("#boton7").click(function() {
+                $("ul li:even").css("color", "orange");
+                $("ul li:odd").css("color", "blue");
+            });
         }
     </script>
 </head>
