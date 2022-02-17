@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio de filereader</title>
+    <script type="text/javascript">
+    function leerArchivo() {
+        //selecciona el primer archivo
+        var fichero=this.files[0];
+        // var fichero=document.getElementById("archivo").files[0];
+        alert(fichero.name);
+        //permite leer ficheros de forma asíncrona
+        var lector =new FileReader();
+        //Abrir el archivo en modo lectura
+        lector.readAsText(fichero);
+        // document.getElementById("parrafo").textContent=lector.result;
+        lector.onload=function(){
+            //el texto del archivo se mostrará en parrafo
+            document.getElementById("parrafo").textContent=lector.result;
+        }
+    }
+    </script>
+</head>
+
+<body>
+    <input type="file" id="archivo">
+    <p id="parrafo"></p>
+    <script>
+        document.getElementById("archivo").addEventListener("change",leerArchivo,false);
+    </script>
+</body>
+
+</html>
