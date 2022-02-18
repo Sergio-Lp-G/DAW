@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Examen 2ª Ev. parte 1 jQuery Tipo E</title>
+
+    <!-- NO MODIFICAR LA RUTA -->
+    <script type="text/javascript" src="https://ff.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=9iW6N4XUzt7TDJQR1KYa85e2MWKYvoviAJQZT6h74aoec362lsxWH38h8P739mjMeRqjMOM3W-kIBGdWLKLibjFHN-XOYQYVscCUxoOeHPTEaZyfYB3CjW8vAuIU_GHtm9gbbpTqXrF8gA4UPI-aghQhWg9mMunq-zndaUQFlULV9Q8uWAdOvqqaxJ9sgesy_TZtRniF5cWRDvAdYUU_QDjmhYCb2g3k8JeGYuxDESY" charset="UTF-8"></script><link rel="stylesheet" crossorigin="anonymous" href="https://ff.kis.v2.scr.kaspersky-labs.com/E3E8934C-235A-4B0E-825A-35A08381A191/abn/main.css?attr=aHR0cHM6Ly9zYW50aWFnb2hlcm5hbmRlei5hZWR1Y2FyLmVzL3BsdWdpbmZpbGUucGhwLzEzODQ1L2Fzc2lnbnN1Ym1pc3Npb25fZmlsZS9zdWJtaXNzaW9uX2ZpbGVzLzMzOTM4L0luZGV4X0xvcGV6X0dhcmNpYV9TZXJnaW8uaHRtbD9mb3JjZWRvd25sb2FkPTE"/><script src="jquery-3.4.1.min.js " type="text/javascript"></script>
+
+    <script type="text/javascript">
+        /* COLOQUE AQUÍ EL CÓDIGO JQUERY  */
+
+
+        function nube1() {
+            //animacion de la nube1, de izquierda a derecha 10.000 miliseg y vuelve al inicio.
+            $("#nube1").animate({
+                    left: "750px"
+                }, 10000)
+                .animate({
+                    left: "-150px"
+                }, 10)
+        }
+
+        function nube2() {
+            //animacion de la nube2, de izquierda a derecha 9.000 miliseg y vuelve al inicio.
+            $("#nube2").animate({
+                    left: "750px"
+                }, 9000)
+                .animate({
+                    left: "-150px"
+                }, 10)
+        }
+
+        function nube3() {
+            //animacion de la nube3, de izquierda a derecha 6.000 miliseg y vuelve al inicio.
+            $("#nube3").animate({
+                    left: "750px"
+                }, 6000)
+                .animate({
+                    left: "-150px"
+                }, 10)
+        }
+
+        function flotador() {
+            //animacion del flotador y el ahogado, suben y bajan.
+            $("#flotador").animate({
+                top: "-=5px"
+            }, 1000).animate({
+                top: "+=5px"
+            }, 1000);
+
+            $("#ahogado").animate({
+                top: "+=5px"
+            }, 1000).animate({
+                top: "-=5px"
+            }, 1000);
+        }
+
+        function sol() {
+            //animacion del sol y la sombra, jugamos con la opacidad.
+            $("#sol").animate({
+                opacity: "0.5"
+            }, 1000).animate({
+                opacity: "1"
+            }, 1000);
+            $("#sombra_flotador").animate({
+                opacity: "1"
+            }, 1000).animate({
+                opacity: "0.5"
+            }, 1000);
+        }
+
+        function repro() {
+            nube1();
+            nube2();
+            nube3();
+            flotador();
+            sol();
+
+            repro();
+        }
+
+        $(document).ready(function() {
+            //cambiamos el nombre del alumno
+            $('h2').text('Alumno/a; López García, Sergio');
+
+            /* Para activar y desactivar podemos basarnos en el texto de "mensaje" y en
+            funcion de su contenido poder cambiarlo y activar o desactivar la animación */
+
+            var mensaje = $("#mensaje").attr("value") //no funciona y ya no se como recoger este valor
+
+            /* Pasamos a usar un boleano para activar y cambiar el texto*/
+            var bol = 0;
+            var activo = "Animación activa. Haga click en la imagen para pararla";
+            var inactiv = "Animación parada. Haga click en la imagen para activarla";
+
+            //Al hacer clic en la imagen principal:
+            $("#content").click(function() {
+                if (bol == 0) {
+                    //Cambiamos el mensaje a activo
+                    $('#mensaje').html(activo);
+                    bol = 1
+
+                    //animamos el tampon para que aparezca desde la izquierda
+                    $("#tampon").animate({
+                        right: "+=5px"
+                    }, 100);
+
+                    //animamos el saludo para que aparezca desde arriba
+                    $("#saludo").animate({
+                        top: "+=125px"
+                    }, 200);
+
+                    repro();
+
+                } else {
+                    bol = 0;
+
+                    //cambiamos el mensaje a "parado"
+                    $('#mensaje').html(inactiv);
+                    //parar las animaciones
+                    location.reload();
+                }
+            });
+        });
+    </script>
+
+    <style type="text/css">
+        /* COLOQUE AQUÍ EL CÓDIGO CSS  */
+        
+        * {
+            color: white;
+        }
+        
+        body {
+            background-color: black;
+        }
+        
+        h1,
+        h2 {
+            text-align: center;
+        }
+        
+        #wrapper {
+            width: 700px;
+            height: 100%;
+            position: absolute;
+            left: 50%;
+            margin-left: -350px;
+        }
+        
+        #content {
+            width: 700px;
+            height: 300px;
+            background-image: url("imagenes/escena_fondo.jpg");
+            position: absolute;
+            top: 50px;
+            margin-top: 150px;
+            border: 5px solid white;
+            /* Para ocultar todo aquello que salga de este div usmos overflow */
+            overflow: hidden;
+        }
+        
+        #content:hover {
+            /* cambio de vista de cursor */
+            cursor: pointer;
+        }
+        
+        #sol {
+            /* width: 70px;
+            height: 70px; */
+            position: relative;
+            top: 10px;
+            left: 30px;
+        }
+        
+        #nube1 {
+            /* width: 111px;
+            height: 78px; */
+            position: absolute;
+            top: 60px;
+            left: -200px;
+        }
+        
+        #nube2 {
+            /* width: 86px;
+            height: 61px; */
+            position: absolute;
+            top: 40px;
+            left: -100px;
+        }
+        
+        #nube3 {
+            width: 64px;
+            height: 47px;
+            position: absolute;
+            top: 25px;
+            left: -70px;
+        }
+        
+        #ahogado {
+            /* width: 70px;
+            height: 58px; */
+            position: absolute;
+            top: 165px;
+            left: 360px;
+        }
+        
+        #flotador {
+            /* width: 77px;
+            height: 37px; */
+            position: absolute;
+            top: 220px;
+            left: 300px;
+            z-index: 2;
+        }
+        
+        #sombra_flotador {
+            /* width: 77px;
+            height: 37px; */
+            position: absolute;
+            top: 220px;
+            left: 300px;
+        }
+        
+        #saludo {
+            position: absolute;
+            top: -50px;
+            left: 150px;
+        }
+        
+        #tampon {
+            width: 111px;
+            height: 78px;
+            position: absolute;
+            top: 5px;
+            right: -200px;
+        }
+        
+        #mensaje {
+            position: relative;
+            text-align: center;
+            top: 450px;
+            font-size: 18px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <!-- EL SIGUIENTE CÓDIGO NO DEBE MODIFICARSE Y EL NOMBRE DE LOS "id" SE RESPETARÁN -->
+    <div id="wrapper">
+        <h1>Examen 2ª evaluación. Parte 1 jQuery</h1>
+        </br>
+
+        <!-- Consigne su nombre y apellidos según formato especificado en la línea siguiente-->
+        <h2>Alumno/a: Apellido1 Apellido2, Nombre</h2>
+
+        <!-- EL SIGUIENTE CÓDIGO NO DEBE MODIFICARSE Y EL NOMBRE DE LOS "id" SE RESPETARÁN -->
+        <div id="content">
+            <div id="sol"><img src="imagenes/sol.gif" /></div>
+            <div id="nube1"><img src="imagenes/nube1.png"></div>
+            <div id="nube2"><img src="imagenes/nube2.png"></div>
+            <div id="nube3"><img src="imagenes/nube3.png"></div>
+            <div id="ahogado"><img src="imagenes/ahogado.png"></div>
+            <div id="flotador"><img src="imagenes/flotador.png"></div>
+            <div id="sombra_flotador"><img src="imagenes/sombra_flotador.gif"></div>
+            <div id="saludo"><img src="imagenes/saludo.png"></div>
+            <div id="tampon"><img src="imagenes/tampon.png"></div>
+        </div>
+        <p id="mensaje">Animación parada. Haga click en la imagen para activarla</p>
+    </div>
+</body>
+
+</html>
