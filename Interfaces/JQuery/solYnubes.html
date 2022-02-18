@@ -6,10 +6,9 @@
     <title>Ejercicio css+jquery</title>
     <script src="jQuery/jquery-3.4.1.min.js" type="text/javascript"></script>
     <script>
-
         var x;
         var timer;
-        var reproducir = function () {
+        var reproducir = function() {
             $("#cuadro1").css("display", "block");
             $("#cuadro1").animate({
                 left: "100%"
@@ -17,17 +16,21 @@
                 left: "-18%"
             }, 10);
             reproducir();
-            
+
         };
 
-        $(document).ready(function () {
-            $("#tv").click(function () {
+        function nube1() {
+
+        }
+
+        $(document).ready(function() {
+            $("#tv").click(function() {
                 $("#circulo1").css("display", "block");
                 $("#circulo1").animate({
                     top: "5%"
                 }, 4000);
                 timer = setTimeout('reproducir()', 4000);
-                
+
             });
         });
     </script>
@@ -36,7 +39,7 @@
             margin: 0px;
             padding: 0px;
         }
-
+        
         #tv {
             width: 500px;
             height: 300px;
@@ -48,7 +51,7 @@
             /* la mitad del alto, cero, cero, la mitad del ancho */
             overflow: hidden;
         }
-
+        
         #circulo1 {
             position: absolute;
             top: -90px;
@@ -61,7 +64,7 @@
             display: none;
             z-index: 5;
         }
-
+        
         #cuadro1 {
             width: 80px;
             height: 50px;
@@ -71,14 +74,14 @@
             left: -18%;
             z-index: 2;
         }
-
+        
         #cuadro2 {
             width: 50px;
             height: 40px;
             background-color: green;
             display: none;
         }
-
+        
         #cuadro3 {
             width: 30px;
             height: 20px;

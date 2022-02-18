@@ -3,19 +3,33 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Ejemplo20. Evento on, off, one.</title>
+    <title>Ejemplo21. Evento on, off, one.</title>
     <script src="jQuery/jquery-3.4.1.min.js" type="text/javascript"></script>
     <script>
-        $(document).ready(function () {
+        $(document).ready(function() {
             //desplazamiento horizontal
-            $("#btn_0").click(function(){
-                $("#cajita").animate({left:"+=300"},2000).animate({left:"-=300"},2000);
+            $("#btn_0").click(function() {
+                $("#cajita").animate({
+                    left: "+=300"
+                }, 2000).animate({
+                    left: "-=300"
+                }, 2000);
             });
-            $("#btn_1").click(function(){
-                $("#cajita").animate({top:"+=300"},2000).animate({top:"-=300"},2000);
+            $("#btn_1").click(function() {
+                $("#cajita").animate({
+                    top: "+=300"
+                }, 2000).animate({
+                    top: "-=300"
+                }, 2000);
             });
-            $("#btn_2").click(function(){
-                $("#cajita").animate({width:"+=300",height:"+=300"},2000).animate({width:"-=300",height:"-=300"},2000);
+            $("#btn_2").click(function() {
+                $("#cajita").animate({
+                    width: "+=300",
+                    height: "+=300"
+                }, 2000).animate({
+                    width: "-=300",
+                    height: "-=300"
+                }, 2000);
             });
         });
     </script>
