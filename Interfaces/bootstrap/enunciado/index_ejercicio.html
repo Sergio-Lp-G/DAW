@@ -14,7 +14,17 @@
     <script src="bootstrap/js/bootstrap.min.js"></script>
 
     <style type="text/css">
-
+        .article {
+            padding: 5px;
+        }
+        
+        .alt3 {
+            height: 400px;
+        }
+        
+        .ultima {
+            margin-bottom: 200px;
+        }
     </style>
 </head>
 
@@ -24,22 +34,22 @@
             <p>Ejercicio Bootstrap <br> Sergio López García</p>
         </div>
         <nav class="navbar navbar-inverse navbar-fixed-bottom">
-            <div class="navbar-">
-
+            <div class="container-fluid">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">INICIO</a></li>
+                    <li><a href="#">COCHES</a></li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" href="#" data-toggle="dropdown">MOTOS
+                            <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">RACING</a> </li>
+                            <li><a href="#">NAKE</a></li>
+                            <li><a href="#">TOURING</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">CAMIONES</a></li>
+                </ul>
             </div>
-
-            <ul>
-                <li><a href="#">INICIO</a></li>
-                <li><a href="#">COCHES</a></li>
-                <li><a href="#" data-toggle="dropdown">MOTOS<b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">RACING</a> </li>
-                        <li><a href="#">NAKE</a></li>
-                        <li><a href="#">TOURING</a></li>
-                    </ul>
-                </li>
-                <li><a href="#">CAMIONES</a></li>
-            </ul>
         </nav>
 
         <nav class="navbar navbar-default col-lg-2 col-md-2 col-sm-12 col-xs-12">
@@ -56,25 +66,68 @@
                 <li><a href="#">menu4</a></li>
             </ul>
         </nav>
-        <section class="row col-lg-10 col-md-10 col-sm-12 col-xs-12 ">
-            <div class="panel panel-default col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                <div class="panel-heading">FOTO 1</div>
-                <div class="panel-body">
-                    <img src="img/foto1.jpg" alt="">
+        <section class="row col-lg-10 col-md-10 col-sm-12 col-xs-12 ultima">
+            <article class="col-lg-3 col-md-4 col-sm-6 col-xs-12 ">
+                <div class="panel panel-default alt3">
+                    <div class="panel-heading">
+                        <p>FOTO 1</p>
+                    </div>
+                    <div class="panel-body">
+                        <img src="img/foto1.jpg" alt="" class="img-responsive">
+                    </div>
                 </div>
-            </div>
-            <div class="panel panel-default col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                <div class="panel-heading">FOTO 1</div>
-                <div class="panel-body">
-                    <img src="img/foto1.jpg" alt="">
+            </article>
+            <article class="col-lg-3 col-md-4 col-sm-6 col-xs-12 ">
+                <div class="panel panel-default alt3">
+                    <div class="panel-heading">
+                        <p>FOTO 2</p>
+                    </div>
+                    <div class="panel-body">
+                        <img src="img/foto2.jpg" alt="" class="img-responsive">
+                    </div>
                 </div>
-            </div>
-            <div class="panel panel-default col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                <div class="panel-heading">FOTO 1</div>
-                <div class="panel-body">
-                    <img src="img/foto1.jpg" alt="">
+            </article>
+            <article class="col-lg-3 col-md-4 col-sm-6 col-xs-12 ">
+                <div class="panel panel-default alt3">
+                    <div class="panel-heading">
+                        <p>FOTO 3</p>
+                    </div>
+                    <div class="panel-body">
+                        <img src="img/foto3.jpg" alt="" class="img-responsive">
+                    </div>
                 </div>
-            </div>
+            </article>
+            <article class="col-lg-3 col-md-4 col-sm-6 col-xs-12 ">
+                <div class="panel panel-default alt3">
+                    <div class="panel-heading">
+                        <p>FOTO 4</p>
+                    </div>
+                    <div class="panel-body">
+                        <img src="img/foto4.jpg" alt="" class="img-responsive">
+                    </div>
+                </div>
+            </article>
+            <article class="col-lg-3 col-md-4 col-sm-6 col-xs-12 ">
+                <div class="panel panel-default alt3">
+                    <div class="panel-heading">
+                        <p>FOTO 5</p>
+                    </div>
+                    <div class="panel-body">
+                        <img src="img/foto5.jpg" alt="" class="img-responsive">
+                    </div>
+                </div>
+            </article>
+            <article class="col-lg-3 col-md-4 col-sm-6 col-xs-12 ">
+                <div class="panel panel-default alt3">
+                    <div class="panel-heading">
+                        <p>FOTO 6</p>
+                    </div>
+                    <div class="panel-body">
+                        <img src="img/foto6.jpg" alt="" class="img-responsive">
+                    </div>
+                </div>
+            </article>
+            <br>
         </section>
     </div>
 
