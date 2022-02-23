@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ejercicio de cokies Con Parametros</title>
+    <script>
+        function setCookie() {
+            //leer formulario
+            var cname = document.getElementById("cname").value;
+            var cvalue = document.getElementById("cvalue").value;
+            var exdays = document.getElementById("exdays").value;
+
+            //traducimos dias a tiempo en miliseg de vida.
+            const d = new Date();
+            d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+            let expires = "expires=" + d.toUTCString();
+            //crear cokies
+            document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+
+            //mostrar cookie por pantalla
+            var listadoCookies = document.cookie;
+            alert(listadoCookies);
+
+            var array = listadoCookies.split();
+            for (i = 0; i < array.length; i++) {
+                alert(array[i]);
+            }
+
+            location.reload();
+        }
+    </script>
+</head>
+
+<body>
+
+    <form action="pagina_destino.php" method="post" name="formulario1">
+        <input type="text" id="cname" name="cname" placeholder="Clave"><br>
+        <input type="text" id="cvalue" name="cvalue" placeholder="Valor"><br>
+        <input type="text" id="exdays" name="exdays" placeholder="Dias de expiración"><br>
+
+    </form>
+    <p><button type="submit" id="button1" onclick="setCookie()">Enviar formulario</button></p>
+
+    <script>
+    </script>
+</body>
+
+</html>
