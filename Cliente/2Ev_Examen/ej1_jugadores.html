@@ -27,16 +27,18 @@
         function crearTabla() {
             var json = peticion_http.responseText;
             var obj = JSON.parse(json);
-
-            var table = document.getElementById("tabla");
-            var trTitulo = document.createElement("tr");
-            trTitulo.innerHTML = "<th> Nombre </th><th> Equipo </th><th> Habilidades </th><th> Posición </th>";
-            tabla.appendChild(trTitulo);
+            alert("Creando tabla");
+            //var table = document.getElementById("tabla");
+            // var trTitulo = document.createElement("tr");
+            // trTitulo.innerHTML = "<th> Nombre </th><th> Equipo </th><th> Habilidades </th><th> Posición </th>";
+            // tabla.appendChild(trTitulo);
 
             for (var j = 0; j < obj.length; j++) {
                 var tabla = document.getElementById("tabla");
                 var tr = document.createElement("tr");
+                alert("Creando fila");
                 tr.innerHTML = "<td>" + nombre + "</td> <td>" + equipo + "</td><td>" + habilidades + "</td><td>" + posicion + "</td>";
+                alert("Añadiendo fila");
                 tabla.appendChild(tr);
             }
         }
