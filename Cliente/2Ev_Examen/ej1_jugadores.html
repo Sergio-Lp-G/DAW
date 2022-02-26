@@ -4,6 +4,7 @@
 <head>
     <title>Ejercicio 1 - jugadores</title>
     <meta charset="utf-8">
+    <script src="jquery-3.6.0.min.js"></script>
     <script>
         function cargarJson() {
             if (window.XMLHttpRequest) {
@@ -25,19 +26,21 @@
         }
 
         function crearTabla() {
-            var json = peticion_http.responseText;
-            var obj = JSON.parse(json);
+            if (peticion_http.readyState == 4 && peticion_http.status == 200) {
+                var json = peticion_http.responseText;
+                var obj = JSON.parse(json);
 
-            var table = document.getElementById("tabla");
-            var trTitulo = document.createElement("tr");
-            trTitulo.innerHTML = "<th> Nombre </th><th> Equipo </th><th> Habilidades </th><th> Posición </th>";
-            tabla.appendChild(trTitulo);
+                var table = document.getElementById("tabla");
+                var trTitulo = document.createElement("tr");
+                trTitulo.innerHTML = "<th> Nombre </th><th> Equipo </th><th> Habilidades </th><th> Posición </th>";
+                tabla.appendChild(trTitulo);
 
-            for (var j = 0; j < obj.length; j++) {
-                var tabla = document.getElementById("tabla");
-                var tr = document.createElement("tr");
-                tr.innerHTML = "<td>" + nombre + "</td> <td>" + equipo + "</td><td>" + habilidades + "</td><td>" + posicion + "</td>";
-                tabla.appendChild(tr);
+                for (var j = 0; j < obj.length; j++) {
+                    var tabla = document.getElementById("tabla");
+                    var tr = document.createElement("tr");
+                    tr.innerHTML = "<td>" + nombre + "</td> <td>" + equipo + "</td><td>" + habilidades + "</td><td>" + posicion + "</td>";
+                    tabla.appendChild(tr);
+                }
             }
         }
     </script>
