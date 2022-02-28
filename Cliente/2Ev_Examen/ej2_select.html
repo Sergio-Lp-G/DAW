@@ -26,22 +26,30 @@
         }
 
         function crearTabla() {
+            var table = document.getElementById("tabla");
+            table.removeChild(0);
+            // tabla.empty();
             if (peticion_http.readyState == 4 && peticion_http.status == 200) {
                 var json = peticion_http.responseText;
                 var obj = JSON.parse(json);
+                var index = document.getElementById("opciones").value;
 
-                var table = document.getElementById("tabla");
-                //tabla.empty();
+
                 var trTitulo = document.createElement("tr");
                 trTitulo.innerHTML = "<th> Nombre </th><th> Equipo </th><th> Habilidades </th><th> Posición </th>";
                 table.appendChild(trTitulo);
 
-                for (var j = 0; j < obj.length; j++) {
-                    var table = document.getElementById("tabla");
-                    var tr = document.createElement("tr");
-                    tr.innerHTML = "<td>" + obj[j].nombre + "</td> <td>" + obj[j].equipo + "</td><td>" + obj[j].habilidades + "</td><td>" + obj[j].posicion + "</td>";
-                    table.appendChild(tr);
-                }
+                var table = document.getElementById("tabla");
+                var fila = document.getElementsByTagName("th");
+                var tr = document.createElement("tr");
+                tr.innerHTML = "<td>" + obj[index - 1].nombre + "</td> <td>" + obj[index - 1].equipo + "</td><td>" + obj[index - 1].habilidades + "</td><td>" + obj[index - 1].posicion + "</td>";
+                table.appendChild(tr);
+                // for (var j = 0; j < obj.length; j++) {
+                //     var table = document.getElementById("tabla");
+                //     var tr = document.createElement("tr");
+                //     tr.innerHTML = "<td>" + obj[j].nombre + "</td> <td>" + obj[j].equipo + "</td><td>" + obj[j].habilidades + "</td><td>" + obj[j].posicion + "</td>";
+                //     table.appendChild(tr);
+                // }
             }
         }
     </script>
@@ -49,6 +57,13 @@
 
 <body>
     <button id="btm1">Graba actividades en la tabla </button>
+    <select id="opciones" name="opciones">
+        <option value="1">Jugador 1</option>
+        <option value="2"> Jugador 2</option>
+        <option value="3"> Jugador 3</option>
+        <option value="4"> Jugador 4</option>
+    </select>
+
     <table id="tabla" border="1">
         <tr>
             <th>Nombre</th>

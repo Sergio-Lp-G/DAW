@@ -38,8 +38,7 @@
 
 
         function cargarLista(datos) {
-            //var ficheroJSON = dat; 
-            //alert(ficheroJSON[0].nombre);lee json en jav script
+
             var elementos = $(datos).find("libro");
             for (i = 0; i < elementos.length; i++) {
                 var titulo = $(elementos).eq(i).find("titulo").text();
@@ -47,32 +46,6 @@
                 $("ul").append("<li>" + titulo + " por " + autor + ".</li>");
             }
         }
-
-
-        // function cabeza(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain chain)
-        // throws IOException, ServletException {
-        //     HttpServletRequest request = (HttpServletRequest) servletRequest;
-        //     HttpServletResponse response = (HttpServletResponse) servletResponse;
-        //     // Solicitud de dominio cruzado, * significa permitir todos los tipos
-        //     response.setHeader("Access-Control-Allow-Origin", "*");
-        //     // Permitir método de solicitud
-        //     response.setHeader("Access-Control-Allow-Methods", "POST, GET, OPTIONS, DELETE");
-        //     // Utilizado para especificar el período de validez de esta solicitud de verificación previa, la unidad es la segunda, durante la cual no se emite ninguna otra solicitud de verificación previa
-        //     response.setHeader("Access-Control-Max-Age", "3600");
-        //     // El contenido del campo incluido en la solicitud, si hay varias comas disponibles separadas de la siguiente manera
-        //     response.setHeader("Access-Control-Allow-Headers", "content-type,x-requested-with,Authorization, x-ui-request,lang");
-        //     // Credenciales permitidas de control de acceso, verdadero está permitido
-        //     response.setHeader("Access-Control-Allow-Credentials", "true");
-        //     // El navegador enviará una solicitud de opciones primero, si la solicitud pasa, luego continuará enviando una solicitud de publicación formal
-        //     // Se devuelve la solicitud para configurar opciones
-        //     if (request.getMethod().equals("OPTIONS")) {
-        //         response.setStatus(HttpStatus.SC_OK);
-        //         response.getWriter().write("OPTIONS returns OK");
-        //         return;
-        //     }
-        //     // Pasando el procesamiento de solicitud de negocio
-        //     chain.doFilter(servletRequest, servletResponse);
-        // }
     </script>
 </head>
 
