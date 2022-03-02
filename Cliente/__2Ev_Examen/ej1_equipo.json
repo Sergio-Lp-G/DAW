@@ -1,0 +1,38 @@
+﻿[{
+        "nombre": "Sergio",
+        "equipo": "Zaragoza",
+        "habilidades": [
+            "regate",
+            "finta"
+        ],
+        "posicion": "delantero"
+    },
+    {
+        "nombre": "Adrian",
+        "equipo": "Huesca",
+        "habilidades": [
+            "salto",
+            "cabezazo",
+            "cortar pase"
+        ],
+        "posicion": "defensa"
+    },
+    {
+        "nombre": "Alfonso",
+        "equipo": "Delicias",
+        "habilidades": [
+            "salto",
+            "palomita"
+        ],
+        "posicion": "guardameta"
+    },
+    {
+        "nombre": "Eduardo",
+        "equipo": "CasaDemont",
+        "habilidades": [
+            "velocidad",
+            "finta"
+        ],
+        "posicion": "lateral"
+    }
+]

@@ -19,11 +19,23 @@
         }
         
         .alt3 {
-            height: 400px;
+            min-height: 350px;
         }
         
         .ultima {
             margin-bottom: 200px;
+        }
+        
+        .equal {
+            display: -webkit-flex;
+            display: flex;
+        }
+        
+        .row-eq-height {
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
         }
     </style>
 </head>
@@ -56,7 +68,7 @@
             <ul class="navbar flex-column">
                 <li><a href="#">menu1</a></li>
                 <li><a href="#">menu2</a></li>
-                <li><a href="#" data-toggle="dropdown">menu3 <b class="caret"></b></a>
+                <li class="dropdown"><a href="#" data-toggle="dropdown">menu3 <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         <li><a href="#">submenu1</a> </li>
                         <li><a href="#">submenu2</a></li>
