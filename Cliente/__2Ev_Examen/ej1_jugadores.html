@@ -20,7 +20,10 @@
             peticion_http.onreadystatechange = crearTabla;
             //Preparar la peticion
 
-            peticion_http.open("GET", "ej1_equipo.json", true); //asincrono
+            peticion_http.open("POST", "ej1_equipo.json", true); //asincrono
+
+            peticion_http.setRequestHeader("Content-type", "aplication/x-www-form-urlencoded");
+
             //Enviar la petición
             peticion_http.send(null);
         }

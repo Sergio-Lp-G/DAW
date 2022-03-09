@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <title>Ejercicio 4</title>
+    <script>
+        function cargarLista(datos) {
+
+            var lista = document.getElementById("lista");
+            var txt = "Cliente\_Ex2Rec\holaMundo.txt";
+            var file = this.files[0];
+            var reader = new FileReader();
+            alert("Selecione el archivo txt");
+
+            reader.onload = function(progressEvent) {
+                alert("Grabando información");
+                var fileContentArray = this.result.split(/\r\n|\n/);
+                for (var line = 0; line < fileContentArray.length; line++) {
+                    crearItem(fileContentArray[line]);
+
+                }
+            };
+            reader.readAsText(file);
+
+        }
+
+        function crearItem(item) {
+            var listado = document.getElementById("lista");
+            var nuevoElemento = document.createElement("li");
+            var nuevoTexto = document.createTextNode(item);
+            nuevoElemento.appendChild(nuevoTexto);
+            listado.appendChild(nuevoElemento);
+        }
+    </script>
+</head>
+
+<body>
+    <input type="file" name="file" id="file" /><br>
+
+
+
+    <ul id="lista">
+
+    </ul>
+
+    <script>
+        document.getElementById("file").addEventListener("click", cargarLista, false);
+    </script>
+</body>
+
+</html>
