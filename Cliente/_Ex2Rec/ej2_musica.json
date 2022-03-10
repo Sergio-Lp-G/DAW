@@ -1,0 +1,42 @@
+﻿[{
+        "nombre": "Magos",
+        "pais": "España",
+        "estilo": "Rock",
+        "instrumentos": [
+            "Batería",
+            "Bajo",
+            "Gaita"
+        ]
+    },
+    {
+        "nombre": "ACDC",
+        "pais": "EEUU",
+        "estilo": "Rock",
+        "instrumentos": [
+            "Batería",
+            "Bajo",
+            "Guitarra"
+        ]
+    },
+    {
+        "nombre": "Druidas",
+        "pais": "España",
+        "estilo": "Celta",
+        "instrumentos": [
+            "Batería",
+            "Bandurria",
+            "Gaita"
+        ]
+    },
+    {
+        "nombre": "Navidades",
+        "pais": "España",
+        "estilo": "Villancicos",
+        "instrumentos": [
+            "Batería",
+            "Guitarra",
+            "Laud",
+            "Flauta"
+        ]
+    }
+]

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <title>Ejercicio 1 - jugadores</title>
+    <meta charset="utf-8">
+    <script src="jquery-3.6.0.min.js"></script>
+    <script>
+        function cargarJson() {
+            if (window.XMLHttpRequest) {
+                peticion_http = new XMLHttpRequest();
+                alert("Su navegador soporta AJAX con objetos XMLHttpRequest");
+            } else if (window.ActiveXObject) {
+                peticion_http = new ActiveXObject("Microsoft.XMWHTTP");
+                alert("Su navegador soporta AJAX con objetos ActiveXObject");
+            } else {
+                alert("Su navegador no soporta AJAX ");
+            }
+            //Asignar la funcion de procesamiento
+            peticion_http.onreadystatechange = crearTabla;
+            //Preparar la peticion
+
+            peticion_http.open("POST", "ej1_equipo.json", true); //asincrono
+
+            peticion_http.setRequestHeader("Content-type", "aplication/x-www-form-urlencoded");
+
+            //Enviar la petición
+            peticion_http.send(null);
+        }
+
+        function crearTabla() {
+            if (peticion_http.readyState == 4 && peticion_http.status == 200) {
+                var json = peticion_http.responseText;
+                var obj = JSON.parse(json);
+
+                var table = document.getElementById("tabla");
+                //tabla.empty();
+                var trTitulo = document.createElement("tr");
+                trTitulo.innerHTML = "<th> Nombre </th><th> Equipo </th><th> Habilidades </th><th> Posición </th>";
+                table.appendChild(trTitulo);
+
+                for (var j = 0; j < obj.length; j++) {
+                    var table = document.getElementById("tabla");
+                    var tr = document.createElement("tr");
+                    tr.innerHTML = "<td>" + obj[j].nombre + "</td> <td>" + obj[j].equipo + "</td><td>" + obj[j].habilidades + "</td><td>" + obj[j].posicion + "</td>";
+                    table.appendChild(tr);
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <button id="btm1">Graba actividades en la tabla </button>
+    <table id="tabla" border="1">
+        <tr>
+            <th>Nombre</th>
+            <th>Equipo</th>
+            <th>Habilidades</th>
+            <th>Posición</th>
+        </tr>
+    </table>
+
+    <script>
+        document.getElementById("btm1").addEventListener("click", cargarJson, false);
+    </script>
+</body>
+
+</html>

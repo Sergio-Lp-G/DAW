@@ -2,9 +2,8 @@
 <html lang="es">
 
 <head>
-    <title>Ejercicio 1 - jugadores</title>
+    <title>Ejercicio 1 - Grupos de música</title>
     <meta charset="utf-8">
-    <script src="jquery-3.6.0.min.js"></script>
     <script>
         function cargarJson() {
             if (window.XMLHttpRequest) {
@@ -17,12 +16,17 @@
                 alert("Su navegador no soporta AJAX ");
             }
             //Asignar la funcion de procesamiento
+            querystring = "nombre&pais&estilo&instrumento";
+
             peticion_http.onreadystatechange = crearTabla;
             //Preparar la peticion
 
-            peticion_http.open("GET", "ej1_equipo.json", true); //asincrono
+            peticion_http.open("POST", "ej2_musica.json", true); //asincrono
+
+            peticion_http.setRequestHeader("Content-type", "aplication/x-www-form-urlencoded");
+
             //Enviar la petición
-            peticion_http.send(null);
+            peticion_http.send(querystring);
         }
 
         function crearTabla() {
@@ -31,15 +35,15 @@
                 var obj = JSON.parse(json);
 
                 var table = document.getElementById("tabla");
-                //tabla.empty();
+                table.empty();
                 var trTitulo = document.createElement("tr");
-                trTitulo.innerHTML = "<th> Nombre </th><th> Equipo </th><th> Habilidades </th><th> Posición </th>";
+                trTitulo.innerHTML = "<th> Nombre </th><th> País </th><th> Estilo </th><th> Instrumentos </th>";
                 table.appendChild(trTitulo);
 
                 for (var j = 0; j < obj.length; j++) {
                     var table = document.getElementById("tabla");
                     var tr = document.createElement("tr");
-                    tr.innerHTML = "<td>" + obj[j].nombre + "</td> <td>" + obj[j].equipo + "</td><td>" + obj[j].habilidades + "</td><td>" + obj[j].posicion + "</td>";
+                    tr.innerHTML = "<td>" + obj[j].nombre + "</td> <td>" + obj[j].pais + "</td><td>" + obj[j].estilo + "</td><td>" + obj[j].instrumento + "</td>";
                     table.appendChild(tr);
                 }
             }
@@ -48,18 +52,19 @@
 </head>
 
 <body>
-    <button id="btm1">Graba actividades en la tabla </button>
+    <button id="btn1">Graba grupos en la tabla </button>
     <table id="tabla" border="1">
+        </div>
         <tr>
             <th>Nombre</th>
-            <th>Equipo</th>
-            <th>Habilidades</th>
-            <th>Posición</th>
+            <th>País</th>
+            <th>Estilo</th>
+            <th>Instrumentos</th>
         </tr>
     </table>
 
     <script>
-        document.getElementById("btm1").addEventListener("click", cargarJson, false);
+        document.getElementById("btn1").addEventListener("click", cargarJson, false);
     </script>
 </body>
 

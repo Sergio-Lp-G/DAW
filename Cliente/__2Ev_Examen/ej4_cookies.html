@@ -53,27 +53,24 @@
 
 
 
-        parrafos[0].innerHTML = listadoCookies + "; ";
+        parrafos[0].innerHTML += listadoCookies + "; ";
 
         //borrar cookie
         document.cookie = "saludo=HolaMundo; max-age=0";
         listadoCookies = document.cookie;
 
-
-        var valor = parrafos[0].innerHTML;
-        alert(valor);
-        parrafos[0].innerHTML = valor + listadoCookies + "; ";
-
+        parrafos[0].innerHTML += listadoCookies + "; ";
 
         //crear item en la local storage
         localStorage.setItem("NIF", "123456789A");
 
-        sessionStorage.setItem("NIF", localStorage);
-        alert(sessionStorage);
+        var nif = localStorage.getItem("NIF");
+        //sessionStorage.getItem("NIF", localStorage);
+        //alert(nif);
 
-        var valor = parrafos[0].innerHTML;
-        alert(valor);
-        parrafos[0].innerHTML = valor + sessionStorage + "; ";
+        // var valor = parrafos[0].innerHTML;
+        // alert(valor);
+        parrafos[0].innerHTML += nif + "; ";
     </script>
 </body>
 

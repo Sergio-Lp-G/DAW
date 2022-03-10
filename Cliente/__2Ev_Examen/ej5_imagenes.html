@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Ejercicio 3 - libros JQUERY</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="jquery-3.6.0.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(document).ready(iniciar);
+
+        function iniciar() {
+            // cabeza();
+            //leerArchivo();
+            //leerImg();
+        }
+
+        function leerArchivo() {
+            $.ajax({
+                    type: "post",
+                    url: "biblio.xml",
+                    dataType: "xml"
+                })
+                .done(function(datos) {
+                    alert("done");
+                    cargarLista(datos);
+                    alert("Texto grabado");
+                })
+                .fail(function(datos) {
+                    alert("Ha ocurrido un error");
+                    alert(datos);
+                    // leerArchivo();
+                })
+                .always(function() {
+                    alert("Trabajo realizado");
+                });
+        }
+
+
+        function cargarLista(datos) {
+
+            var elementos = $(datos).find("libro");
+            for (i = 0; i < elementos.length; i++) {
+                var titulo = $(elementos).eq(i).find("titulo").text();
+                var autor = $(elementos).eq(i).find("autor").text();
+                $("ul").append("<li>" + titulo + " por " + autor + ".</li>");
+            }
+        }
+
+        function leerImg() {
+            $.ajax({
+                    type: "post",
+                    url: "/imagenes",
+                    dataType: "text"
+                })
+                .done(function(datos) {
+                    alert("done");
+                    cargarGaleria(datos);
+                    alert("Texto grabado");
+                })
+                .fail(function(datos) {
+                    alert("Ha ocurrido un error");
+                    alert(datos);
+                    // leerArchivo();
+                })
+                .always(function() {
+                    alert("Trabajo realizado");
+                });
+        }
+
+
+        function previewFiles() {
+
+            var preview = document.querySelector('#preview');
+            var files = document.querySelector('input[type=file]').files;
+
+            function readAndPreview(file) {
+
+                // Asegurate que `file.name` coincida con el criterio de extensiones
+                if (/\.(jpe?g|png|gif)$/i.test(file.name)) {
+                    alert("imagen seleccionada con exito");
+                    var reader = new FileReader();
+
+                    reader.addEventListener("load", function() {
+                        var image = new Image();
+                        image.height = 100;
+                        image.title = file.name;
+                        image.src = this.result;
+                        preview.appendChild(image);
+                    }, false);
+                    reader.readAsDataURL(file);
+                }
+            }
+
+            if (files) {
+                [].forEach.call(files, readAndPreview);
+            }
+
+        }
+    </script>
+</head>
+
+<body>
+    <h2>Ejercicio de JQuery, petición POST y XML</h2>
+    <img src="" alt="">
+
+    <input id="browse" type="file" onchange="previewFiles()" multiple>
+    <div id="preview"></div>
+
+
+    <ul>
+
+    </ul>
+
+
+    <input class="joint" type='file' id="imgInp" />
+    <img style="width:45px" id="blah" src="#" alt="your image" />
+
+
+    <script type="text/javascript">
+        $("#imgInp").change(function() {
+            readURL(this);
+        });
+
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function(e) {
+                    $(input).next('img').attr('src', e.target.result);
+                }
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+    </script>
+</body>
+
+</html>
