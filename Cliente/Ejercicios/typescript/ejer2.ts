@@ -8,5 +8,17 @@ class Persona{
     }
 }
 
-var persona1=new Persona("Teruel");
+var persona1=new Persona("Zaragoza");
 persona1.decirCiudad();
+
+class Coche{
+    modelo:String;
+    anio:number;
+    constructor(modelo:string,anio:number){
+        this.modelo=modelo;
+        this.anio=anio;
+    }
+    decirCaracteristicas(){
+        alert(""+this.modelo);
+    }
+}

@@ -7,5 +7,15 @@ var Persona = /** @class */ (function () {
     };
     return Persona;
 }());
-var persona1 = new Persona("Teruel");
+var persona1 = new Persona("Zaragoza");
 persona1.decirCiudad();
+var Coche = /** @class */ (function () {
+    function Coche(modelo, anio) {
+        this.modelo = modelo;
+        this.anio = anio;
+    }
+    Coche.prototype.decirCaracteristicas = function () {
+        alert("" + this.modelo);
+    };
+    return Coche;
+}());
