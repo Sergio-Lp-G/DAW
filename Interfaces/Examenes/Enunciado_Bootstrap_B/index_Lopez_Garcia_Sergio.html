@@ -1,0 +1,112 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+    <title>Parte II 2ª Evaluación Bootstrap 2021-22 tipo B</title>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="generator" content="CSE HTML Validator (https://www.htmlvalidator.com/)">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- DEFINA AQUÍ EL CÓDIGO CSS -->
+    <style type="text/css">
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- DEFINA AQUÍ LA BARRA DE NAVEGACIÓN -->
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">Examen 2ª Eval. Parte 2 Bootstrap</a>
+                <!-- Boton "hamburguesa", los tres icon-bar, colapsado. Objetivo el menú con id #menu-->
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menu" aria-expanded="false">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <!-- Opciones de menú. Como tiene id #menu responde al boton de "hamburguesa" -->
+            <div class="collapse navbar-collapse" id="menu">
+                <ul class="nav navbar-nav dropdown">
+                    <li><a href="#">OPCION 1</a></li>
+                    <li><a href="#">OPCION 2</a></li>
+                    <li class="dropdown-toggle">
+                        <!-- Menu desplegable con dropdown -->
+                        <a href="#" id="opcion3" data-toggle="dropdown" aria-expanded="true">OPCION 3 <span
+                                class="caret"></span></a>
+                        <ul class="dropdown-menu" aria-labelledby="opcion3">
+                            <li><a href="#">OPCION 3.1</a></li>
+                            <li><a href="#">OPCION 3.2</a></li>
+                            <li><a href="#">OPCION 3.3</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">OPCION 4</a></li>
+                </ul>
+            </div>
+        </nav>
+
+    </div>
+    <!-- END BARRA NAVEGACIÓN -->
+
+    <!-- DEFINA AQUÍ EL JUMBOTRON -->
+    <div class="jumbotron text-center">
+        <!-- clase jumbotron y clase para centrar el texto -->
+        <h2>López García, Sergio</h2>
+        <!-- enlace con forma de boton -->
+        <p>Diseño de interfaces web. Bootstrap. <a href="#" class="btn btn-warning">Leer mas &raquo;</a></p>
+    </div>
+
+    <!-- END JUMBUTRON -->
+
+    <!-- DEFINA AQUÍ LA SECTION  -->
+    <section class="container">
+        <!-- La section es clase container para poder aplicar bien el css Bootstrap -->
+
+        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+            <!-- Declaramos el modelo de columnas que queremos usar 3 para lg y md, 2 para sm y 1 para xs -->
+            <img src="img/FPB.png" alt="" class="img-responsive">
+            <!-- Imagen modo responsive -->
+            <h2>F.P. Básica</h2>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Natus laboriosam sit, cum inventore dignissimos tempora incidunt, id odio ullam sed nostrum! Quasi ut sapiente saepe! Laborum voluptates magnam consectetur eos!</p>
+            <p class="text-left"><a class="btn btn-success" href="#">Ver detalles &raquo;</a></p>
+            <!-- parrafo con texto a la izquierda y enlace tipo botón -->
+        </div>
+
+        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+            <img src="img/GM.png" alt="" class="img-responsive">
+            <h2>F.P. Grado Medio</h2>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Natus laboriosam sit, cum inventore dignissimos tempora incidunt, id odio ullam sed nostrum! Quasi ut sapiente saepe! Laborum voluptates magnam consectetur eos!</p>
+            <p class="text-center"><a class="btn btn-danger" href="#">Ver detalles &raquo;</a></p>
+            <!-- parrafo con texto centrado y enlace tipo botón -->
+        </div>
+
+        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+            <img src="img/GS.png" alt="" class="img-responsive">
+            <h2>F.P. Grado Superior</h2>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Natus laboriosam sit, cum inventore dignissimos tempora incidunt, id odio ullam sed nostrum! Quasi ut sapiente saepe! Laborum voluptates magnam consectetur eos!</p>
+            <p class="text-right"><a class="btn btn-primary" href="#">Ver detalles &raquo;</a></p>
+            <!-- parrafo con texto a la derecha y enlace tipo botón -->
+
+        </div>
+    </section>
+
+    <!-- END SECTION -->
+    <br>
+    <!-- DEFINA AQUÍ EL FOOTER  -->
+    <footer class="text-center">
+        <p>&copy; IES Santiago Hernández.</p>
+    </footer>
+    <!-- END FOOTER -->
+
+
+</body>
+
+</html>
