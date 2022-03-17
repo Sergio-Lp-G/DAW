@@ -7,14 +7,55 @@
     <script src="https://unpkg.com/react@17/umd/react.development.js">
         //biblioteca online
     </script>
-    <script src="https://unpkg.com/react@17/umd/react-dom.development.js">
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js">
         //biblioteca online
     </script>
-
-
+    <script>
+        function cambio() {
+            const elemento2 = React.createElement(
+                "h1", //etiqueta
+                {}, //clases
+                document.getElementById("entrada").value //valor
+            );
+            ReactDOM.render(
+                elemento2,
+                document.getElementById("div3")
+            )
+        }
+    </script>
 </head>
 
 <body>
+    <div id="root"></div>
+
+    <div id="div2">
+        <input type="text" id="entrada">
+        <input type="button" id="boton1" value="Grabar">
+    </div>
+    <div id="div3"></div>
+
+
+
+    <script>
+        //grabar el mensaje hola mundo en un bloque div con Javascript
+        // texto1 = document.createTextNode("Hola Mundo");
+        // document.getElementById("root").appendChild(texto1);
+
+        //grabar el mensaje hola mundo en un bloque div con React
+        const elemento1 = React.createElement(
+            "h1", //etiqueta
+            {}, //clases
+            "Hola mundo de nuevo!!" //valor
+        );
+        ReactDOM.render(
+            elemento1,
+            document.getElementById("root")
+        )
+
+        //Añadir un segundo elemento que al pulsar un botón grabe un mensaje de un input y lo muestre por pantalla en div2
+
+        document.getElementById("boton1").addEventListener("click", cambio);
+    </script>
 
 </body>
 
