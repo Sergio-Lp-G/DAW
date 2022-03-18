@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Ejercicio de JSX y React - Reloj</title>
+    <script src="https://unpkg.com/react@17/umd/react.development.js">
+        //biblioteca online
+    </script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js">
+        //biblioteca online
+    </script>
+    <script src="http://fb.me/JSXTransformer-0.12.2.js"></script>
+    <script type="text/jsx">
+        function mostarHora(){
+            {/*var hora= new Date().toLocaleTimeString();*/}
+            
+
+            var hora= new Date();
+
+            hora=hora.getHours()+":"+hora.getMinutes()+":"+hora.getSeconds();
+            const elemento=<h2>Son las {hora} horas</h2>; 
+            ReactDOM.render( 
+                elemento, 
+                document.getElementById("div1")
+            ); 
+
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Reloj creado con React y JSX</h1>
+    <div id="div1"></div>
+    
+    <!-- Hora por pantalla -->
+    <script type="text/jsx">
+        setInterval(mostarHora,1000);
+        
+    </script>
+
+</body>
+
+</html>

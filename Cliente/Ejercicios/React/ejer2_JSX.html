@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Ejercicio de React</title>
+    <title>Ejercicio de JSX y React</title>
     <script src="https://unpkg.com/react@17/umd/react.development.js">
         //biblioteca online
     </script>
@@ -18,12 +18,21 @@
 
 <body>
     <div id="div1"></div>
+    <div id="div2"></div>
 
     <script type="text/jsx">
-
-        const elemento=
-        <h1>Hello world</h1>; ReactDOM.render( elemento, document.getElementById("div1"));
-
+        const elemento=<h1>Hello world</h1>; 
+        ReactDOM.render( 
+            elemento, 
+            document.getElementById("div1")
+        ); 
+        
+        const nombre="Sergio López"; 
+        const elemento2=<h2>Me llamo {nombre}</h2>; 
+        ReactDOM.render( 
+            elemento2, 
+            document.getElementById("div2")
+        );
     </script>
 
 </body>
